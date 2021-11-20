@@ -6,7 +6,6 @@ if (has("termguicolors"))
 endif
 
 " Colorschemes
-" good alternatives are: zellner, pablo
 " good for markdown: slate
 " dark themes: gruvbox, onedark
 " light themes: tomorrow, PaperColor Light
@@ -20,6 +19,9 @@ let g:material_terminal_italics = 1
 " options are: 'default', 'palenight', 'ocean', 'lighter', 'darker', 'default-community', 'palenight-community', 'ocean-community', 'lighter-community', 'darker-community'
 let g:material_theme_style = 'default-community'
 " colorscheme material
+
+autocmd BufWinEnter,Filetype json colorscheme onedark
+autocmd BufWinEnter,Filetype markdown,vimwiki colorscheme slate
 
 set shiftwidth=4
 set tabstop=4
@@ -59,6 +61,8 @@ set langmenu=en_US
 let $LANG = 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+
+set encoding=utf-8
 
 " Have lines wrap instead of continue off-screen
 set linebreak
