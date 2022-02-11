@@ -55,6 +55,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'tpope/vim-surround'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
