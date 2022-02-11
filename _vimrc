@@ -5,6 +5,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+" set vim font to nerd font
+set guifont=mononoki:h22
+
 " Colorschemes
 " good for markdown: slate
 " dark themes: gruvbox, onedark
@@ -38,17 +41,36 @@ set nowritebackup
 set nocompatible
 filetype plugin on
 set laststatus=2
-set t_Co=256
+" set t_Co=256
+if !has('gui_running')
+  set t_Co=256
+endif
 
 call plug#begin('C:/Program\ Files\ (x86)/Vim/vim82/plugged')
 Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
 " Plug 'flazz/vim-colorschemes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'tpope/vim-surround'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" NERDTree Syntax Highlighting
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
 
 " Always show command
 set showcmd
