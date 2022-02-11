@@ -10,9 +10,10 @@ set guifont=mononoki:h22
 
 " Colorschemes
 " good for markdown: slate
-" dark themes: gruvbox, onedark
-" light themes: tomorrow, PaperColor Light
-colorscheme gruvbox
+" dark themes: gruvbox, onedark, vim-material, vilight, vorange, vydark,
+" hydrangea
+" light themes: tomorrow, PaperColor Light, vylight
+colorscheme vilight 
 
 " for PaperColor light theme
 " set background=light
@@ -24,7 +25,9 @@ let g:material_theme_style = 'default-community'
 " colorscheme material
 
 autocmd BufWinEnter,Filetype json colorscheme onedark
-autocmd BufWinEnter,Filetype markdown,vimwiki colorscheme slate
+autocmd BufWinEnter,Filetype py, html colorscheme vilight
+autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
+autocmd BufWinEnter,Filetype markdown,vimwiki, xml colorscheme gruvbox
 
 set shiftwidth=4
 set tabstop=4
@@ -50,7 +53,8 @@ call plug#begin('C:/Program\ Files\ (x86)/Vim/vim82/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
-" Plug 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
+Plug 'yuttie/hydrangea-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
