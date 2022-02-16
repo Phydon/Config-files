@@ -9,11 +9,13 @@ endif
 set guifont=mononoki:h22
 
 " Colorschemes
-" good for markdown: slate
 " dark themes: gruvbox, onedark, vim-material, vilight, vorange, vydark,
-" hydrangea
-" light themes: tomorrow, PaperColor Light, vylight
-colorscheme vilight 
+" hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
+" deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
+" revolutions, Revolution, zenburn,tetragrammaton, strange, cabin, muon,
+" thornbird
+" light themes: Tomorrow, PaperColor Light, vylight, zenesque
+colorscheme muon 
 
 " for PaperColor light theme
 " set background=light
@@ -24,10 +26,14 @@ let g:material_terminal_italics = 1
 let g:material_theme_style = 'default-community'
 " colorscheme material
 
-autocmd BufWinEnter,Filetype json colorscheme onedark
-autocmd BufWinEnter,Filetype py, html colorscheme vilight
+autocmd BufWinEnter,Filetype json colorscheme afterglow
+autocmd BufWinEnter,Filetype *.py colorscheme muon
+autocmd BufWinEnter,Filetype c colorscheme muon
 autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
-autocmd BufWinEnter,Filetype markdown,vimwiki, xml colorscheme gruvbox
+autocmd BufWinEnter,Filetype html colorscheme hydrangea
+autocmd BufWinEnter,Filetype markdown colorscheme hydrangea
+autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
+autocmd BufWinEnter,Filetype xml colorscheme gruvbox
 
 set shiftwidth=4
 set tabstop=4
@@ -58,20 +64,31 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'luochen1990/rainbow'
+Plug 'tommcdo/vim-lion'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
+" rainbow - Enable rainbow parentheses
+" let g:rainbow_active = 1
+
+" vim-lion - squeeze aligning text by some character
+let b:lion_squeeze_spaces = 1
+
 " YouCompleteMe - close preview window after user accepts the offered completion string
  let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+"
 " Open the existing NERDTree on each new tab.
-autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+"
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
