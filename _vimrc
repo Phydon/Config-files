@@ -68,6 +68,8 @@ Plug 'luochen1990/rainbow'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-syntastic/syntastic'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
@@ -78,6 +80,16 @@ call plug#end()
 
 " vim-lion - squeeze aligning text by some character
 let b:lion_squeeze_spaces = 1
+
+" vim-syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
 
 " YouCompleteMe - close preview window after user accepts the offered completion string
  let g:ycm_autoclose_preview_window_after_completion = 1
