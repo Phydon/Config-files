@@ -1,3 +1,3 @@
-# Vim
+# Config files
 
-vimrc file
+random config files
