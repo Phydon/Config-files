@@ -13,10 +13,10 @@ set guifont=mononoki:h22
 " hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
 " deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
 " revolutions, Revolution, zenburn,tetragrammaton, strange, cabin, muon,
-" thornbird, lucius, stormpetrel, Spink, redblack
+" thornbird, lucius, stormpetrel, Spink, redblack, abra
 " light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
 " laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme afterglow 
+colorscheme deep-space 
 
 " for PaperColor light theme
 " set background=light
@@ -28,11 +28,12 @@ let g:material_theme_style = 'default-community'
 " colorscheme material
 
 autocmd BufWinEnter,Filetype json colorscheme afterglow
-autocmd BufWinEnter,Filetype *.py colorscheme muon
-autocmd BufWinEnter,Filetype c colorscheme muon
+autocmd BufWinEnter,Filetype *.py colorscheme deep-space
+autocmd BufWinEnter,Filetype c colorscheme deep-space
+autocmd BufWinEnter,Filetype rs colorscheme deep-space
 autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
 autocmd BufWinEnter,Filetype html colorscheme hydrangea
-autocmd BufWinEnter,Filetype markdown colorscheme hydrangea
+autocmd BufWinEnter,Filetype markdown, colorscheme muon
 autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
 autocmd BufWinEnter,Filetype xml colorscheme gruvbox
 
@@ -66,6 +67,8 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+Plug 'lotabout/skim.vim'
 Plug 'luochen1990/rainbow'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
@@ -80,6 +83,7 @@ Plug 'mattn/vim-lsp-settings'
 " Plug 'ycm-core/YouCompleteMe'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/tagbar'
 call plug#end()
 
 "Language Server Protocol settings
@@ -144,6 +148,12 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+
+" toggle tagbar on or off with F8 key
+nmap <F8> :TagbarToggle<CR>
+" specify path if ctags are not in $PATH environment variable
+" --> change path
+" g:tagbar_ctags_bin = 'path_to_ctags.exe'
 
 " Always show command
 set showcmd
