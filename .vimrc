@@ -168,6 +168,7 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 " TAGBAR
 " automatically open tagbar on start up
 autocmd VimEnter * nested :call tagbar#autoopen(1)
+autocmd FileType * nested :call tagbar#autoopen(0)
 " set tagbar width if using vertical split
 let g:tagbar_width = max([15, winwidth(0) / 6])
 " Tagbar omitting the short help at the top of the window and the blank lines in between top-level scopes
