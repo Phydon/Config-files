@@ -132,23 +132,56 @@ let b:lion_squeeze_spaces = 1
 " let g:ycm_show_diagnostics_ui = 0
 
 " YouCompleteMe - close preview window after user accepts the offered completion string
- " let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-"
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
 " Open the existing NERDTree on each new tab.
-" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
-"
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+" show hidden files
+let NERDTreeShowHidden=1
+
+" show line numbers
+let NERDTreeShowLineNumbers=1
+
+" NERDTree win size when opened
+let NERDTreeWinSize=25
 
 " NERDTree Syntax Highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
+" TAGBAR
+" automatically open tagbar on start up
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+" set tagbar width if using vertical split
+let g:tagbar_width = max([15, winwidth(0) / 6])
+" Tagbar omitting the short help at the top of the window and the blank lines in between top-level scopes
+" possible values are:
+" 0: Show short help and blank lines between top-level scopes
+" 1: Don't show the short help or the blank lines.
+" 2: Don't show the short help but show the blank lines.
+let g:tagbar_compact = 2
+" show data types
+let g:tagbar_show_data_type = 1
+" show line numbers
+" let g:tagbar_show_tag_linenumbers = 2
+" line wrap
+let g:tagbar_wrap = 2
 " toggle tagbar on or off with F8 key
 nmap <F8> :TagbarToggle<CR>
 " specify path if ctags are not in $PATH environment variable
