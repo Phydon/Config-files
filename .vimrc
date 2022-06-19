@@ -31,7 +31,7 @@ autocmd BufWinEnter,Filetype json colorscheme afterglow
 autocmd BufWinEnter,Filetype *.py colorscheme deep-space
 autocmd BufWinEnter,Filetype c colorscheme deep-space
 autocmd BufWinEnter,Filetype rs colorscheme deep-space
-autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
+" autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
 autocmd BufWinEnter,Filetype html colorscheme hydrangea
 autocmd BufWinEnter,Filetype markdown, colorscheme muon
 autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
@@ -176,6 +176,19 @@ set linebreak
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 " Hide and format markdown elements like **bold**
 autocmd FileType markdown set conceallevel=2
+
+" toggle background transparent
+let t:is_transparent = 0                     
+function! Toggle_transparent_background()                      
+  if t:is_transparent == 0                   
+    hi Normal guibg=#202025 ctermbg=black                     
+    let t:is_transparent = 1
+  else
+    hi Normal guibg=NONE ctermbg=NONE                    
+    let t:is_transparent = 0                        
+  endif                    
+endfunction               
+nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
 
 " Vim with all enhancements
