@@ -5,3 +5,4 @@ end
 alias sf="~/Aliases/sf"
 alias rep="~/Aliases/rep"
 alias cat="bat"
+alias ls="exa -h --long --icons --time-style=long-iso"
