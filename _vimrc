@@ -13,9 +13,10 @@ set guifont=mononoki:h22
 " hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
 " deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
 " revolutions, Revolution, zenburn,tetragrammaton, strange, cabin, muon,
-" thornbird
-" light themes: Tomorrow, PaperColor Light, vylight, zenesque
-colorscheme muon 
+" thornbird, lucius, stormpetrel, Spink, redblack, abra
+" light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
+" laederon, lightcolors, kalt, Light, rainbow_autumn
+colorscheme deep-space
 
 " for PaperColor light theme
 " set background=light
@@ -27,9 +28,10 @@ let g:material_theme_style = 'default-community'
 " colorscheme material
 
 autocmd BufWinEnter,Filetype json colorscheme afterglow
-autocmd BufWinEnter,Filetype *.py colorscheme muon
-autocmd BufWinEnter,Filetype c colorscheme muon
-autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
+autocmd BufWinEnter,Filetype *.py colorscheme deep-space
+autocmd BufWinEnter,Filetype c colorscheme deep-space
+autocmd BufWinEnter,Filetype rs colorscheme deep-space
+" autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
 autocmd BufWinEnter,Filetype html colorscheme hydrangea
 autocmd BufWinEnter,Filetype markdown colorscheme hydrangea
 autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
@@ -39,6 +41,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set number relativenumber
+set foldenable
 
 " Set backup directory
 set backup
@@ -73,6 +76,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+" Plug 'preservim/tagbar'
 call plug#end()
 
 " rainbow - Enable rainbow parentheses
@@ -95,19 +99,60 @@ let g:syntastic_aggregate_errors = 1
  let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-"
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
 " Open the existing NERDTree on each new tab.
-" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
-"
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" If another buffer tries to replace NERDTree, put it in the other window,
+and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+" show hidden files
+let NERDTreeShowHidden=1
+
+" show line numbers
+let NERDTreeShowLineNumbers=1
+
+" NERDTree win size when opened
+let NERDTreeWinSize=25
 
 " NERDTree Syntax Highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+
+" TAGBAR
+" specify path if ctags are not in $PATH environment variable
+" --> change path
+" let g:tagbar_ctags_bin = 'C:/Program\ Files\ (x86)/Vim/vim82/CTags/ctags.exe'
+" automatically open tagbar on start up
+" autocmd VimEnter * nested :call tagbar#autoopen(1)
+" autocmd FileType * nested :call tagbar#autoopen(0)
+" set tagbar width if using vertical split
+" let g:tagbar_width = max([15, winwidth(0) / 6])
+" Tagbar omitting the short help at the top of the window and the blank lines in between top-level scopes
+" possible values are:
+" 0: Show short help and blank lines between top-level scopes
+" 1: Don't show the short help or the blank lines.
+" 2: Don't show the short help but show the blank lines.
+" let g:tagbar_compact = 2
+" show data types
+" let g:tagbar_show_data_type = 1
+" show line numbers
+" let g:tagbar_show_tag_linenumbers = 2
+" line wrap
+" let g:tagbar_wrap = 2
+" toggle tagbar on or off with F8 key
+" nmap <F8> :TagbarToggle<CR>
 
 " Always show command
 set showcmd
@@ -130,6 +175,19 @@ set linebreak
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 " Hide and format markdown elements like **bold**
 autocmd FileType markdown set conceallevel=2
+
+" toggle background transparent
+let t:is_transparent = 0                     
+function! Toggle_transparent_background()                      
+	if t:is_transparent == 0                   
+		hi Normal guibg=#202025 ctermbg=black                     
+		let t:is_transparent = 1
+	else
+		hi Normal guibg=NONE ctermbg=NONE                    
+		let t:is_transparent = 0                        
+	endif                    
+endfunction               
+nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
 
 " Vim with all enhancements
