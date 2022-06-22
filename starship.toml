@@ -25,9 +25,9 @@ discharging_symbol = " "
 format = '\[[ ($version(-$name))]($style)\]'
 
 [character]
-success_symbol = "[INSERT❯](bold green)"
-error_symbol = "[INSERT❯](bold red)"
-vicmd_symbol = "[VIM❯](bold bright-yellow) "
+success_symbol = "[-COMMAND❯](bold green)"
+error_symbol = "[-COMMAND❯](bold red)"
+vicmd_symbol = "[-VIM❯](bold bright-yellow) "
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
@@ -53,6 +53,12 @@ format = '\[[$symbol($version)]($style)\]'
 [deno]
 format = '\[[$symbol($version)]($style)\]'
 
+[directory]
+read_only = " "
+read_only_style = "red"
+truncation_symbol = ".."
+home_symbol = "~"
+
 [docker_context]
 format = '\[[ $context]($style)\]'
 
@@ -72,13 +78,13 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
-format = '\[[ $branch]($style)\]'
+format = '\[[git $branch]($style)\]'
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
 
 [golang]
-format = '\[[$symbol($version)]($style)\]'
+format = '\[[ ($version)]($style)\]'
 
 [haskell]
 format = '\[[( $version)]($style)\]'
@@ -93,7 +99,7 @@ format = '\[[$symbol$branch]($style)\]'
 format = '\[[ ($version)]($style)\]'
 
 [julia]
-format = '\[[$symbol($version)]($style)\]'
+format = '\[[ ($version)]($style)\]'
 
 [kotlin]
 format = '\[[$symbol($version)]($style)\]'
@@ -114,7 +120,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol$state( \($name\))]($style)\]'
 
 [nodejs]
-format = '\[[$symbol($version)]($style)\]'
+format = '\[[ ($version)]($style)\]'
 
 [ocaml]
 format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
@@ -156,7 +162,8 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol$environment]($style)\]'
 
 [sudo]
-format = '\[[as $symbol]\]'
+format = '\[[as sudo](&style)\]'
+disabled = true
 
 [swift]
 format = '\[[$symbol($version)]($style)\]'
