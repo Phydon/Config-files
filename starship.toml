@@ -111,7 +111,10 @@ format = '\[[$symbol$context( \($namespace\))]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [memory_usage]
-format = '\[ [$ram( | $swap)]($style)\]'
+disabled = false
+format = '\[ [$ram_pct( | $swap_pct)]($style)\]'
+threshold = -1
+style = "bold dimmed red"
 
 [nim]
 format = '\[[$symbol($version)]($style)\]'
