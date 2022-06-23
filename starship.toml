@@ -44,8 +44,8 @@ format = '\[[$symbol$environment]($style)\]'
 [crystal]
 format = '\[[$symbol($version)]($style)\]'
 
-[daml]
-format = '\[[$symbol($version)]($style)\]'
+# [daml]
+# format = '\[[$symbol($version)]($style)\]'
 
 [dart]
 format = '\[[$symbol($version)]($style)\]'
@@ -135,7 +135,7 @@ format = '\[[$symbol$cloud(\($project\))]($style)\]'
 format = '\[[$symbol$version]($style)\]'
 
 [perl]
-format = '\[[$symbol($version)]($style)\]'
+format = '\[[perl ($version)]($style)\]'
 
 [php]
 format = '\[[$symbol($version)]($style)\]'
