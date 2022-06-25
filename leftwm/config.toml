@@ -280,3 +280,15 @@ key = "9"
 command = "ToggleFullScreen"
 modifier = ["modkey"]
 key = "f"
+
+[[keybind]]
+command = "IncreaseMainWidth"
+value = "1"
+modifier = ["modkey", "Shift"]
+key = "l"
+
+[[keybind]]
+command = "DecreaseMainWidth"
+value = "1"
+modifier = ["modkey", "Shift"]
+key = "h"
