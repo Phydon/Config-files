@@ -20,7 +20,8 @@ end
 # ALIASES
 alias sf="~/Aliases/sf"
 alias rep="~/Aliases/rep"
-alias cat="bat"
+alias cat="bat --theme Sublime\ Snazzy"
+alias sk="sk -e"
 alias mv="mv -i"
 alias cp="cp -i"
 alias rm="rm -i"
