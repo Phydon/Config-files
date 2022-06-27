@@ -29,6 +29,7 @@ alias ls="exa -h --long --icons --time-style=long-iso"
 alias fd="fd -H"
 alias du="dust"
 alias ps="procs --sortd cpu"
+alias sad="sad -e"
 
 # SKIM and RIPGREP
 function skrg
