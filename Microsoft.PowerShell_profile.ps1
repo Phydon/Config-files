@@ -1,6 +1,6 @@
-Import-Module oh-my-posh
+# Import-Module oh-my-posh
 
-oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH/jandedobbeleer.omp.json | Invoke-Expression
+# oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH/jandedobbeleer.omp.json | Invoke-Expression
 
 # minimal (without username):
 # Set-PoshPrompt -Theme material
@@ -14,7 +14,8 @@ oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH/jandedobbeleer.omp
 # Set-PoshPrompt -Theme xtoys
 # Set-PoshPrompt -Theme huvix
 # Set-PoshPrompt -Theme pure
-Set-PoshPrompt -Theme nordtron
+# GOOD ONE: nordtron
+# Set-PoshPrompt -Theme nordtron
 # Set-PoshPrompt -Theme darkblood
 # Set-PoshPrompt -Theme emodipt
 # Set-PoshPrompt -Theme negligible
@@ -44,3 +45,6 @@ $Hour = (Get-Date).Hour
 If ($Hour -lt 9) {"Good Morning $($Env:UserName)"}
 ElseIf ($Hour -gt 17) {"Good Evening $($Env:UserName)"}
 Else {"Welcome $($Env:UserName)"}
+
+# use starship prompt
+Invoke-Expression (&starship init powershell)
