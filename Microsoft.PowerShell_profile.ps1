@@ -36,8 +36,11 @@
 # generate new aliases for specific programs
 New-Alias -Name sf -Value C:/Aliases/Programs/sf.exe 
 
-Function Find {gci -r | where Name -match $args[0] | select FullName}
+Function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
 New-Alias -Name fd -Value Find
+
+Function cdback {cd ..}
+New-Alias -Name .. -Value cdback
 
 
 # greeting function
