@@ -12,9 +12,13 @@ end
 # end
 
 function fish_greeting
-	command figlet WELCOME | lolcat
-	command fortune | cowsay -f $(exa ~/Documents/cows/|shuf -n 1)
+	echo (set_color red; date +%T; set_color blue) $hostname
 end
+
+# function fish_greeting
+# 	command figlet WELCOME | lolcat
+# 	command fortune | cowsay -f $(exa ~/Documents/cows/|shuf -n 1)
+# end
 
 
 # ALIASES
