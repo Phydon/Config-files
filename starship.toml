@@ -25,9 +25,9 @@ discharging_symbol = " "
 format = '\[[ ($version(-$name))]($style)\]'
 
 [character]  
-success_symbol = "[-N❯](bold green)"
-error_symbol = "[-N❯](bold red)"
-vicmd_symbol = "[-I❯](bold bright-yellow) "
+success_symbol = "[-I❯](bold green)"
+error_symbol = "[-I❯](bold red)"
+vicmd_symbol = "[-N❯](bold bright-yellow) "
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
