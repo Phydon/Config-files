@@ -1,7 +1,7 @@
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
-[battery]
+[battery]  
 full_symbol = "  "
 charging_symbol = "  "
 discharging_symbol = "  "
@@ -21,18 +21,18 @@ threshold = 99
 style = "bold green"
 discharging_symbol = " "
 
-[c]
+[c]  
 format = '\[[ ($version(-$name))]($style)\]'
 
-[character]
-success_symbol = "[-COMMAND❯](bold green)"
-error_symbol = "[-COMMAND❯](bold red)"
-vicmd_symbol = "[-VIM❯](bold bright-yellow) "
+[character]  
+success_symbol = "[-N❯](bold green)"
+error_symbol = "[-N❯](bold red)"
+vicmd_symbol = "[-I❯](bold bright-yellow) "
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
 
-[cmd_duration]
+[cmd_duration]  
 format = '\[[⏱ $duration]($style)\]'
 
 [cobol]
@@ -53,8 +53,8 @@ format = '\[[$symbol($version)]($style)\]'
 [deno]
 format = '\[[$symbol($version)]($style)\]'
 
-[directory]
-read_only = " "
+[directory]  
+read_only = " "
 read_only_style = "red"
 truncation_symbol = ".."
 home_symbol = "~"
@@ -77,17 +77,17 @@ format = '\[[$symbol($version)]($style)\]'
 [gcloud]
 format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
-[git_branch]
+[git_branch]  
 format = '\[[git $branch]($style)\]'
 
-[git_status]
+[git_status]  
 format = '([\[$all_status$ahead_behind\]]($style))'
 
-[golang]
+[golang]  
 format = '\[[ ($version)]($style)\]'
 
 [haskell]
-format = '\[[( $version)]($style)\]'
+format = '\[[ ($version)]($style)\]'
 
 [helm]
 format = '\[[$symbol($version)]($style)\]'
@@ -95,13 +95,13 @@ format = '\[[$symbol($version)]($style)\]'
 [hg_branch]
 format = '\[[$symbol$branch]($style)\]'
 
-[java]
+[java]  
 format = '\[[ ($version)]($style)\]'
 
-[julia]
+[julia]  
 format = '\[[ ($version)]($style)\]'
 
-[kotlin]
+[kotlin]  
 format = '\[[$symbol($version)]($style)\]'
 
 [kubernetes]
@@ -110,9 +110,9 @@ format = '\[[$symbol$context( \($namespace\))]($style)\]'
 [lua]
 format = '\[[$symbol($version)]($style)\]'
 
-[memory_usage]
+[memory_usage]  
 disabled = false
-format = '\[ [$ram_pct( | $swap_pct)]($style)\]'
+format = '\[ [$ram_pct(|$swap_pct)]($style)\]'
 threshold = -1
 style = "bold dimmed red"
 
@@ -131,11 +131,11 @@ format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
 [openstack]
 format = '\[[$symbol$cloud(\($project\))]($style)\]'
 
-[package]
+[package]  
 format = '\[[$symbol$version]($style)\]'
 
-[perl]
-format = '\[[perl ($version)]($style)\]'
+[perl]  
+format = '\[[$symbol($version)]($style)\]'
 
 [php]
 format = '\[[$symbol($version)]($style)\]'
@@ -146,7 +146,7 @@ format = '\[[$symbol$stack]($style)\]'
 [purescript]
 format = '\[[$symbol($version)]($style)\]'
 
-[python]
+[python]  
 format = '\[[ ${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 
 [red]
@@ -155,20 +155,37 @@ format = '\[[$symbol($version)]($style)\]'
 [ruby]
 format = '\[[$symbol($version)]($style)\]'
 
-[rust]
+[rust]  
 format = '\[[ ($version)]($style)\]'
 
 [scala]
 format = '\[[$symbol($version)]($style)\]'
 
+[shell]
+format = "[$indicator]($style) "
+fish_indicator = "fish"
+powershell_indicator = "psh"
+bash_indicator = "bash"
+zsh_indicator = "zsh"
+nu_indicator = "nushell"
+cmd_indicator = "cmd"
+ion_indicator = "ion"
+elvish_indicator = "esh"
+tcsh_indicator = "tsh"
+xonsh_indicator = "xsh"
+unknown_indicator = "unknown shell"
+style = "cyan bold"
+disabled = false
+# symbol _
+
 [spack]
 format = '\[[$symbol$environment]($style)\]'
 
-[sudo]
+[sudo]  
 format = '\[[as sudo](&style)\]'
 disabled = true
 
-[swift]
+[swift]  
 format = '\[[$symbol($version)]($style)\]'
 
 [terraform]
