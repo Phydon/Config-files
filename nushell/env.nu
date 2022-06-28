@@ -21,8 +21,8 @@ let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
 let-env PROMPT_INDICATOR = { "〉" }
-let-env PROMPT_INDICATOR_VI_INSERT = { ": " }
-let-env PROMPT_INDICATOR_VI_NORMAL = { "〉" }
+let-env PROMPT_INDICATOR_VI_INSERT = { "-I〉 " }
+let-env PROMPT_INDICATOR_VI_NORMAL = { "-N〉" }
 let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
 
 # Specifies how environment variables are:
@@ -57,5 +57,4 @@ let-env NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
-mkdir ~/.cache/starship
 starship init nu | save ~/.cache/starship/init.nu
