@@ -174,7 +174,7 @@ elvish_indicator = "esh"
 tcsh_indicator = "tsh"
 xonsh_indicator = "xsh"
 unknown_indicator = "unknown shell"
-style = "cyan bold"
+style = "green dimmed bold"
 disabled = false
 # symbol _
 
