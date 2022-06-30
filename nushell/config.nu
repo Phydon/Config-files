@@ -130,17 +130,17 @@ let default_theme = {
     separator: white
     leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
     header: green_bold
-    empty: blue
-    bool: white
-    int: white
-    filesize: white
-    duration: white
-    date: white
-    range: white
-    float: white
-    string: white
+    empty: white
+    bool: light_red
+    int: blue
+    filesize: light_yellow
+    duration: yellow
+    date: yellow_dimmed
+    range: cyan_dimmed
+    float: light_blue
+    string: light_green_dimmed
     nothing: white
-    binary: white
+    binary: blue_dimmed
     cellpath: white
     row_index: green_bold
     record: white
@@ -151,24 +151,24 @@ let default_theme = {
     # shapes are used to change the cli syntax highlighting
     shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
     shape_binary: purple_bold
-    shape_bool: light_cyan
-    shape_int: purple_bold
-    shape_float: purple_bold
-    shape_range: yellow_bold
-    shape_internalcall: cyan_bold
-    shape_external: cyan
-    shape_externalarg: green_bold
+    shape_bool: light_red
+    shape_int: blue_bold
+    shape_float: blue_bold
+    shape_range: cyan_bold
+    shape_internalcall: blue_bold
+    shape_external: blue
+    shape_externalarg: green
     shape_literal: blue
-    shape_operator: yellow
+    shape_operator: yellow_dimmed
     shape_signature: green_bold
-    shape_string: green
+    shape_string: green_dimmed
     shape_string_interpolation: cyan_bold
-    shape_datetime: cyan_bold
+    shape_datetime: yellow
     shape_list: cyan_bold
     shape_table: blue_bold
     shape_record: cyan_bold
     shape_block: blue_bold
-    shape_filepath: cyan
+    shape_filepath: blue_dimmed
     shape_globpattern: cyan_bold
     shape_variable: purple
     shape_flag: blue_bold
@@ -185,7 +185,7 @@ let-env config = {
   color_config: $default_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
-  quick_completions: false  # set this to false to prevent auto-selecting completions when only one remains
+  quick_completions: true  # set this to false to prevent auto-selecting completions when only one remains
   partial_completions: true  # set this to false to prevent partial filling of the prompt
   completion_algorithm: "prefix"  # prefix, fuzzy
   animate_prompt: false # redraw the prompt every second
