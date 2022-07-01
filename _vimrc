@@ -1,5 +1,8 @@
 syntax on
 
+" leaderkey to Space
+let mapleader = " "
+
 " check for term gui colors
 if (has("termguicolors"))
  set termguicolors
@@ -27,15 +30,15 @@ let g:material_terminal_italics = 1
 let g:material_theme_style = 'default-community'
 " colorscheme material
 
-autocmd BufWinEnter,Filetype json colorscheme afterglow
-autocmd BufWinEnter,Filetype *.py colorscheme deep-space
-autocmd BufWinEnter,Filetype c colorscheme deep-space
-autocmd BufWinEnter,Filetype rs colorscheme deep-space
+" autocmd BufWinEnter,Filetype json colorscheme afterglow
+" autocmd BufWinEnter,Filetype *.py colorscheme deep-space
+" autocmd BufWinEnter,Filetype c colorscheme deep-space
+" autocmd BufWinEnter,Filetype rs colorscheme deep-space
 " autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
-autocmd BufWinEnter,Filetype html colorscheme hydrangea
-autocmd BufWinEnter,Filetype markdown colorscheme hydrangea
-autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
-autocmd BufWinEnter,Filetype xml colorscheme gruvbox
+" autocmd BufWinEnter,Filetype html colorscheme hydrangea
+" autocmd BufWinEnter,Filetype markdown colorscheme hydrangea
+" autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
+" autocmd BufWinEnter,Filetype xml colorscheme gruvbox
 
 set shiftwidth=4
 set tabstop=4
@@ -43,11 +46,59 @@ set softtabstop=4
 set number relativenumber
 set foldenable
 
+" Always show command
+set showcmd
+
+" Highlight matching brackets[{()}]
+set showmatch
+
+" Set language to english by default
+set langmenu=en_US
+let $LANG = 'en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+set encoding=utf-8
+
+" Have lines wrap instead of continue off-screen
+set linebreak
+
+" Colored column at line wrap
+ set colorcolumn=80
+
+" " Hard Wrap - max line length 80
+" set wrap
+" set wrapmargin=0
+" set textwidth=0
+" set columns=80
+
+" Treat all .md files as markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+" Hide and format markdown elements like **bold**
+autocmd FileType markdown set conceallevel=2
+
+" toggle background transparent
+let t:is_transparent = 0                     
+function! Toggle_transparent_background()                      
+	if t:is_transparent == 0                   
+		hi Normal guibg=#202025 ctermbg=black                     
+		let t:is_transparent = 1
+	else
+		hi Normal guibg=NONE ctermbg=NONE                    
+		let t:is_transparent = 0                        
+	endif                    
+endfunction               
+nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
+
+" highlight search
+map <leader>h :noh<CR>
+
 " Set backup directory
 set backup
 set backupdir=C:/Program\ Files\ (x86)/Vim/vimtmp//,.
 set directory=C:/Program\ Files\ (x86)/Vim/vimtmp//,.
 set nowritebackup
+
 
 "Plugins
 set nocompatible
@@ -76,14 +127,18 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'preservim/tagbar'
 call plug#end()
+
 
 " rainbow - Enable rainbow parentheses
 " let g:rainbow_active = 1
 
+
 " vim-lion - squeeze aligning text by some character
 let b:lion_squeeze_spaces = 1
+
 
 " vim-syntastic
 set statusline+=%#warningmsg#
@@ -95,12 +150,18 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 
+
 " YouCompleteMe - close preview window after user accepts the offered completion string
  let g:ycm_autoclose_preview_window_after_completion = 1
+
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+" Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == '' | NERDTree | endif
 
 " Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
@@ -122,12 +183,16 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 
 " NERDTree win size when opened
-let NERDTreeWinSize=25
+let NERDTreeWinSize=18
+
+" Toogle NERDTree 
+nmap <F7> :NERDTreeToggle<CR>
 
 " NERDTree Syntax Highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+
 
 " TAGBAR
 " specify path if ctags are not in $PATH environment variable
@@ -137,7 +202,7 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 " autocmd VimEnter * nested :call tagbar#autoopen(1)
 " autocmd FileType * nested :call tagbar#autoopen(0)
 " set tagbar width if using vertical split
-" let g:tagbar_width = max([15, winwidth(0) / 6])
+" let g:tagbar_width = max([15, winwidth(0) / 7])
 " Tagbar omitting the short help at the top of the window and the blank lines in between top-level scopes
 " possible values are:
 " 0: Show short help and blank lines between top-level scopes
@@ -153,40 +218,17 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 " toggle tagbar on or off with F8 key
 " nmap <F8> :TagbarToggle<CR>
 
-" Always show command
-set showcmd
 
-" Highlight matching brackets[{()}]
-set showmatch
+" skim
+" map <leader>f :Files ~<CR>
 
-" Set language to english by default
-set langmenu=en_US
-let $LANG = 'en_US'
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+" skim with preview window
+" command! -bang -nargs=? -complete=dir Files
+"     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-set encoding=utf-8
 
-" Have lines wrap instead of continue off-screen
-set linebreak
-
-" Treat all .md files as markdown
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-" Hide and format markdown elements like **bold**
-autocmd FileType markdown set conceallevel=2
-
-" toggle background transparent
-let t:is_transparent = 0                     
-function! Toggle_transparent_background()                      
-	if t:is_transparent == 0                   
-		hi Normal guibg=#202025 ctermbg=black                     
-		let t:is_transparent = 1
-	else
-		hi Normal guibg=NONE ctermbg=NONE                    
-		let t:is_transparent = 0                        
-	endif                    
-endfunction               
-nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
+" ripgrep
+" map <leader>r :Rg ~<CR>
 
 
 " Vim with all enhancements
