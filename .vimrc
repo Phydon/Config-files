@@ -12,14 +12,14 @@ endif
 set guifont=mononoki:h22
 
 " Colorschemes
-" dark themes: gruvbox, onedark, vim-material, vilight, vorange, vydark,
-" hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
+" dark themes: elly, alduin, gruvbox, onedark, vim-material, vilight, vorange,
+" vydark, hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
 " deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
 " revolutions, Revolution, zenburn, tetragrammaton, strange, cabin, muon,
 " thornbird, lucius, stormpetrel, Spink, redblack, abra
 " light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
 " laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme deep-space 
+colorscheme elly 
 
 " for PaperColor light theme
 " set background=light
@@ -30,6 +30,10 @@ let g:material_terminal_italics = 1
 let g:material_theme_style = 'default-community'
 " colorscheme material
 
+" gruvbox 
+let g:gruvbox_contrast_dark = 'hard'
+
+
 " autocmd BufWinEnter,Filetype json colorscheme afterglow
 " autocmd BufWinEnter,Filetype *.py colorscheme deep-space
 " autocmd BufWinEnter,Filetype c colorscheme deep-space
@@ -39,6 +43,7 @@ let g:material_theme_style = 'default-community'
 " autocmd BufWinEnter,Filetype markdown, colorscheme muon
 " autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
 " autocmd BufWinEnter,Filetype xml colorscheme gruvbox
+
 
 set shiftwidth=4
 set tabstop=4
@@ -114,7 +119,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'flazz/vim-colorschemes'
-Plug 'yuttie/hydrangea-vim'
+Plug 'srcery-colors/srcery-vim'
+Plug 'ulwlu/elly.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
@@ -137,6 +143,15 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/tagbar'
 Plug 'ap/vim-css-color'
 call plug#end()
+
+
+" Lightline
+" don`t show extra mode information
+set noshowmode
+" set color scheme (molokai, apprentice, darcula, ayu_dark, deus, wombat, simpleblack)
+let g:lightline = {
+      \ 'colorscheme': 'molokai',
+      \ }
 
 
 "Language Server Protocol settings
