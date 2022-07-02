@@ -18,16 +18,16 @@ style = "bold yellow"
 discharging_symbol = ""
 [[battery.display]]
 threshold = 99
-style = "bold green"
+style = "green dimmed bold"
 discharging_symbol = ""
 
 [c]  
 format = '\[[ ($version(-$name))]($style)\]'
 
 [character]  
-success_symbol = "[-I❯](bold green)"
-error_symbol = "[-I❯](bold red)"
-vicmd_symbol = "[-N❯](bold bright-yellow) "
+success_symbol = "[-I❯](bold green dimmed)"
+error_symbol = "[-I❯](bold fg:#870000)"
+vicmd_symbol = "[-N❯](bold fg:#b58900) "
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
@@ -58,6 +58,7 @@ read_only = " "
 read_only_style = "red"
 truncation_symbol = ".."
 home_symbol = "~"
+style = "fg:#4e4e4e"
 
 [docker_context]
 format = '\[[ $context]($style)\]'
@@ -174,7 +175,7 @@ elvish_indicator = "esh"
 tcsh_indicator = "tsh"
 xonsh_indicator = "xsh"
 unknown_indicator = "unknown shell"
-style = "green dimmed bold"
+style = "bold fg:#4e4e4e"
 disabled = false
 # symbol _
 
