@@ -132,46 +132,46 @@ let default_theme = {
     header: green_bold
     empty: white
     bool: light_red
-    int: blue
+    int: red
     filesize: light_yellow
     duration: yellow
     date: yellow_dimmed
     range: cyan_dimmed
-    float: light_blue
+    float: red
     string: light_green_dimmed
     nothing: white
-    binary: blue_dimmed
+    binary: purple
     cellpath: white
     row_index: green_bold
-    record: white
-    list: white
-    block: white
+    record: cyan_dimmed
+    list: cyan_dimmed
+    block: blue_dimmed
     hints: dark_gray
 
     # shapes are used to change the cli syntax highlighting
     shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
-    shape_binary: purple_bold
+    shape_binary: purple
     shape_bool: light_red
-    shape_int: blue_bold
-    shape_float: blue_bold
-    shape_range: cyan_bold
-    shape_internalcall: blue_bold
-    shape_external: blue
-    shape_externalarg: green
+    shape_int: red
+    shape_float: red
+    shape_range: cyan_dimmed
+    shape_internalcall: { fg: "#008080" attr: b }
+    shape_external: { fg: "#194775" }
+    shape_externalarg: { fg: "#6684a3" }
     shape_literal: blue
     shape_operator: yellow_dimmed
     shape_signature: green_bold
     shape_string: green_dimmed
     shape_string_interpolation: cyan_bold
     shape_datetime: yellow
-    shape_list: cyan_bold
-    shape_table: blue_bold
-    shape_record: cyan_bold
-    shape_block: blue_bold
+    shape_list: cyan_dimmed
+    shape_table: blue_dimmed
+    shape_record: cyan_dimmed
+    shape_block: blue_dimmed
     shape_filepath: blue_dimmed
-    shape_globpattern: cyan_bold
+    shape_globpattern: cyan
     shape_variable: purple
-    shape_flag: blue_bold
+    shape_flag: blue
     shape_custom: green
     shape_nothing: light_cyan
 }
