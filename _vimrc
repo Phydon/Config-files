@@ -19,7 +19,7 @@ set guifont=mononoki:h22
 " thornbird, lucius, stormpetrel, Spink, redblack, abra
 " light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
 " laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme deep-space
+colorscheme elly
 
 " for PaperColor light theme
 " set background=light
@@ -29,6 +29,9 @@ let g:material_terminal_italics = 1
 " options are: 'default', 'palenight', 'ocean', 'lighter', 'darker', 'default-community', 'palenight-community', 'ocean-community', 'lighter-community', 'darker-community'
 let g:material_theme_style = 'default-community'
 " colorscheme material
+
+" gruvbox 
+let g:gruvbox_contrast_dark = 'hard'
 
 " autocmd BufWinEnter,Filetype json colorscheme afterglow
 " autocmd BufWinEnter,Filetype *.py colorscheme deep-space
@@ -114,7 +117,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'flazz/vim-colorschemes'
-Plug 'yuttie/hydrangea-vim'
+Plug 'ulwlu/elly.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
@@ -127,9 +130,20 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ap/vim-css-color'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'preservim/tagbar'
 call plug#end()
+
+
+" Lightline
+" don`t show extra mode information
+set noshowmode
+" set color scheme (molokai, apprentice, darcula, ayu_dark, deus, wombat, simpleblack)
+let g:lightline = {
+      \ 'colorscheme': 'molokai',
+	  \ }
 
 
 " rainbow - Enable rainbow parentheses
