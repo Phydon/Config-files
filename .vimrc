@@ -206,9 +206,9 @@ let b:lion_squeeze_spaces = 1
 " let g:ycm_autoclose_preview_window_after_completion = 1
 
 
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" " Start NERDTree. If a file is specified, move the cursor to its window.
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " " Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
 " autocmd StdinReadPre * let s:std_in=1
@@ -234,7 +234,7 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 
 " NERDTree win size when opened
-let NERDTreeWinSize=18
+let NERDTreeWinSize=25
 
 " Toogle NERDTree 
 nmap <F7> :NERDTreeToggle<CR>
@@ -247,10 +247,10 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 
 " TAGBAR
 " automatically open tagbar on start up
-autocmd VimEnter * nested :call tagbar#autoopen(1)
-autocmd FileType * nested :call tagbar#autoopen(0)
+" autocmd VimEnter * nested :call tagbar#autoopen(1)
+" autocmd FileType * nested :call tagbar#autoopen(0)
 " set tagbar width if using vertical split
-let g:tagbar_width = max([15, winwidth(0) / 7])
+let g:tagbar_width = max([15, winwidth(0) / 5])
 " Tagbar omitting the short help at the top of the window and the blank lines in between top-level scopes
 " possible values are:
 " 0: Show short help and blank lines between top-level scopes
