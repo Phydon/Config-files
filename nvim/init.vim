@@ -51,6 +51,10 @@ set colorcolumn=80
 " set columns=80
 
 
+" escape terminal-mode
+:tnoremap <Esc> <C-\><C-n>
+
+
 " highlight search
 map <leader>h :noh<CR>
 
