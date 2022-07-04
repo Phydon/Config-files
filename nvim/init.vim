@@ -55,7 +55,7 @@ set colorcolumn=80
 map <leader>h :noh<CR>
 
 
-"Plugins
+" PLUGINS
 filetype plugin on
 set laststatus=2
 " if !has('gui_running')
@@ -96,6 +96,8 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 
@@ -103,7 +105,7 @@ call plug#end()
 colorscheme elly
 
 
-" Lightline
+" LIGHTLINE
 " don`t show extra mode information
 set noshowmode
 " set color scheme (molokai, apprentice, darcula, ayu_dark, deus, wombat, simpleblack)
@@ -176,16 +178,24 @@ nmap <F8> :TagbarToggle<CR>
 " g:tagbar_ctags_bin = 'path_to_ctags.exe'
 
 
-" skim
-map <leader>f :Files ~<CR>
+" SKIM
+map <leader>ff :Files ~<CR>
 
 " skim with preview window
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 
-" ripgrep
-map <leader>r :Rg ~<CR>
+" RIPGREP
+map <leader>rr :Rg ~<CR>
+
+
+" TELESCOPE
+" Find files using Telescope command-line sugar.
+nnoremap <leader>tf <cmd>Telescope find_files<cr>
+nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+nnoremap <leader>tb <cmd>Telescope buffers<cr>
+nnoremap <leader>th <cmd>Telescope help_tags<cr>
 
 
 
