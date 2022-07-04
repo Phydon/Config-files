@@ -235,7 +235,7 @@ cmp.setup({
   }),
   -- sources where autocompletion should be used
   -- the order sets the priority (first -> most important, shows up on top; second shows up afterwards)
-  -- keyword_length -> when should autocompletion should the first results
+  -- keyword_length -> when should autocompletion show the first suggestions
   sources = cmp.config.sources({
     { name = 'nvim_lsp', keyword_length = 3 },
     { name = 'vsnip', keyword_length = 3 }, -- For vsnip users.
