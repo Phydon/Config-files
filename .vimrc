@@ -102,6 +102,9 @@ nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 " highlight search
 map <leader>h :noh<CR>
 
+" quickly escape to normal mode
+imap qq <esc>
+
 " Set backup directory
 " set backup
 " set backupdir=C:/Program\ Files\ (x86)/Vim/vimtmp//,.
