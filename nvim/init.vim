@@ -58,9 +58,11 @@ set sidescrolloff=14
 " escape terminal-mode
 :tnoremap <Esc> <C-\><C-n>
 
-
 " highlight search
 map <leader>h :noh<CR>
+
+" quickly escape to normal mode
+imap qq <esc>
 
 
 " PLUGINS
