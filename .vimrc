@@ -3,47 +3,6 @@ syntax on
 " leaderkey to Space
 let mapleader = " "
 
-" check for term gui colors
-if (has("termguicolors"))
- set termguicolors
-endif
-
-" set vim font to nerd font
-set guifont=mononoki:h22
-
-" Colorschemes
-" dark themes: elly, alduin, gruvbox, onedark, vim-material, vilight, vorange,
-" vydark, hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
-" deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
-" revolutions, Revolution, zenburn, tetragrammaton, strange, cabin, muon,
-" thornbird, lucius, stormpetrel, Spink, redblack, abra
-" light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
-" laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme elly 
-
-" for PaperColor light theme
-" set background=light
-" colorscheme PaperColor
-
-let g:material_terminal_italics = 1
-" options are: 'default', 'palenight', 'ocean', 'lighter', 'darker', 'default-community', 'palenight-community', 'ocean-community', 'lighter-community', 'darker-community'
-let g:material_theme_style = 'default-community'
-" colorscheme material
-
-" gruvbox 
-let g:gruvbox_contrast_dark = 'hard'
-
-
-" autocmd BufWinEnter,Filetype json colorscheme afterglow
-" autocmd BufWinEnter,Filetype *.py colorscheme deep-space
-" autocmd BufWinEnter,Filetype c colorscheme deep-space
-" autocmd BufWinEnter,Filetype rs colorscheme deep-space
-" autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
-" autocmd BufWinEnter,Filetype html colorscheme hydrangea
-" autocmd BufWinEnter,Filetype markdown, colorscheme muon
-" autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
-" autocmd BufWinEnter,Filetype xml colorscheme gruvbox
-
 
 set shiftwidth=4
 set tabstop=4
@@ -99,11 +58,18 @@ function! Toggle_transparent_background()
 endfunction               
 nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
+
+" terminal-mode
+map <leader>TT :terminal<CR>
+" escape terminal-mode
+:tnoremap <Esc> <C-\><C-n>
+
 " highlight search
 map <leader>h :noh<CR>
 
 " quickly escape to normal mode
 imap qq <esc>
+
 
 " Set backup directory
 " set backup
@@ -150,6 +116,48 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/tagbar'
 Plug 'ap/vim-css-color'
 call plug#end()
+
+
+" check for term gui colors
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" set vim font to nerd font
+set guifont=mononoki:h22
+
+" Colorschemes
+" dark themes: elly, alduin, gruvbox, onedark, vim-material, vilight, vorange,
+" vydark, hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
+" deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
+" revolutions, Revolution, zenburn, tetragrammaton, strange, cabin, muon,
+" thornbird, lucius, stormpetrel, Spink, redblack, abra
+" light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
+" laederon, lightcolors, kalt, Light, rainbow_autumn
+colorscheme elly 
+
+" for PaperColor light theme
+" set background=light
+" colorscheme PaperColor
+
+let g:material_terminal_italics = 1
+" options are: 'default', 'palenight', 'ocean', 'lighter', 'darker', 'default-community', 'palenight-community', 'ocean-community', 'lighter-community', 'darker-community'
+let g:material_theme_style = 'default-community'
+" colorscheme material
+
+" gruvbox 
+let g:gruvbox_contrast_dark = 'hard'
+
+
+" autocmd BufWinEnter,Filetype json colorscheme afterglow
+" autocmd BufWinEnter,Filetype *.py colorscheme deep-space
+" autocmd BufWinEnter,Filetype c colorscheme deep-space
+" autocmd BufWinEnter,Filetype rs colorscheme deep-space
+" autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
+" autocmd BufWinEnter,Filetype html colorscheme hydrangea
+" autocmd BufWinEnter,Filetype markdown, colorscheme muon
+" autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
+" autocmd BufWinEnter,Filetype xml colorscheme gruvbox
 
 
 " Lightline
@@ -278,7 +286,7 @@ nmap <F8> :TagbarToggle<CR>
 
 
 " skim
-map <leader>f :Files ~<CR>
+map <leader>ff :Files ~<CR>
 
 " skim with preview window
 command! -bang -nargs=? -complete=dir Files
@@ -286,7 +294,7 @@ command! -bang -nargs=? -complete=dir Files
 
 
 " ripgrep
-map <leader>r :Rg ~<CR>
+map <leader>rr :Rg ~<CR>
 
 
 " Vim with all enhancements
