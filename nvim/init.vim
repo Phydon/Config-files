@@ -1,27 +1,6 @@
 " leaderkey to Space
 let mapleader = " "
 
-" check for term gui colors
-if (has("termguicolors"))
-set termguicolors
-endif
-
-" Colorschemes
-" dark themes: elly, alduin, gruvbox, onedark, vim-material, vilight, vorange,
-" vydark, hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
-" deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
-" revolutions, Revolution, zenburn, tetragrammaton, strange, cabin, muon,
-" thornbird, lucius, stormpetrel, Spink, redblack, abra
-" light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
-" laederon, lightcolors, kalt, Light, rainbow_autumn
-
-" for PaperColor light theme
-" set background=light
-" colorscheme PaperColor
-
-" gruvbox 
-let g:gruvbox_contrast_dark = 'hard'
-
 
 set shiftwidth=4
 set tabstop=4
@@ -55,6 +34,8 @@ set sidescrolloff=14
 " set columns=80
 
 
+" terminal-mode
+map <leader>TT :terminal<CR>
 " escape terminal-mode
 :tnoremap <Esc> <C-\><C-n>
 
@@ -72,6 +53,7 @@ set laststatus=2
 "   set t_Co=256
 " endif
 
+" automatically install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -110,6 +92,27 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
+
+" check for term gui colors
+if (has("termguicolors"))
+set termguicolors
+endif
+
+" Colorschemes
+" dark themes: elly, alduin, gruvbox, onedark, vim-material, vilight, vorange,
+" vydark, hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
+" deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
+" revolutions, Revolution, zenburn, tetragrammaton, strange, cabin, muon,
+" thornbird, lucius, stormpetrel, Spink, redblack, abra
+" light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
+" laederon, lightcolors, kalt, Light, rainbow_autumn
+
+" for PaperColor light theme
+" set background=light
+" colorscheme PaperColor
+
+" gruvbox 
+let g:gruvbox_contrast_dark = 'hard'
 
 " needs to be after plugin load
 colorscheme elly
