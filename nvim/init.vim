@@ -44,6 +44,10 @@ set linebreak
 " Colored column at line wrap
 set colorcolumn=80
 
+" better scrolling -> doesn`t work when compatible is set
+set scrolloff=14
+set sidescrolloff=14
+
 " " Hard Wrap - max line length 80
 " set wrap
 " set wrapmargin=0
