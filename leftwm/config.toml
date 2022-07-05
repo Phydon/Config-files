@@ -1,6 +1,6 @@
-modkey = "Mod1"
+modkey = "Mod4"
 # Usually Mod1 is Alt or Meta, Mod2 is Num lock, Mod3 is AltGr, Mod4 is Win, and Mod5 is Scroll lock, but this varies between X implementations and/or keyboard models.
-mousekey = "Mod1"
+mousekey = "Mod4"
 workspaces = []
 tags = ["main", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "LeftMain", "CenterMain", "CenterMainBalanced", "CenterMainFluid", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
