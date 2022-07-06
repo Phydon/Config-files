@@ -1,4 +1,4 @@
-" leaderkey to Space
+" LEADERKEY to Space
 let mapleader = " "
 
 
@@ -27,22 +27,22 @@ set colorcolumn=80
 set scrolloff=14
 set sidescrolloff=14
 
-" " Hard Wrap - max line length 80
+" HARD WRAP - max line length 80
 " set wrap
 " set wrapmargin=0
 " set textwidth=0
 " set columns=80
 
 
-" terminal-mode
+" TERMINAL-MODE
 map <leader>TT :terminal<CR>
 " escape terminal-mode
 :tnoremap <Esc> <C-\><C-n>
 
-" highlight search
+" HIGHLIGHT SEARCH
 map <leader>h :noh<CR>
 
-" quickly escape to normal mode
+" quickly ESCAPE to normal mode
 imap qq <esc>
 
 
@@ -98,7 +98,7 @@ if (has("termguicolors"))
 set termguicolors
 endif
 
-" Colorschemes
+" COLORSCHEMES
 " dark themes: elly, alduin, gruvbox, onedark, vim-material, vilight, vorange,
 " vydark, hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
 " deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
@@ -127,6 +127,25 @@ let g:lightline = {
       \ }
 
 
+" SURROUND shortcuts
+nmap <leader>" ysiw"
+nmap <leader>' ysiw'
+nmap <leader>( ysiw(
+nmap <leader>) ysiw)
+nmap <leader>[ ysiw[
+nmap <leader>] ysiw]
+nmap <leader>{ ysiw{
+nmap <leader>} ysiw}
+nmap <leader>< ysiw<
+nmap <leader>> ysiw>
+
+
+" VIMWIKI
+" toogle todo checkboxes
+:nmap <Leader>dd <Plug>VimwikiToggleListItem
+
+
+" NERDTREE
 " " Start NERDTree. If a file is specified, move the cursor to its window.
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
