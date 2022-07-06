@@ -77,6 +77,12 @@ imap qq <esc>
 " set directory=C:/Program\ Files\ (x86)/Vim/vimtmp//,.
 " set nowritebackup
 
+" save an UNDO backup
+if has('persistent_undo')      "check if your vim version supports it
+  silent !mkdir -p ~/.vim/undo
+  set undofile                 "turn on undo files  
+  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+endif
 
 " PLUGINS
 set nocompatible
