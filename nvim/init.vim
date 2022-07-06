@@ -46,6 +46,14 @@ map <leader>h :noh<CR>
 imap qq <esc>
 
 
+" save an UNDO backup
+if has('persistent_undo')				"check if your vim version supports it
+silent !mkdir -p ~/.config/nvim/undo
+set undofile							"turn on undo files  
+set undodir=$HOME/.config/nvim/undo		"directory where the undo files will be stored
+endif
+
+
 " PLUGINS
 filetype plugin on
 set laststatus=2
