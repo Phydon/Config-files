@@ -1,7 +1,9 @@
 syntax on
 
+
 " leaderkey to Space
 let mapleader = " "
+
 
 " check for term gui colors
 if (has("termguicolors"))
@@ -93,14 +95,34 @@ function! Toggle_transparent_background()
 endfunction               
 nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
+
+" TERMINAL-MODE
+map <leader>TT :terminal<CR>
+" escape terminal-mode
+:tnoremap <Esc> <C-\><C-n>"
+
+
 " highlight search
 map <leader>h :noh<CR>
+
+
+" quickly ESCAPE to normal mode
+imap qq <esc>
+
 
 " Set backup directory
 set backup
 set backupdir=C:/Program\ Files\ (x86)/Vim/vimtmp//,.
 set directory=C:/Program\ Files\ (x86)/Vim/vimtmp//,.
 set nowritebackup
+
+
+" save an UNDO backup
+if has('persistent_undo')      "check if your vim version supports it
+  silent !mkdir -p ~/.vim/undo
+  set undofile                 "turn on undo files  
+  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+endif"
 
 
 "Plugins
@@ -134,6 +156,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ap/vim-css-color'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'preservim/tagbar'
+Plug 'justinmk/vim-sneak' 
 call plug#end()
 
 
@@ -169,9 +192,9 @@ let g:syntastic_aggregate_errors = 1
  let g:ycm_autoclose_preview_window_after_completion = 1
 
 
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" " Start NERDTree. If a file is specified, move the cursor to its window.
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
 " autocmd StdinReadPre * let s:std_in=1
@@ -231,6 +254,32 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 " let g:tagbar_wrap = 2
 " toggle tagbar on or off with F8 key
 " nmap <F8> :TagbarToggle<CR>
+
+
+" SURROUND shortcuts
+nmap <leader>" ysiw"
+nmap <leader>' ysiw'
+nmap <leader>( ysiw(
+nmap <leader>) ysiw)
+nmap <leader>[ ysiw[
+nmap <leader>] ysiw]
+nmap <leader>{ ysiw{
+nmap <leader>} ysiw}
+nmap <leader>( ysiw(
+nmap <leader>) ysiw)
+nmap <leader>< ysiw<
+nmap <leader>> ysiw>
+
+
+" VIMWIKI
+" toogle todo checkboxes
+:nmap <Leader>dd <Plug>VimwikiToggleListItem"
+
+
+" SNEAK
+" replace f with sneak
+" map f <Plug>Sneak_s
+" map F <Plug>Sneak_S
 
 
 " skim
