@@ -121,6 +121,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/tagbar'
 Plug 'ap/vim-css-color'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 
@@ -191,6 +192,12 @@ nmap <leader>> ysiw>
 " VIMWIKI
 " toogle todo checkboxes
 :nmap <Leader>dd <Plug>VimwikiToggleListItem
+
+
+" SNEAK
+" replace f with sneak
+" map f <Plug>Sneak_s
+" map F <Plug>Sneak_S
 
 
 " LANGUAGE SERVER PROTOCOL settings
