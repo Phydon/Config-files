@@ -1,6 +1,6 @@
 syntax on
 
-" leaderkey to Space
+" LEADERKEY to Space
 let mapleader = " "
 
 
@@ -34,7 +34,7 @@ set colorcolumn=80
 set scrolloff=14
 set sidescrolloff=14
 
- " Hard Wrap - max line length 80
+" HARD WRAP - max line length 80
 " set wrap
 " set wrapmargin=0
 " set textwidth=0
@@ -59,26 +59,26 @@ endfunction
 nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
 
-" terminal-mode
+" TERMINAL-MODE
 map <leader>TT :terminal<CR>
 " escape terminal-mode
 :tnoremap <Esc> <C-\><C-n>
 
-" highlight search
+" HIGHLIGHT SEARCH
 map <leader>h :noh<CR>
 
-" quickly escape to normal mode
+" quickly ESCAPE to normal mode
 imap qq <esc>
 
 
-" Set backup directory
+" Set BACKUP directory
 " set backup
 " set backupdir=C:/Program\ Files\ (x86)/Vim/vimtmp//,.
 " set directory=C:/Program\ Files\ (x86)/Vim/vimtmp//,.
 " set nowritebackup
 
 
-"Plugins
+" PLUGINS
 set nocompatible
 filetype plugin on
 set laststatus=2
@@ -169,7 +169,25 @@ let g:lightline = {
       \ }
 
 
-"Language Server Protocol settings
+" SURROUND shortcuts
+nmap <leader>" ysiw"
+nmap <leader>' ysiw'
+nmap <leader>( ysiw(
+nmap <leader>) ysiw)
+nmap <leader>[ ysiw[
+nmap <leader>] ysiw]
+nmap <leader>{ ysiw{
+nmap <leader>} ysiw}
+nmap <leader>< ysiw<
+nmap <leader>> ysiw>
+
+
+" VIMWIKI
+" toogle todo checkboxes
+:nmap <Leader>dd <Plug>VimwikiToggleListItem
+
+
+" LANGUAGE SERVER PROTOCOL settings
 if executable('pyls')
 	" pip install python-language-server
 	au User lsp_setup call lsp#register_server({
@@ -195,15 +213,15 @@ inoremap <expr> <S-Tab>	pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>	pumvisible() ? asnycomplete#close_popup() : "\<cr>"
 
 
-" rainbow - Enable rainbow parentheses
+" RAINBOW - Enable rainbow parentheses
 " let g:rainbow_active = 1
 
 
-" vim-lion - squeeze aligning text by some character
+" VIM-LION - squeeze aligning text by some character
 let b:lion_squeeze_spaces = 1
 
 
-" vim-syntastic
+" VIM-SYNTASTIC
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -217,10 +235,11 @@ let b:lion_squeeze_spaces = 1
 " let g:ycm_show_diagnostics_ui = 0
 
 
-" YouCompleteMe - close preview window after user accepts the offered completion string
+" YOUCOMPLETEME - close preview window after user accepts the offered completion string
 " let g:ycm_autoclose_preview_window_after_completion = 1
 
 
+" NERDTREE
 " " Start NERDTree. If a file is specified, move the cursor to its window.
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
@@ -285,7 +304,7 @@ nmap <F8> :TagbarToggle<CR>
 " g:tagbar_ctags_bin = 'path_to_ctags.exe'
 
 
-" skim
+" SKIM
 map <leader>ff :Files ~<CR>
 
 " skim with preview window
@@ -293,7 +312,7 @@ command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 
-" ripgrep
+" RIPGREP
 map <leader>rr :Rg ~<CR>
 
 
