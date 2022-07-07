@@ -220,16 +220,16 @@ nmap <F8> :TagbarToggle<CR>
 " g:tagbar_ctags_bin = 'path_to_ctags.exe'
 
 
-" SKIM
-map <leader>ff :Files ~<CR>
+" " SKIM
+" map <leader>ff :Files ~<CR>
 
-" skim with preview window
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" " skim with preview window
+" command! -bang -nargs=? -complete=dir Files
+"     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 
-" RIPGREP
-map <leader>rr :Rg ~<CR>
+" " RIPGREP
+" map <leader>rr :Rg ~<CR>
 
 
 " TELESCOPE
