@@ -99,6 +99,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ggandor/lightspeed.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 
@@ -237,14 +238,17 @@ nnoremap <leader>tf <cmd>Telescope find_files<cr>
 nnoremap <leader>tg <cmd>Telescope live_grep<cr>
 nnoremap <leader>tb <cmd>Telescope buffers<cr>
 nnoremap <leader>th <cmd>Telescope help_tags<cr>
+" remap fuzzy buffer search to <Ctrl> + </>
+" to sort in reversed order at sorting_strategy=ascending
+nnoremap <C-_> <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 
 
 " EVERYTHING AFTER THIS IS LUA CODE
 " =================================
 
-" LSP
 lua << EOF
+-- LSP
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 local lspconfig = require'lspconfig'
