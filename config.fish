@@ -25,7 +25,6 @@ end
 alias sf="~/Aliases/sf"
 alias rep="~/Aliases/rep"
 alias cat="bat --theme Sublime\ Snazzy"
-alias sk="sk -e"
 alias mv="mv -i"
 alias cp="cp -i"
 alias rm="rm -i"
@@ -38,7 +37,7 @@ alias sad="sad -e"
 
 # SKIM and RIPGREP
 function skrg
-    command sk -e --preview "rg -i -p $argv {}"
+    command sk --exact --preview "rg --ignore-case --pretty $argv {}"
 end
 
 
