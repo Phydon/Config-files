@@ -363,13 +363,20 @@ require('lspconfig')['rust_analyzer'].setup{
     capabilities = capabilities,
 }
 -- python
-require('lspconfig')['jedi_language_server '].setup{
+require('lspconfig')['jedi_language_server'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
 }
 -- c/c++
 require('lspconfig')['clangd'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+}
+
+-- haskell
+require('lspconfig')['hls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
