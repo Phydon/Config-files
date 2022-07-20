@@ -1,0 +1,24 @@
+# remove all files that end with "~" -> in all directories recursively
+ls **/* | get name | where ($it | str ends-with "~") | parse "{name}" | each {|it| rm --trash $it.name}
+ls **/* | where name =~ ~$ | each {|it| rm --trash $it.name}
+
+# remove all files that start with "~" -> in all directories recursively
+ls **/* | where name =~ ^~ | each {|it| rm --trash $it.name}
+
+# find all .toml files in C:/
+ls C:/**/* |  where type == file | find .toml
+
+search recursively for files that contain the word "manifest"
+glob "**/*manifest*"
+
+# display the whole year 2022
+cal --week-start monday --month-names --year --full-year 2022
+
+# show month july and august of the year 2022
+cal --week-start monday --month-names --year --full-year 2022 | find july august
+
+# watch and log all changes made in any file in ~/main to changes_in_main.log
+watch ~/main  { |op, path| $"($op) - ($path)(char nl)" | save --append changes_in_main.log }
+
+# Run "cargo test" whenever a Rust file changes
+watch . --glob=**/*.rs { cargo test }
