@@ -10,6 +10,9 @@ ls C:/**/* |  where type == file | find .toml
 search recursively for files that contain the word "manifest"
 glob "**/*manifest*"
 
+# search recursively for files that start with either "My" (case sensitive) or with an "x"
+glob **/{[M]y,x}*
+
 # display the whole year 2022
 cal --week-start monday --month-names --year --full-year 2022
 
@@ -19,5 +22,5 @@ cal --week-start monday --month-names --year --full-year 2022 | find july august
 # watch and log all changes made in any file in ~/main to changes_in_main.log
 watch ~/main  { |op, path| $"($op) - ($path)(char nl)" | save --append changes_in_main.log }
 
-# Run "cargo test" whenever a Rust file changes
-watch . --glob=**/*.rs { cargo test }
+# Enter new line and run "cargo check" whenever a Rust file changes
+watch . --glob=**/*.rs { (echo "(char nl)" | cargo check) }
