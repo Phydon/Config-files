@@ -1,4 +1,4 @@
-# remove all files that end with "~" -> in all directories recursively
+# remove all files that end with ".un~" -> in all directories recursively
 glob **/*.un~ | parse "{name}" | par-each {|it| rm --trash --verbose $it.name}
 
 # remove all files that start with "My" (case sensitive, -> insensitive without "[]") -> in all directories recursively
