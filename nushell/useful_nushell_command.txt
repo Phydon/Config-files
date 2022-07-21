@@ -1,9 +1,8 @@
 # remove all files that end with "~" -> in all directories recursively
-ls **/* | get name | where ($it | str ends-with "~") | parse "{name}" | each {|it| rm --trash $it.name}
-ls **/* | where name =~ ~$ | each {|it| rm --trash $it.name}
+glob **/*.un~ | parse "{name}" | par-each {|it| rm --trash --verbose $it.name}
 
-# remove all files that start with "~" -> in all directories recursively
-ls **/* | where name =~ ^~ | each {|it| rm --trash $it.name}
+# remove all files that start with "My" (case sensitive, -> insensitive without "[]") -> in all directories recursively
+glob **/[M]y* | parse "{name}" | par-each {|it| rm --trash --verbose $it.name}
 
 # find all .toml files in C:/
 ls C:/**/* |  where type == file | find .toml
