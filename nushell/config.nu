@@ -176,13 +176,183 @@ let default_theme = {
     shape_nothing: light_cyan
 }
 
+let dark_theme = {
+    # color for nushell primitives
+    separator: white
+    leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
+    header: green_bold
+    empty: blue
+    bool: white
+    int: white
+    filesize: white
+    duration: white
+    date: white
+    range: white
+    float: white
+    string: white
+    nothing: white
+    binary: white
+    cellpath: white
+    row_index: green_bold
+    record: white
+    list: white
+    block: white
+    hints: dark_gray
+
+    # shapes are used to change the cli syntax highlighting
+    shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
+    shape_binary: purple_bold
+    shape_bool: light_cyan
+    shape_int: purple_bold
+    shape_float: purple_bold
+    shape_range: yellow_bold
+    shape_internalcall: cyan_bold
+    shape_external: cyan
+    shape_externalarg: green_bold
+    shape_literal: blue
+    shape_operator: yellow
+    shape_signature: green_bold
+    shape_string: green
+    shape_string_interpolation: cyan_bold
+    shape_datetime: cyan_bold
+    shape_list: cyan_bold
+    shape_table: blue_bold
+    shape_record: cyan_bold
+    shape_block: blue_bold
+    shape_filepath: cyan
+    shape_globpattern: cyan_bold
+    shape_variable: purple
+    shape_flag: blue_bold
+    shape_custom: green
+    shape_nothing: light_cyan
+}
+
+let light_theme = {
+    # color for nushell primitives
+    separator: dark_gray
+    leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
+    header: green_bold
+    empty: blue
+    bool: dark_gray
+    int: dark_gray
+    filesize: dark_gray
+    duration: dark_gray
+    date: dark_gray
+    range: dark_gray
+    float: dark_gray
+    string: dark_gray
+    nothing: dark_gray
+    binary: dark_gray
+    cellpath: dark_gray
+    row_index: green_bold
+    record: white
+    list: white
+    block: white
+    hints: dark_gray
+
+    # shapes are used to change the cli syntax highlighting
+    shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
+    shape_binary: purple_bold
+    shape_bool: light_cyan
+    shape_int: purple_bold
+    shape_float: purple_bold
+    shape_range: yellow_bold
+    shape_internalcall: cyan_bold
+    shape_external: cyan
+    shape_externalarg: green_bold
+    shape_literal: blue
+    shape_operator: yellow
+    shape_signature: green_bold
+    shape_string: green
+    shape_string_interpolation: cyan_bold
+    shape_datetime: cyan_bold
+    shape_list: cyan_bold
+    shape_table: blue_bold
+    shape_record: cyan_bold
+    shape_block: blue_bold
+    shape_filepath: cyan
+    shape_globpattern: cyan_bold
+    shape_variable: purple
+    shape_flag: blue_bold
+    shape_custom: green
+    shape_nothing: light_cyan
+}
+
+# Colors 
+# signal colors:
+    # shape_operator: { fg: "#fb7b42" }
+    # shape_int: { fg: "#b93344" }
+    # shape_float: { fg: "#b93344" }
+	# https://www.schemecolor.com/apache-server-logo-colors.php
+# ocean theme: 
+	# https://www.schemecolor.com/ocean-gradient.php
+	# https://www.schemecolor.com/endless-sea.php
+
+
+let ocean_theme = {
+    # color for nushell primitives
+    separator: dark_gray
+    leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
+    header: { fg: "#48BF92" }
+    empty: white
+    bool: { fg: "#a22160" }
+    # bool: { fg: "#4B8DA0" }
+    int: { fg: "#b93344" }
+    # int: { fg: "#4B8DA0" }
+    filesize: { fg: "#4C74A6" }
+    duration: { fg: "#4C74A6" }
+    date: { fg: "#4E5BAD" }
+    range: { fg: "#b93344" }
+    # range: { fg: "#4B8DA0" }
+    float: { fg: "#b93344" }
+    # float: { fg: "#4B8DA0" }
+    string: { fg: "#49A699" }
+    # string: { fg: "#497a82" }
+    nothing: white
+    binary: { fg: "#9c1027" }
+    # binary: dark_gray
+    cellpath: dark_gray
+    row_index: { fg: "#48BF92" }
+    record: { fg: "#06a595" }
+    list: { fg: "#06a595" }
+    block: { fg: "#06a595" }
+    hints: dark_gray
+
+    # shapes are used to change the cli syntax highlighting
+    shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
+    shape_binary: { fg: "#9c1027" }
+    shape_bool: { fg: "#a22160" }
+    shape_int: { fg: "#b93344" }
+    shape_float: { fg: "#b93344" }
+    shape_range: { fg: "#731f46" }
+    shape_internalcall: { fg: "#2952ac" attr: b }
+    shape_external: { fg: "#194775" attr: b }
+    shape_externalarg: { fg: "#6684a3" }
+    shape_literal: { fg: "#1692c4" }
+    shape_operator: { fg: "#731f46" }
+    shape_signature: { fg: "#1692c4" }
+	shape_string : { fg: "#007089" }
+    shape_string_interpolation: { fg: "#1692c4" }
+    shape_datetime: { fg: "#8F670B" }
+    shape_list: { fg: "#06a595" }
+    shape_table: { fg: "#06a595" }
+    shape_record: { fg: "#06a595" }
+    shape_block: { fg: "#06a595" }
+    shape_filepath: { fg: "#1692c4" }
+    shape_globpattern: { fg: "#1692c4" }
+    shape_variable: { fg: "#236fc5" }
+    shape_flag: { fg: "#137087" }
+    shape_custom: { fg: "#1692c4" }
+    shape_nothing: white
+}
+
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
   filesize_metric: false
   table_mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
-  use_ls_colors: true
+  use_ls_colors: false
   rm_always_trash: false
-  color_config: $default_theme
+  color_config: $ocean_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   quick_completions: true  # set this to false to prevent auto-selecting completions when only one remains
