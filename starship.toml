@@ -30,9 +30,12 @@ format = '\[[ ($version(-$name))]($style)\]'
 
 [character]  
 # success_symbol = "[-I❯](bold green dimmed)"
-success_symbol = "[:❯](bold dimmed fg:#4C74A6)"
-error_symbol = "[:❯](bold fg:#870000)"
-vicmd_symbol = "[::❯](bold fg:#b58900) "
+# success_symbol = "[:❯](bold dimmed fg:#4C74A6)"
+# error_symbol = "[:❯](bold fg:#870000)"
+# vicmd_symbol = "[::❯](bold fg:#b58900) "
+success_symbol = "[-:](bold dimmed fg:#4C74A6)"
+error_symbol = "[-:](bold fg:#870000)"
+vicmd_symbol = "[-::](bold fg:#b58900)"
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
@@ -171,7 +174,7 @@ format = '\[[ ($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [shell]
-format = "[$indicator]($style) "
+format = "[$indicator]($style)"
 fish_indicator = "fish"
 powershell_indicator = "psh"
 bash_indicator = "bash"
