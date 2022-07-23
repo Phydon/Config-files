@@ -14,8 +14,8 @@ style = "bold red"
 discharging_symbol = ""
 [[battery.display]] # "bold yellow" style and   symbol when capacity is between 25% and 35%
 threshold = 35
-# style = "bold yellow"
-style = "bold fg:#4E5BAD"
+style = "bold yellow"
+# style = "bold fg:#4E5BAD"
 discharging_symbol = ""
 [[battery.display]]
 threshold = 99
@@ -187,6 +187,7 @@ tcsh_indicator = "tsh"
 xonsh_indicator = "xsh"
 unknown_indicator = "unknown shell"
 style = "bold fg:#4C74A6"
+# style = "bold fg:#4E5BAD"
 # style = "bold fg:#49A699"
 # style = "bold fg:#4e4e4e"
 # symbol _
