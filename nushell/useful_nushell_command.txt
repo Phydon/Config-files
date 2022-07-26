@@ -24,3 +24,6 @@ watch ~/main  { |op, path| $"($op) - ($path)(char nl)" | save --append changes_i
 
 # Enter new line and run "cargo check" whenever a Rust file changes
 watch . --glob=**/*.rs { (echo "(char nl)" | cargo check) }
+
+# get all active nushell aliases
+open $nu.config-path | lines | find alias | find -v "#" | split column "=" | select column1 column2 | rename Alias Command | update Alias {|f| $f.Alias | split row " " | last} | sort-by Alias
