@@ -27,3 +27,6 @@ watch . --glob=**/*.rs { (echo "(char nl)" | cargo check) }
 
 # get all active nushell aliases
 open $nu.config-path | lines | find alias | find -v "#" | split column "=" | select column1 column2 | rename Alias Command | update Alias {|f| $f.Alias | split row " " | last} | sort-by Alias
+
+# remove duplicates from nushells history.txt
+open $nu.history-path | lines | into df | drop-duplicates | into nu | get "0" | save $nu.history-path
