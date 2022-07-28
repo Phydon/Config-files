@@ -351,7 +351,7 @@ let-env config = {
   filesize_metric: false
   table_mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
   use_ls_colors: false
-  rm_always_trash: false
+  rm_always_trash: true
   color_config: $ocean_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
@@ -365,6 +365,7 @@ let-env config = {
   edit_mode: vi # emacs, vi
   max_history_size: 10000 # Session has to be reloaded for this to take effect
   sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
+  history_file_format: "plaintext" # "sqlite" or "plaintext"
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
   disable_table_indexes: false # set to true to remove the index column from tables
   cd_with_abbreviations: false # set to true to allow you to do things like cd s/o/f and nushell expand it to cd some/other/folder
