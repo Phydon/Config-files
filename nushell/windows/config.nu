@@ -358,7 +358,6 @@ let-env config = {
   quick_completions: true  # set this to false to prevent auto-selecting completions when only one remains
   partial_completions: true  # set this to false to prevent partial filling of the prompt
   completion_algorithm: "prefix"  # prefix, fuzzy
-  animate_prompt: false # redraw the prompt every second
   float_precision: 2
   buffer_editor: "nvim" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
@@ -366,10 +365,19 @@ let-env config = {
   edit_mode: vi # emacs, vi
   max_history_size: 10000 # Session has to be reloaded for this to take effect
   sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
+  history_file_format: "plaintext" # "sqlite" or "plaintext"
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
   disable_table_indexes: false # set to true to remove the index column from tables
   cd_with_abbreviations: false # set to true to allow you to do things like cd s/o/f and nushell expand it to cd some/other/folder
   case_sensitive_completions: false # set to true to enable case-sensitive completions
+  max_external_completion_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
+
+  # A strategy of managing table view in case of limited space 
+  table_trim: {
+	  methodology: wrapping, # wrapping, truncating
+	  wrapping_try_keep_words: true, # A strategy which will be used by 'wrapping' methodology
+	  # truncating_suffix: "..." # A suffix which will be used with 'truncating' methodology
+  }
 
   hooks: {
     pre_prompt: [{
@@ -384,6 +392,10 @@ let-env config = {
       }]
     }
   }
+# date: { fg: "#4E5BAD" }
+# string: { fg: "#49A699" }
+# shape_operator: { fg: "#fb7b42" }
+# shape_int: { fg: "#b93344" }
   menus: [
       # Configuration for default nushell menus
       # Note the lack of souce parameter
@@ -398,9 +410,9 @@ let-env config = {
             col_padding: 2
         }
         style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
+            text: { fg: "#49A699" }
+            selected_text: { fg: "#b93344" }
+            description_text: { fg: "#4C74A6" } 
         }
       }
       {
@@ -409,12 +421,12 @@ let-env config = {
         marker: "? "
         type: {
             layout: list
-            page_size: 20
+            page_size: 25
         }
         style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
+            text: { fg: "#49A699" }
+            selected_text: { fg: "#b93344" }
+            description_text: { fg: "#4C74A6" } 
         }
       }
       {
@@ -430,9 +442,9 @@ let-env config = {
             description_rows: 10
         }
         style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
+            text: { fg: "#49A699" }
+            selected_text: { fg: "#b93344" }
+            description_text: { fg: "#4C74A6" } 
         }
       }
       # Example of extra menus created using a nushell source
@@ -449,9 +461,9 @@ let-env config = {
             col_padding: 2
         }
         style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
+            text: { fg: "#49A699" }
+            selected_text: { fg: "#b93344" }
+            description_text: { fg: "#4C74A6" } 
         }
         source: { |buffer, position|
             $nu.scope.commands
@@ -465,12 +477,12 @@ let-env config = {
         marker: "# "
         type: {
             layout: list
-            page_size: 10
+            page_size: 20
         }
         style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
+            text: { fg: "#49A699" }
+            selected_text: { fg: "#b93344" }
+            description_text: { fg: "#4C74A6" } 
         }
         source: { |buffer, position|
             $nu.scope.vars
@@ -492,9 +504,9 @@ let-env config = {
             description_rows: 10
         }
         style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
+            text: { fg: "#49A699" }
+            selected_text: { fg: "#b93344" }
+            description_text: { fg: "#4C74A6" } 
         }
         source: { |buffer, position|
             $nu.scope.commands
@@ -549,6 +561,39 @@ let-env config = {
         ]
        }
     }
+    {
+      name: yank
+      modifier: control
+      keycode: char_y
+      mode: emacs
+      event: {
+        until: [
+          {edit: pastecutbufferafter}
+        ]
+      }
+    }
+    {
+      name: unix-line-discard
+      modifier: control
+      keycode: char_u
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        until: [
+          {edit: cutfromlinestart}
+        ]
+      }
+    }
+    {
+      name: kill-line
+      modifier: control
+      keycode: char_k
+      mode: [emacs, vi_normal, vi_insert]
+      event: {
+        until: [
+          {edit: cuttolineend}
+        ]
+      }
+    }
     # Keybindings used to trigger the user defined menus
     {
       name: commands_menu
@@ -559,15 +604,15 @@ let-env config = {
     }
     {
       name: vars_menu
-      modifier: control
-      keycode: char_y
+      modifier: alt
+      keycode: char_o
       mode: [emacs, vi_normal, vi_insert]
       event: { send: menu name: vars_menu }
     }
     {
       name: commands_with_description
       modifier: control
-      keycode: char_u
+      keycode: char_s
       mode: [emacs, vi_normal, vi_insert]
       event: { send: menu name: commands_with_description }
     }
