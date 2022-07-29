@@ -630,14 +630,15 @@ source ~/.zoxide.nu
 alias sf = C:\Aliases\Programs\sf.exe
 alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
 # alias fzf = C:\Aliases\Programs\fzf.exe --preview 'cat {}'
-alias cat = C:\Aliases\Programs\bat.exe
-# alias cat = bat
+alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
 alias rg = C:\Aliases\Programs\rg.exe --hidden --stats --no-messages
 alias gs = git status
 alias cal = cal --week-start monday --month-names --year
 alias diff = C:\Aliases\Programs\delta.exe
 alias cd = z
+alias cdi  = zi
 alias :q = source C:\Aliases\Programs\qscript.nu
+# alias sk = sk --preview 'bat --style=numbers --color=always --line-range :500 {}'
 # alias rep = ~/Aliases/rep
 # alias sk = sk -e
 # alias mv = mv -i
