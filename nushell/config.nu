@@ -624,8 +624,10 @@ source ~/.zoxide.nu
 # ALIASES
 alias sf = ~/Aliases/sf
 alias rep = ~/Aliases/rep
-alias cat = bat --theme Sublime\ Snazzy
-alias skrg = sk --exact --preview "rg --ignore-case --pretty $argv {}"
+alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
+alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
+alias sk = sk --preview 'bat --style=numbers --color=always --line-range :500 {}'
+alias rg = rg --hidden --stats --no-messages
 alias diff = delta
 alias cd  = z
 alias cdi  = zi
