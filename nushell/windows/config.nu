@@ -637,6 +637,7 @@ alias gs = git status
 alias cal = cal --week-start monday --month-names --year
 alias diff = C:\Aliases\Programs\delta.exe
 alias cd = z
+alias :q = source C:\Aliases\Programs\qscript.nu
 # alias rep = ~/Aliases/rep
 # alias sk = sk -e
 # alias mv = mv -i
