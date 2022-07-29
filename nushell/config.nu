@@ -618,11 +618,15 @@ let-env config = {
 # STARSHIP PROMPT
 source ~/.cache/starship/init.nu
 
+# ZOXIDE
+source ~/.zoxide.nu
 
 # ALIASES
 alias sf = ~/Aliases/sf
 alias rep = ~/Aliases/rep
 alias cat = bat
+alias cd  = z
+alias :q = source ~/Aliases/qscript.nu
 # alias sk = sk -e
 # alias mv = mv -i
 # alias cp = cp -i
