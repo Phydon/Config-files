@@ -626,6 +626,7 @@ alias sf = ~/Aliases/sf
 alias rep = ~/Aliases/rep
 alias cat = bat
 alias cd  = z
+alias cdi  = zi
 alias :q = source ~/Aliases/qscript.nu
 # alias sk = sk -e
 # alias mv = mv -i
