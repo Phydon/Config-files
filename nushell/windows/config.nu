@@ -641,3 +641,4 @@ alias cal = cal --week-start monday --month-names --year
 # alias du = dust
 # alias ps = procs --sortd cpu
 # alias sad = sad -e
+alias diff = C:\Aliases\Programs\delta.exe
