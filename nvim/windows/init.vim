@@ -43,8 +43,8 @@ map <leader>TT :terminal<CR>
 map <leader>h :noh<CR>
 
 " quickly ESCAPE to normal mode
-imap <leader>q <esc>
-vmap <leader>q <esc>
+imap qq <esc>
+vmap qq <esc>
 
 
 " save an UNDO backup
