@@ -1,3 +1,4 @@
+# Gets the name of the running operating system
 export def getos [] {
 	sys | get host.name
 }
@@ -6,6 +7,7 @@ export def ":q" [] {
 	exit
 }
 
+# Gets all active aliases
 export def "get aliases" [] {
 	open $nu.config-path | 
 	lines | 
@@ -17,19 +19,22 @@ export def "get aliases" [] {
 	update Alias {
 		|f| $f.Alias | 
 		split row " " | 
-		last} | 
+		last
+	} | 
 	sort-by Alias
 }
 
-export def "backup history" [] {
+# Creates a backup of your nushell command history
+export def "history backup" [] {
 	mkdir ~/backup
 
 	open $nu.history-path | 
 	save ~/backup/history.txt
 }
 
-export def "history remove dups" [] {
-	backup history
+# Creates a backup of your nushell command history and removes all duplicates in the $nu.history-path
+export def "history remove_duplicates" [] {
+	history backup
 
 	open $nu.history-path | 
 	lines | 
