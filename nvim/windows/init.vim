@@ -100,6 +100,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 
@@ -218,6 +219,14 @@ nmap <F8> :TagbarToggle<CR>
 " specify path if ctags are not in $PATH environment variable
 " --> change path
 " g:tagbar_ctags_bin = 'path_to_ctags.exe'
+
+
+" FLOATERM
+let g:floaterm_shell = "nu"
+let g:floaterm_title = "Terminal $1/$2"
+let g:floaterm_width = 0.95
+let g:floaterm_height = 0.9
+let g:floaterm_keymap_toggle = "<Leader>FT"
 
 
 " " SKIM
@@ -357,19 +366,26 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-    settings = {
-      ["rust-analyzer"] = {}
-    },
+    -- settings = {
+    --   ["rust-analyzer"] = {}
+    -- },
     capabilities = capabilities,
 }
 -- python
-require('lspconfig')['jedi_language_server '].setup{
+require('lspconfig')['jedi_language_server'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
 }
 -- c/c++
 require('lspconfig')['clangd'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+}
+
+-- haskell
+require('lspconfig')['hls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
