@@ -107,7 +107,8 @@ map <leader>h :noh<CR>
 
 
 " quickly ESCAPE to normal mode
-imap qq <esc>
+imap <leader>q <esc>
+vmap <leader>q <esc>
 
 
 " Set backup directory
