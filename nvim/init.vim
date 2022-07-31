@@ -44,6 +44,7 @@ map <leader>h :noh<CR>
 
 " quickly ESCAPE to normal mode
 imap qq <esc>
+vmap qq <esc>
 
 
 " save an UNDO backup
@@ -100,6 +101,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 
@@ -218,6 +220,14 @@ nmap <F8> :TagbarToggle<CR>
 " specify path if ctags are not in $PATH environment variable
 " --> change path
 " g:tagbar_ctags_bin = 'path_to_ctags.exe'
+
+
+" FLOATERM
+let g:floaterm_shell = "nu"
+let g:floaterm_title = "Terminal $1/$2"
+let g:floaterm_width = 0.95
+let g:floaterm_height = 0.9
+let g:floaterm_keymap_toggle = "<Leader>FT"
 
 
 " SKIM
