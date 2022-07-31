@@ -621,24 +621,39 @@ source ~/.cache/starship/init.nu
 # ZOXIDE
 source ~/.zoxide.nu
 
+
+# import init.nu
+use ~/.config/nushell/init.nu *
+
+
 # ALIASES
+# if ((getos) == Windows) {
+# alias sf = C:\Aliases\Programs\sf.exe
+# alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
+# alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
+# alias rg = C:\Aliases\Programs\rg.exe --hidden --stats --no-messages
+# alias gs = git status
+# alias cal = cal --week-start monday --month-names --year
+# alias diff = C:\Aliases\Programs\delta.exe
+# alias cd = z
+# alias cdi  = zi
+# } else {
 alias sf = ~/Aliases/sf
-alias rep = ~/Aliases/rep
-alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
 alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
-alias sk = sk --preview 'bat --style=numbers --color=always --line-range :500 {}'
+alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
 alias rg = rg --hidden --stats --no-messages
-alias diff = delta
-alias cd  = z
-alias cdi  = zi
-alias :q = source ~/Aliases/qscript.nu
 alias gs = git status
+alias cal = cal --week-start monday --month-names --year
+alias diff = delta
+alias cd = z
+alias cdi  = zi
+alias sk = sk --preview 'bat --style=numbers --color=always --line-range :500 {}'
+alias rep = ~/Aliases/rep
+alias mv = mv --verbose
+alias cp = cp --verbose
+alias rm = rm --verbose
 alias fd = fd -H
 alias du = dust
 alias ps = procs --sortd cpu
 alias sad = sad -e
-alias cal = cal --week-start monday --month --month-names --year
-# alias sk = sk -e
-# alias mv = mv -i
-# alias cp = cp -i
-# alias rm = rm -i
+# }
