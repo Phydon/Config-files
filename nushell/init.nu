@@ -44,3 +44,26 @@ export def "history remove_duplicates" [] {
 	get "0" | 
 	save $nu.history-path
 }
+
+# Get input by words as a table
+# Returns the words stored in a table seperated into rows by default
+export def words [
+	--list (-l)		# Return a list of words seperated into rows
+	--column (-c)	# Return the words stored in a table seperated into columns
+] {
+	let input = ($in | str trim)
+
+	if ($input | empty?) {
+		# Do nothing
+	} else if $column {
+		$input |
+		split column -c " "
+	} else if $list {
+		$input |
+		split row " "
+	} else {
+		$input |
+		split row " " |
+		wrap word
+	}
+}
