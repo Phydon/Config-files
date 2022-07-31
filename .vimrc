@@ -69,6 +69,7 @@ map <leader>h :noh<CR>
 
 " quickly ESCAPE to normal mode
 imap qq <esc>
+vmap qq <esc>
 
 
 " Set BACKUP directory
@@ -122,6 +123,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/tagbar'
 Plug 'ap/vim-css-color'
 Plug 'justinmk/vim-sneak'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 
@@ -198,6 +200,14 @@ nmap <leader>> ysiw>
 " replace f with sneak
 " map f <Plug>Sneak_s
 " map F <Plug>Sneak_S
+
+
+" FLOATERM
+let g:floaterm_shell = "nu"
+let g:floaterm_title = "Terminal $1/$2"
+let g:floaterm_width = 0.93
+let g:floaterm_height = 0.93
+let g:floaterm_keymap_toggle = "<Leader>FT"
 
 
 " LANGUAGE SERVER PROTOCOL settings
