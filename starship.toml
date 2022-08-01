@@ -41,7 +41,8 @@ vicmd_symbol = "[-::](bold fg:#b58900)"
 format = '\[[$symbol($version)]($style)\]'
 
 [cmd_duration]  
-format = '\[[⏱ $duration]($style)\]'
+format = '\[[took $duration]($style)\]'
+# format = '\[[⏱ $duration]($style)\]'
 # style = "bold fg:#8F670B"
 style = "fg:#4e4e4e"
 
