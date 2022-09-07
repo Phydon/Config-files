@@ -633,6 +633,7 @@ use ~/.config/nushell/init.nu *
 # alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
 # alias rg = C:\Aliases\Programs\rg.exe --hidden --stats --no-messages
 # alias gs = git status
+# alias ga = git all
 # alias cal = cal --week-start monday --month-names --year
 # alias diff = C:\Aliases\Programs\delta.exe
 # alias cd = z
@@ -643,6 +644,7 @@ alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 
 alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
 alias rg = rg --hidden --stats --no-messages
 alias gs = git status
+alias ga = git all
 alias cal = cal --week-start monday --month-names --year
 alias diff = delta
 alias cd = z

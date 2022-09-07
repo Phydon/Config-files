@@ -27,15 +27,12 @@ export def "get aliases" [] {
 # Creates a backup of your nushell command history
 export def "history backup" [] {
 	mkdir ~/backup
-
 	open $nu.history-path | 
 	save ~/backup/history.txt
 }
-
 # Creates a backup of your nushell command history and removes all duplicates in the $nu.history-path
 export def "history remove_duplicates" [] {
 	history backup
-
 	open $nu.history-path | 
 	lines | 
 	into df | 
@@ -44,7 +41,6 @@ export def "history remove_duplicates" [] {
 	get "0" | 
 	save $nu.history-path
 }
-
 # Get input by words as a table
 # Returns the words stored in a table seperated into rows by default
 def get-words [
@@ -68,7 +64,6 @@ def get-words [
 		parse "{word}"
 	}
 }
-
 # Get input by words
 # Returns the words stored in a table seperated into rows by default
 # Only works with raw input 
@@ -80,7 +75,6 @@ export def words [
 	# sum up if input is not raw input
 	# panics if input is list of strings
 	let line_size = ($input | size | get lines | math sum) 
-
 	if ($input | empty?) {
 		# Do nothing
 	} else if ($line_size <= 1) {
@@ -113,3 +107,15 @@ export def words [
 		}
 	}
 }
+
+# combine git add .; git commit -m "message"; git push
+export def "git all" [
+	commit_txt: string	# your commit message
+] {
+	git add . |
+	sleep 300ms |
+	git commit -m $commit_txt |
+	sleep 300ms |
+	git push
+}
+
