@@ -101,6 +101,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'flazz/vim-colorschemes'
 Plug 'srcery-colors/srcery-vim'
 Plug 'ulwlu/elly.vim'
+Plug 'arzg/vim-substrata'
+Plug 'wadackel/vim-dogrun'
+Plug 'logico/typewriter-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
@@ -136,14 +139,15 @@ endif
 set guifont=mononoki:h22
 
 " Colorschemes
-" dark themes: elly, alduin, gruvbox, onedark, vim-material, vilight, vorange,
+" dark themes: elly, substrata, typewriter-night, dogrun, alduin, gruvbox, 
+" onedark, vim-material, vilight, vorange,
 " vydark, hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
 " deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
 " revolutions, Revolution, zenburn, tetragrammaton, strange, cabin, muon,
 " thornbird, lucius, stormpetrel, Spink, redblack, abra
 " light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
 " laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme elly 
+colorscheme substrata 
 
 " for PaperColor light theme
 " set background=light
