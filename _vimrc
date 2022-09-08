@@ -21,7 +21,7 @@ set guifont=mononoki:h22
 " thornbird, lucius, stormpetrel, Spink, redblack, abra
 " light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
 " laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme elly
+colorscheme substrata
 
 " for PaperColor light theme
 " set background=light
@@ -141,6 +141,9 @@ Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'flazz/vim-colorschemes'
 Plug 'ulwlu/elly.vim'
+Plug 'arzg/vim-substrata'
+Plug 'wadackel/vim-dogrun'
+Plug 'logico/typewriter-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
@@ -285,11 +288,11 @@ nmap <leader>> ysiw>
 
 
 " FLOATERM
-let g:floaterm_shell = "nu"
-let g:floaterm_title = "Terminal $1/$2"
-let g:floaterm_width = 0.93
-let g:floaterm_height = 0.93
-let g:floaterm_keymap_toggle = "<Leader>FT"
+let g:floaterm_shell = "nu" 
+let g:floaterm_title = "Terminal $1/$2" 
+let g:floaterm_width = 0.93 
+let g:floaterm_height = 0.93 
+let g:floaterm_keymap_toggle = "<Leader>FT" 
 
 
 " skim
