@@ -13,38 +13,6 @@ endif
 " set vim font to nerd font
 set guifont=mononoki:h22
 
-" Colorschemes
-" dark themes: gruvbox, onedark, vim-material, vilight, vorange, vydark,
-" hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
-" deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
-" revolutions, Revolution, zenburn,tetragrammaton, strange, cabin, muon,
-" thornbird, lucius, stormpetrel, Spink, redblack, abra
-" light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
-" laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme substrata
-
-" for PaperColor light theme
-" set background=light
-" colorscheme PaperColor
-
-let g:material_terminal_italics = 1
-" options are: 'default', 'palenight', 'ocean', 'lighter', 'darker', 'default-community', 'palenight-community', 'ocean-community', 'lighter-community', 'darker-community'
-let g:material_theme_style = 'default-community'
-" colorscheme material
-
-" gruvbox 
-let g:gruvbox_contrast_dark = 'hard'
-
-" autocmd BufWinEnter,Filetype json colorscheme afterglow
-" autocmd BufWinEnter,Filetype *.py colorscheme deep-space
-" autocmd BufWinEnter,Filetype c colorscheme deep-space
-" autocmd BufWinEnter,Filetype rs colorscheme deep-space
-" autocmd BufWinEnter,Filetype *.txt colorscheme hydrangea
-" autocmd BufWinEnter,Filetype html colorscheme hydrangea
-" autocmd BufWinEnter,Filetype markdown colorscheme hydrangea
-" autocmd BufWinEnter,Filetype vimwiki colorscheme gruvbox
-" autocmd BufWinEnter,Filetype xml colorscheme gruvbox
-
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -163,6 +131,29 @@ Plug 'ap/vim-css-color'
 Plug 'justinmk/vim-sneak' 
 Plug 'voldikss/vim-floaterm'
 call plug#end()
+
+" Colorschemes
+" dark themes: elly, substrata, dogrun, typewriter-night, gruvbox, 
+" onedark, vim-material, vilight, vorange, vydark,
+" hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
+" deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
+" revolutions, Revolution, zenburn,tetragrammaton, strange, cabin, muon,
+" thornbird, lucius, stormpetrel, Spink, redblack, abra
+" light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
+" laederon, lightcolors, kalt, Light, rainbow_autumn
+colorscheme substrata
+
+" for PaperColor light theme
+" set background=light
+" colorscheme PaperColor
+
+let g:material_terminal_italics = 1
+" options are: 'default', 'palenight', 'ocean', 'lighter', 'darker', 'default-community', 'palenight-community', 'ocean-community', 'lighter-community', 'darker-community'
+let g:material_theme_style = 'default-community'
+" colorscheme material
+
+" gruvbox 
+let g:gruvbox_contrast_dark = 'hard'
 
 
 " Lightline
