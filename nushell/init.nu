@@ -116,6 +116,6 @@ export def "git all" [
 	sleep 300ms |
 	git commit -m $commit_txt |
 	sleep 300ms |
-	git push
+	git push origin master
 }
 

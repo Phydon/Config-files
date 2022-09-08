@@ -631,7 +631,7 @@ use ~/.config/nushell/init.nu *
 # alias sf = C:\Aliases\Programs\sf.exe
 # alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
 # alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
-# alias rg = C:\Aliases\Programs\rg.exe --hidden --stats --no-messages
+# alias rg = C:\Aliases\Programs\rg.exe --hidden --stats --no-messages --with-filename
 # alias gs = git status
 # alias ga = git all
 # alias cal = cal --week-start monday --month-names --year
@@ -642,7 +642,7 @@ use ~/.config/nushell/init.nu *
 alias sf = ~/Aliases/sf
 alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
 alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
-alias rg = rg --hidden --stats --no-messages
+alias rg = rg --hidden --stats --no-messages --with-filename
 alias gs = git status
 alias ga = git all
 alias cal = cal --week-start monday --month-names --year
