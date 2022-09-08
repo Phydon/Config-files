@@ -348,6 +348,7 @@ let ocean_theme = {
 
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
+  show_banner: false
   filesize_metric: false
   table_mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
   use_ls_colors: false
@@ -654,8 +655,9 @@ let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
 alias sf = C:\Aliases\Programs\sf.exe
 alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
 alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
-alias rg = C:\Aliases\Programs\rg.exe --hidden --stats --no-messages
+alias rg = C:\Aliases\Programs\rg.exe --hidden --stats --no-messages --with-filename
 alias gs = git status
+alias ga = git all
 alias cal = cal --week-start monday --month-names --year
 alias diff = C:\Aliases\Programs\delta.exe
 alias cd = z
@@ -667,8 +669,9 @@ alias rm = rm --verbose
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
 # alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
-# alias rg = rg --hidden --stats --no-messages
+# alias rg = rg --hidden --stats --no-messages --with-filename
 # alias gs = git status
+# alias ga = git all
 # alias cal = cal --week-start monday --month-names --year
 # alias diff = delta
 # alias cd = z
