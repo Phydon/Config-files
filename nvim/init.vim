@@ -76,6 +76,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'flazz/vim-colorschemes'
 Plug 'srcery-colors/srcery-vim'
 Plug 'ulwlu/elly.vim'
+Plug 'arzg/vim-substrata'
+Plug 'wadackel/vim-dogrun'
+Plug 'logico/typewriter-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
@@ -127,7 +130,7 @@ endif
 let g:gruvbox_contrast_dark = 'hard'
 
 " needs to be after plugin load
-colorscheme elly
+colorscheme substrata
 
 
 " LIGHTLINE
