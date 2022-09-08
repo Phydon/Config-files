@@ -15,7 +15,7 @@ discharging_symbol = ""
 [[battery.display]] # "bold yellow" style and   symbol when capacity is between 25% and 35%
 threshold = 35
 style = "bold yellow"
-# style = "bold fg:#4E5BAD"
+# style = "bold fg:#b58900"
 discharging_symbol = ""
 [[battery.display]]
 threshold = 99
@@ -33,9 +33,9 @@ format = '\[[ ($version(-$name))]($style)\]'
 # success_symbol = "[:❯](bold dimmed fg:#4C74A6)"
 # error_symbol = "[:❯](bold fg:#870000)"
 # vicmd_symbol = "[::❯](bold fg:#b58900) "
-success_symbol = "[-:](bold dimmed fg:#4C74A6)"
-error_symbol = "[-:](bold fg:#870000)"
-vicmd_symbol = "[-::](bold fg:#b58900)"
+success_symbol = "[:](bold dimmed fg:#4C74A6)"
+error_symbol = "[:](bold fg:#870000)"
+vicmd_symbol = "[::](bold fg:#b58900) "
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
@@ -123,7 +123,7 @@ format = '\[[$symbol$context( \($namespace\))]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [memory_usage]  
-disabled = false
+disabled = true
 format = '\[ [$ram_pct(|$swap_pct)]($style)\]'
 threshold = -1
 # style = "bold dimmed red"
@@ -188,7 +188,6 @@ tcsh_indicator = "tsh"
 xonsh_indicator = "xsh"
 unknown_indicator = "unknown shell"
 style = "bold fg:#4C74A6"
-# style = "bold fg:#4E5BAD"
 # style = "bold fg:#49A699"
 # style = "bold fg:#4e4e4e"
 # symbol _
