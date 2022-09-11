@@ -105,6 +105,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
+Plug 'ron-rs/ron.vim'
 call plug#end()
 
 
