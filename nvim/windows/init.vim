@@ -48,10 +48,10 @@ vmap qq <esc>
 
 
 " save an UNDO backup
-if has('persistent_undo')						"check if your vim version supports it
-silent !mkdir -p ~/AppData/Local/nvim/undo
-set undofile									"turn on undo files  
-set undodir=$HOME/AppData/Local/nvim/undo		"directory where the undo files will be stored
+if has('persistent_undo')				"check if your vim version supports it
+silent !mkdir -p ~/.config/nvim/undo
+set undofile							"turn on undo files  
+set undodir=$HOME/.config/nvim/undo		"directory where the undo files will be stored
 endif
 
 
@@ -76,6 +76,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'flazz/vim-colorschemes'
 Plug 'srcery-colors/srcery-vim'
 Plug 'ulwlu/elly.vim'
+Plug 'arzg/vim-substrata'
+Plug 'wadackel/vim-dogrun'
+Plug 'logico/typewriter-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
@@ -102,6 +105,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
+Plug 'ron-rs/ron.vim'
 call plug#end()
 
 
@@ -127,7 +131,7 @@ endif
 let g:gruvbox_contrast_dark = 'hard'
 
 " needs to be after plugin load
-colorscheme elly
+colorscheme substrata
 
 
 " LIGHTLINE
@@ -230,16 +234,16 @@ let g:floaterm_height = 0.9
 let g:floaterm_keymap_toggle = "<Leader>FT"
 
 
-" " SKIM
-" map <leader>ff :Files ~<CR>
+" SKIM
+map <leader>ff :Files ~<CR>
 
-" " skim with preview window
-" command! -bang -nargs=? -complete=dir Files
-"     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" skim with preview window
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 
-" " RIPGREP
-" map <leader>rr :Rg ~<CR>
+" RIPGREP
+map <leader>rr :Rg ~<CR>
 
 
 " TELESCOPE
@@ -367,9 +371,9 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-    -- settings = {
-    --   ["rust-analyzer"] = {}
-    -- },
+    settings = {
+      ["rust-analyzer"] = {}
+    },
     capabilities = capabilities,
 }
 -- python
