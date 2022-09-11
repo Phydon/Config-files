@@ -127,6 +127,7 @@ Plug 'preservim/tagbar'
 Plug 'ap/vim-css-color'
 Plug 'justinmk/vim-sneak'
 Plug 'voldikss/vim-floaterm'
+Plug 'ron-rs/ron.vim'
 call plug#end()
 
 
