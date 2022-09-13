@@ -119,3 +119,30 @@ export def "git all" [
 	git push origin master
 }
 
+# run 'cargo check' or 'cargo test' on every file change
+export def "watch cargo" [
+	--check (-c)	# run 'cargo check' whenever a rust file changes
+	--test (-t)		# run 'cargo test' whenever a rust file changes
+] {
+	if $check {
+		watch . --glob=**/*.rs {(
+			echo "(char nl)" |
+			cargo check
+		)}
+	} else if $test {
+		watch . --glob=**/*.rs {
+			echo "(char nl)" |
+			cargo test -- --show-output
+		}
+	}
+}
+
+# log all changes in any file in the given path to 'watched_changes.log'
+export def "watch log" [
+	path: string = "~/main"		# path to folder to watch for file changes; default is '~/main'	
+] {
+	watch $path {
+		|op, path| $"($op) - ($path)(char nl)" |
+		save --append watched_changes.log
+	}
+}
