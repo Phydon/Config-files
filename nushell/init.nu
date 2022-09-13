@@ -146,3 +146,9 @@ export def "watch log" [
 		save --append watched_changes.log
 	}
 }
+
+# get the current date and time 
+export def now [] {
+	date now |
+	date format "%d-%m-%Y  %H:%M:%S"
+}
