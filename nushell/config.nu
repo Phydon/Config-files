@@ -632,7 +632,7 @@ use ~/.config/nushell/init.nu *
 # alias sf = C:\Aliases\Programs\sf.exe
 # alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
 # alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
-# alias rg = C:\Aliases\Programs\rg.exe --hidden --stats --no-messages --with-filename
+# alias rg = C:\Aliases\Programs\rg.exe --stats --no-messages --with-filename
 # alias gs = git status
 # alias ga = git all
 # alias cal = cal --week-start monday --month-names --year
@@ -643,11 +643,13 @@ use ~/.config/nushell/init.nu *
 # alias cp = cp --verbose
 # alias rm = rm --verbose
 # alias mkdir = mkdir -s
+# alias bkp = backup
+# alias tldr = tldr --pager
 # } else {
 alias sf = ~/Aliases/sf
 alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
 alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
-alias rg = rg --hidden --stats --no-messages --with-filename
+alias rg = rg --stats --no-messages --with-filename
 alias gs = git status
 alias ga = git all
 alias cal = cal --week-start monday --month-names --year
@@ -660,8 +662,8 @@ alias mv = mv --verbose
 alias cp = cp --verbose
 alias rm = rm --verbose
 alias mkdir = mkdir -s
-alias fd = fd -H
 alias du = dust
 alias ps = procs --sortd cpu
-alias sad = sad -e
+alias bkp = backup
+alias tldr = tldr --pager
 # }
