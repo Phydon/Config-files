@@ -49,7 +49,7 @@ def get-words [
 	--list (-l)		# Return a list of words seperated into rows
 	--column (-c)	# Return the words stored in a table seperated into columns
 ] {
-	if ($in | empty?) {
+	if ($in | is-empty) {
 		# Do nothing
 	} else if $column {
 		$in |
@@ -77,7 +77,7 @@ export def words [
 	# sum up if input is not raw input
 	# panics if input is list of strings
 	let line_size = ($input | size | get lines | math sum) 
-	if ($input | empty?) {
+	if ($input | is-empty) {
 		# Do nothing
 	} else if ($line_size <= 1) {
 		if $column {
