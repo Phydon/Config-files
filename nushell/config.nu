@@ -639,6 +639,10 @@ use ~/.config/nushell/init.nu *
 # alias diff = C:\Aliases\Programs\delta.exe
 # alias cd = z
 # alias cdi  = zi
+# alias mv = mv --verbose
+# alias cp = cp --verbose
+# alias rm = rm --verbose
+# alias mkdir = mkdir -s
 # } else {
 alias sf = ~/Aliases/sf
 alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
@@ -655,6 +659,7 @@ alias rep = ~/Aliases/rep
 alias mv = mv --verbose
 alias cp = cp --verbose
 alias rm = rm --verbose
+alias mkdir = mkdir -s
 alias fd = fd -H
 alias du = dust
 alias ps = procs --sortd cpu
