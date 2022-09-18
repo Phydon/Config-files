@@ -179,3 +179,47 @@ export def backup [
 		cp --verbose $file nubackup/ 
 	}
 }
+
+# Simplified find and replace implementation.
+# Works with multiple files or input from pipeline.
+# By default it only replaces the first occurrence of the find pattern.
+export def "fdrpl" [
+	--all (-a)			# replace all occurrences of the pattern
+	find: string		# the pattern to find
+	replace: string		# the pattern to replace
+	...files: cell-path	# the file or files to work with
+] {
+	if $all {
+		if ($in | is-empty) {
+			for $file in $files {
+				open --raw $file | 
+				str replace --all $find $replace |
+				save $file
+			}
+		} else {
+			if ($files | is-empty) {
+				$in |
+				str replace --all $find $replace
+			} else {
+				echo "ERROR: Cannot combine input from pipeline and files. Too much arguments: [" $in "] + " $files | 
+				str collect
+			}
+		}
+	} else {
+		if ($in | is-empty) {
+			for $file in $files {
+				open --raw $file | 
+				str replace $find $replace |
+				save $file
+			}	
+		} else {
+			if ($files | is-empty) {
+				$in |
+				str replace $find $replace
+			} else {
+				echo "ERROR: Cannot combine input from pipeline and files. Too much arguments: [" $in "] + " $files | 
+				str collect
+			}
+		}
+	}
+}
