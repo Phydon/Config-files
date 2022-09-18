@@ -627,6 +627,23 @@ source ~/.zoxide.nu
 use ~/.config/nushell/init.nu *
 
 
+# ENVIRONMENT VARIABLES
+# -- WINDOWS --
+# # set path to init.nu -> available via "$env.init-path"
+# let-env init-path = "~/AppData/Roaming/nushell/init.nu"
+# # path to nvim`s init.vim
+# let-env nvim-path = "~/AppData/Local/nvim/init.vim"
+# # path to vim`s vimrc
+# let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
+# -- LINUX --
+# set path to init.nu -> available via "$env.init-path"
+let-env init-path = ".config/nushell/init.nu"
+# path to nvim`s init.vim
+let-env nvim-path = ".config/nvim/init.vim"
+# path to vim`s vimrc
+let-env vim-path = ".vimrc"
+
+
 # ALIASES
 # if ((getos) == Windows) {
 # alias sf = C:\Aliases\Programs\sf.exe
