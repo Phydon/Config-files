@@ -80,7 +80,8 @@ vmap qq <esc>
 
 " save an UNDO backup
 if has('persistent_undo')      "check if your vim version supports it
-  silent !mkdir -p ~/.vim/undo
+  "the symbol '^' is required in nushell to escape the build-in command
+  silent !^mkdir -p ~/.vim/undo	
   set undofile                 "turn on undo files  
   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
 endif
@@ -384,4 +385,3 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
-
