@@ -159,24 +159,24 @@ export def now [] {
 # If no file is given, a backup of all files in the current folder is created.
 # Hidden files included.
 export def backup [
-	file?: cell-path	# the file to backup
+	...files: cell-path	# the files to backup
 ] {
-	if ($file == null) {
-		echo "::: Create backup folder ..."
-		mkdir -s nubackup
+	echo "::: Create backup folder ..."
+	mkdir -s nubackup
 
-		echo "::: Make backup ..."
+	echo "::: Make backup ..."
+
+	if ($files | is-empty) {
 		ls -a |
 		where type == file | 
 		par-each {
-			|it| cp --verbose $it.name nubackup/ |
+			|it| cp --verbose $it.name nubackup/
 		}
 	} else {
-		echo "::: Create backup folder ..."
-		mkdir -s nubackup
-
-		echo "::: Make backup ..."
-		cp --verbose $file nubackup/ 
+		for $file in $files {
+			cp --verbose $file nubackup/ |
+		} |
+		flatten
 	}
 }
 
