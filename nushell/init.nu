@@ -159,7 +159,7 @@ export def now [] {
 # If no file is given, a backup of all files in the current folder is created.
 # Hidden files included.
 export def backup [
-	file?: string	# the file to backup
+	file?: cell-path	# the file to backup
 ] {
 	if ($file == null) {
 		echo "::: Create backup folder ..."
