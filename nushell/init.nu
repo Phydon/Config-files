@@ -164,17 +164,17 @@ export def now [
 		} else if $time {
 			date format "%H:%M:%S"
 		} else if ($date and $short) {
-			date format "%d-%m-%y"
+			date format "%d.%m.%y"
 		} else if ($date and $long) {
-			date format "%A, %d-%B-%Y"
+			date format "%A, %d.%B.%Y"
 		} else if $date {
-			date format "%v"
+			date format "%d.%m.%Y"
 		} else if $short {
-			date format "%d-%m-%y  %H:%M"
+			date format "%d.%m.%y, %H:%M"
 		} else if $long {
-			date format "%A, %d-%B-%Y  %H:%M:%S%.3f"
+			date format "%A, %d.%B.%Y, %H:%M:%S%.3f"
 		} else {
-			date format "%d-%m-%Y  %H:%M:%S"
+			date format "%d.%m.%Y, %H:%M:%S"
 		}
 	)
 
