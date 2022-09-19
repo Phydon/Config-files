@@ -150,9 +150,40 @@ export def "watch log" [
 }
 
 # Get the current date and time.
-export def now [] {
-	date now |
-	date format "%d-%m-%Y  %H:%M:%S"
+export def now [
+	--time (-t)		# only show time
+	--date (-d)		# only show date
+	--short (-s)	# show the short version
+	--long (-l)		# show the long version
+] {
+	if ($time and $short) {
+		date now |
+		date format "%H:%M"
+	} else if ($time and $long) {
+		date now |
+		date format "%H:%M:%S%.3f"
+	} else if $time {
+		date now |
+		date format "%H:%M:%S"
+	} else if ($date and $short) {
+		date now |
+		date format "%d-%m-%y"
+	} else if ($date and $long) {
+		date now |
+		date format "%A, %d-%B-%Y"
+	} else if $date {
+		date now |
+		date format "%v"
+	} else if $short {
+		date now |
+		date format "%d-%m-%y  %H:%M"
+	} else if $long {
+		date now |
+		date format "%A, %d-%B-%Y  %H:%M:%S%.3f"
+	} else {
+		date now |
+		date format "%d-%m-%Y  %H:%M:%S"
+	}
 }
 
 # Create a backup of a given file.
@@ -174,7 +205,7 @@ export def backup [
 		}
 	} else {
 		for $file in $files {
-			cp --verbose $file nubackup/ |
+			cp --verbose $file nubackup/ 
 		} |
 		flatten
 	}
