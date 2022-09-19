@@ -186,7 +186,7 @@ export def now [
 # If no file is given, a backup of all files in the current folder is created.
 # Hidden files included.
 export def backup [
-	...files: cell-path	# the files to backup
+	...files: path		# the files to backup
 ] {
 	echo "::: Create backup folder ..."
 	mkdir -s nubackup
@@ -214,7 +214,7 @@ export def "fdrpl" [
 	--all (-a)			# replace all occurrences of the pattern
 	find: string		# the pattern to find
 	replace: string		# the pattern to replace
-	...files: cell-path	# the file or files to work with
+	...files: path		# the file or files to work with
 ] {
 	if $all {
 		if ($in | is-empty) {
