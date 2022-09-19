@@ -156,34 +156,30 @@ export def now [
 	--short (-s)	# show the short version
 	--long (-l)		# show the long version
 ] {
-	if ($time and $short) {
-		date now |
-		date format "%H:%M"
-	} else if ($time and $long) {
-		date now |
-		date format "%H:%M:%S%.3f"
-	} else if $time {
-		date now |
-		date format "%H:%M:%S"
-	} else if ($date and $short) {
-		date now |
-		date format "%d-%m-%y"
-	} else if ($date and $long) {
-		date now |
-		date format "%A, %d-%B-%Y"
-	} else if $date {
-		date now |
-		date format "%v"
-	} else if $short {
-		date now |
-		date format "%d-%m-%y  %H:%M"
-	} else if $long {
-		date now |
-		date format "%A, %d-%B-%Y  %H:%M:%S%.3f"
-	} else {
-		date now |
-		date format "%d-%m-%Y  %H:%M:%S"
-	}
+	let dt = (
+		if ($time and $short) {
+			date format "%H:%M"
+		} else if ($time and $long) {
+			date format "%H:%M:%S%.3f"
+		} else if $time {
+			date format "%H:%M:%S"
+		} else if ($date and $short) {
+			date format "%d-%m-%y"
+		} else if ($date and $long) {
+			date format "%A, %d-%B-%Y"
+		} else if $date {
+			date format "%v"
+		} else if $short {
+			date format "%d-%m-%y  %H:%M"
+		} else if $long {
+			date format "%A, %d-%B-%Y  %H:%M:%S%.3f"
+		} else {
+			date format "%d-%m-%Y  %H:%M:%S"
+		}
+	)
+
+	date now |
+	$dt
 }
 
 # Create a backup of a given file.
