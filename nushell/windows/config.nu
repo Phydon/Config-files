@@ -653,6 +653,7 @@ let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
 # ALIASES
 # if ((getos) == Windows) {
 alias sf = C:\Aliases\Programs\sf.exe
+alias fd = C:\Aliases\Programs\fd.exe
 alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
 alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
 alias rg = C:\Aliases\Programs\rg.exe --stats --no-messages --with-filename
