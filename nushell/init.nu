@@ -35,6 +35,7 @@ export def "history backup" [] {
 # Creates a backup of your nushell command history and removes all duplicates in the $nu.history-path.
 export def "history remove_duplicates" [] {
 	history backup
+
 	open $nu.history-path | 
 	lines | 
 	into df | 
@@ -43,6 +44,7 @@ export def "history remove_duplicates" [] {
 	get "0" | 
 	save $nu.history-path
 }
+
 # Get input by words as a table.
 # Returns the words stored in a table seperated into rows by default.
 def get-words [
@@ -66,6 +68,7 @@ def get-words [
 		parse "{word}"
 	}
 }
+
 # Get input by words.
 # Returns the words stored in a table seperated into rows by default.
 # Only works with raw input.
@@ -186,30 +189,49 @@ export def now [
 # If no file is given, a backup of all files in the current folder is created.
 # Hidden files included.
 export def backup [
+	--verbose (-v)		# print verbose output
 	...files: path		# the files to backup
 ] {
-	echo "::: Create backup folder ..."
-	mkdir -s nubackup
+	if $verbose {
+		echo "::: Create backup folder ..."
+		mkdir -s nubackup
 
-	echo "::: Make backup ..."
+		echo "::: Make backup ..."
 
-	if ($files | is-empty) {
-		ls -a |
-		where type == file | 
-		par-each {
-			|it| cp --verbose $it.name nubackup/
+		if ($files | is-empty) {
+			ls -a |
+			where type == file | 
+			par-each {
+				|it| cp --verbose $it.name nubackup/
+			}
+		} else {
+			for $file in $files {
+				cp --verbose $file nubackup/ 
+			} |
+			flatten
 		}
 	} else {
-		for $file in $files {
-			cp --verbose $file nubackup/ 
-		} |
-		flatten
+		mkdir nubackup
+
+		if ($files | is-empty) {
+			ls -a |
+			where type == file | 
+			par-each {
+				|it| cp $it.name nubackup/
+			}
+		} else {
+			for $file in $files {
+				cp $file nubackup/ 
+			} |
+			flatten
+		}
 	}
 }
 
 # Simplified find and replace implementation.
 # Works with multiple files or input from pipeline.
 # By default it only replaces the first occurrence of the find pattern.
+# Warning: backup non plaintext files
 export def "fdrpl" [
 	--all (-a)			# replace all occurrences of the pattern
 	find: string		# the pattern to find
@@ -228,8 +250,7 @@ export def "fdrpl" [
 				$in |
 				str replace --all $find $replace
 			} else {
-				echo "ERROR: Cannot combine input from pipeline and files. Too much arguments: [" $in "] + " $files | 
-				str collect
+				echo $"ERROR: Cannot combine input from pipeline and files. Too much arguments: [($in)] + ($files)"
 			}
 		}
 	} else {
@@ -244,8 +265,7 @@ export def "fdrpl" [
 				$in |
 				str replace $find $replace
 			} else {
-				echo "ERROR: Cannot combine input from pipeline and files. Too much arguments: [" $in "] + " $files | 
-				str collect
+				echo $"ERROR: Cannot combine input from pipeline and files. Too much arguments: [($in)] + ($files)"
 			}
 		}
 	}
