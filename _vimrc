@@ -121,7 +121,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jiangmiao/auto-pairs'
@@ -131,9 +131,11 @@ Plug 'ap/vim-css-color'
 Plug 'justinmk/vim-sneak' 
 Plug 'voldikss/vim-floaterm'
 Plug 'ron-rs/ron.vim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
-" Colorschemes
+
+" COLORSCHEMES
 " dark themes: elly, substrata, dogrun, typewriter-night, gruvbox, 
 " onedark, vim-material, vilight, vorange, vydark,
 " hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
@@ -144,7 +146,7 @@ call plug#end()
 " laederon, lightcolors, kalt, Light, rainbow_autumn
 colorscheme substrata
 
-" for PaperColor light theme
+" for PAPERCOLOR light theme
 " set background=light
 " colorscheme PaperColor
 
@@ -153,11 +155,11 @@ let g:material_terminal_italics = 1
 let g:material_theme_style = 'default-community'
 " colorscheme material
 
-" gruvbox 
+" GRUVBOX 
 let g:gruvbox_contrast_dark = 'hard'
 
 
-" Lightline
+" LIGHTLINE
 " don`t show extra mode information
 set noshowmode
 " set color scheme (molokai, apprentice, darcula, ayu_dark, deus, wombat, simpleblack)
@@ -166,15 +168,15 @@ let g:lightline = {
 	  \ }
 
 
-" rainbow - Enable rainbow parentheses
+" RAINBOW - Enable rainbow parentheses
 " let g:rainbow_active = 1
 
 
-" vim-lion - squeeze aligning text by some character
+" VIM-LION - squeeze aligning text by some character
 let b:lion_squeeze_spaces = 1
 
 
-" vim-syntastic
+" VIM-SYNTASTIC
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -185,7 +187,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 
 
-" YouCompleteMe - close preview window after user accepts the offered completion string
+" YOUCOMPLETEME - close preview window after user accepts the offered completion string
  let g:ycm_autoclose_preview_window_after_completion = 1
 
 
@@ -287,7 +289,7 @@ let g:floaterm_height = 0.93
 let g:floaterm_keymap_toggle = "<Leader>FT" 
 
 
-" skim
+" SKIM
 " map <leader>f :Files ~<CR>
 
 " skim with preview window
@@ -295,8 +297,12 @@ let g:floaterm_keymap_toggle = "<Leader>FT"
 "     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 
-" ripgrep
+" RIPGREP
 " map <leader>r :Rg ~<CR>
+
+
+" INDENTLINE
+nnoremap <leader>ii <cmd>IndentLinesToggle<cr>
 
 
 " Vim with all enhancements
