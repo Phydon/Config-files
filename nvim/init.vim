@@ -106,6 +106,7 @@ Plug 'ggandor/lightspeed.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'voldikss/vim-floaterm'
 Plug 'ron-rs/ron.vim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 
@@ -257,6 +258,9 @@ nnoremap <leader>th <cmd>Telescope help_tags<cr>
 nnoremap <C-_> <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 
+" INDENTLINE
+nnoremap <leader>ii <cmd>IndentLinesToggle<cr>
+
 
 " EVERYTHING AFTER THIS IS LUA CODE
 " =================================
@@ -395,3 +399,4 @@ require('lspconfig')['hls'].setup{
     flags = lsp_flags,
     capabilities = capabilities,
 }
+
