@@ -129,6 +129,7 @@ Plug 'ap/vim-css-color'
 Plug 'justinmk/vim-sneak'
 Plug 'voldikss/vim-floaterm'
 Plug 'ron-rs/ron.vim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 
@@ -343,6 +344,10 @@ command! -bang -nargs=? -complete=dir Files
 
 " RIPGREP
 map <leader>rr :Rg ~<CR>
+
+
+" INDENTLINE
+nnoremap <leader>ii <cmd>IndentLinesToggle<cr>
 
 
 " Vim with all enhancements
