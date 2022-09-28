@@ -1,0 +1,37 @@
+theme = "rose_pine"
+
+[editor]
+line-number = "relative"
+# shell = "nushell"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[editor.lsp]
+display-messages = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.search]
+smart-case = false
+
+[editor.indent-guides]
+render = true
+character = "╎"
