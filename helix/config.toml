@@ -1,7 +1,8 @@
-theme = "rose_pine"
+theme = "bogster"
 
 [editor]
 line-number = "relative"
+color-modes = true
 # shell = "nushell"
 
 [editor.statusline]
