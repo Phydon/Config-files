@@ -1,0 +1,9 @@
+[[language]]
+name = "rust"
+# https://rust-analyzer.github.io/manual.html#configuration
+config = {format = {"rust-analyzer.rustfmt.extraArgs" = "max_width=80"}}
+
+[[language]]
+name = "nu"
+shebangs = ["nu"]
+indent =  {tab-width = 4, unit = "    "}
