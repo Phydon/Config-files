@@ -36,3 +36,12 @@ smart-case = false
 [editor.indent-guides]
 render = true
 character = "╎"
+
+[keys.normal]
+"space" = { w = { w = ":open ~/vimwiki/index.wiki" } }
+
+[keys.insert]
+q = { q = "normal_mode" }
+
+[keys.select]
+q = { q = "normal_mode" }
