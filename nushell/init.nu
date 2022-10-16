@@ -270,3 +270,35 @@ export def "fdrpl" [
 		}
 	}
 }
+
+# Update tools, languages and more
+export def "up" [
+	--list (-l)			# show everything that gets updated
+] {
+	let tools = [scoop rustup vim nvim ghcup]
+
+	if $list {
+		for $tool in $tools {
+			echo $tool
+		}
+	} else {
+		echo "::: Updating scoop ..."
+		scoop update
+
+		echo (char nl)
+		echo  "::: Updating rust ..."
+		rustup --verbose update
+
+		echo (char nl)
+		echo  "::: Updating vim ..."
+		vim -c PlugUpdate -c qa
+
+		echo (char nl)
+		echo  "::: Updating nvim ..."
+		nvim -c PlugUpdate -c qa
+
+		echo (char nl)
+		echo  "::: Updating ghcup ..."
+		ghcup --verbose upgrade
+	}
+}
