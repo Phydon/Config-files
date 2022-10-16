@@ -271,6 +271,24 @@ export def "fdrpl" [
 	}
 }
 
+# Get user input in a while loop using recursive function
+export def userinput [
+	match: string	# the matching string to escape the loop
+	msg?: string		# prompt the user a message
+] {
+	if ($msg != null) {
+		echo $"::: ($msg):"
+	}
+	
+	let inp = (input)
+
+	if $inp == $match {
+		echo $inp
+	} else {
+		userinput $match $msg
+	}
+}
+
 # Update tools, languages and more
 export def "up" [
 	--list (-l)			# show everything that gets updated
@@ -282,23 +300,30 @@ export def "up" [
 			echo $tool
 		}
 	} else {
-		echo "::: Updating scoop ..."
-		scoop update
+		let inp = (userinput "update" "Enter \"update\" to update")
 
-		echo (char nl)
-		echo  "::: Updating rust ..."
-		rustup --verbose update
+		if $inp == "update" {
+			echo "::: Updating scoop ..."
+			scoop update
 
-		echo (char nl)
-		echo  "::: Updating vim ..."
-		vim -c PlugUpdate -c qa
+			echo (char nl)
+			echo  "::: Updating rust ..."
+			rustup --verbose update
 
-		echo (char nl)
-		echo  "::: Updating nvim ..."
-		nvim -c PlugUpdate -c qa
+			echo (char nl)
+			echo  "::: Updating vim ..."
+			vim -c PlugUpdate -c qa
 
-		echo (char nl)
-		echo  "::: Updating ghcup ..."
-		ghcup --verbose upgrade
+			echo (char nl)
+			echo  "::: Updating nvim ..."
+			nvim -c PlugUpdate -c qa
+
+			echo (char nl)
+			echo  "::: Updating ghcup ..."
+			ghcup --verbose upgrade
+		} else {
+			$nothing
+		}
+
 	}
 }
