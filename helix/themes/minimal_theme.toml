@@ -1,0 +1,106 @@
+"attribute"                 = "minimal-lgrey"
+"keyword"                   = { fg = "minimal-white", modifiers = ["bold"] }
+"keyword.directive"         = "minimal-white"
+"namespace"                 = "minimal-grey"
+"punctuation"               = "minimal-eggplant"
+"punctuation.delimiter"     = "minimal-eggplant"
+"operator"                  = { fg = "minimal-eggplant", modifiers = ["bold"] }
+"special"                   = "minimal-lgrey"
+"variable.other.member"     = "minimal-lgrey"
+"variable"                  = "minimal-lgrey"
+"variable.parameter"        = "minimal-lgrey"
+"type"                      = "minimal-viridian"
+"type.builtin"              = { fg = "minimal-viridian", modifiers = ["bold"] }
+"constructor"               = "minimal-lgrey"
+"function"                  = "minimal-teal_blue"
+"function.macro"            = { fg = "minimal-teal_blue", modifiers = ["bold"] }
+"function.builtin"          = { fg = "minimal-teal_blue", modifiers = ["bold"] }
+"comment"                   = { fg = "minimal-dgrey", modifiers = ["italic"] }
+"variable.builtin"          = "minimal-lgrey"
+"constant"                  = "minimal-lgrey"
+"constant.builtin"          = "minimal-lgrey"
+"string"                    = "minimal-violetred"
+"constant.numeric"          = "minimal-purp"
+"constant.character.escape" = { fg = "minimal-lgrey", modifiers = ["bold"] }
+"label"                     = "minimal-grey"
+"module"                    = "minimal-grey"
+
+"markup.heading"            = "minimal-blue"
+"markup.list"               = "minimal-red"
+"markup.bold"               = { fg = "minimal-yellow", modifiers = ["bold"] }
+"markup.italic"             = { fg = "minimal-purp", modifiers = ["italic"] }
+"markup.link.url"           = { fg = "minimal-yellow", modifiers = ["underlined"] }
+"markup.link.text"          = "minimal-red"
+"markup.quote"              = "minimal-teal"
+"markup.raw"                = "minimal-lgreen"
+
+"diff.plus"                 = "minimal-teal"
+"diff.delta"                = "minimal-orange"
+"diff.minus"                = "minimal-lred"
+
+"ui.background"             = { bg = "minimal-base1" }
+"ui.linenr"                 = { fg = "minimal-base4" }
+"ui.linenr.selected"        = { fg = "minimal-fg1" }
+"ui.cursorline"             = { bg = "minimal-base0" }
+"ui.statusline"             = { fg = "minimal-fg1", bg = "minimal-base2" }
+"ui.statusline.inactive"    = { fg = "minimal-fg0", bg = "minimal-base2" }
+"ui.popup"                  = { bg = "minimal-base2" }
+"ui.window"                 = { bg = "minimal-base2" }
+"ui.help"                   = { bg = "minimal-base2", fg = "minimal-fg1" }
+
+"ui.statusline.normal"      = { fg = "minimal-base1", bg = "minimal-dblue", modifiers = [ "bold" ]}
+"ui.statusline.insert"      = { fg = "minimal-base1", bg = "minimal-violetred", modifiers = [ "bold" ]}
+"ui.statusline.select"      = { fg = "minimal-base1", bg = "minimal-red", modifiers = [ "bold" ] }
+
+"ui.text"                   = { fg = "minimal-fg1" }
+"ui.text.focus"             = { fg = "minimal-fg1", modifiers= ["bold"] }
+"ui.virtual.lgreyspace"     = "minimal-base5"
+"ui.virtual.ruler"          = { bg = "minimal-base0" }
+
+"ui.selection"              = { bg = "minimal-base3" }
+"ui.cursor.match"           = { fg = "minimal-base3", bg = "minimal-orange" }
+"ui.cursor"                 = { fg = "minimal-base5", modifiers = ["reversed"] }
+
+"ui.menu"                   = { fg = "minimal-fg1", bg = "minimal-base2" }
+"ui.menu.selected"          = { bg = "minimal-base3" }
+
+"warning"                   = "minimal-lred"
+"error"                     = "minimal-red"
+"info"                      = "minimal-yellow"
+"hint"                      = "minimal-lgrey"
+
+# make diagnostic underlined, to distinguish with selection text.
+diagnostic = { modifiers = ["underlined"] }
+
+[palette]
+minimal-yellow      = "#dcb659"
+minimal-lblue       = "#59dcd8"
+minimal-teal        = "#59dcb7"
+minimal-teal_blue   = "#2E6170"
+minimal-blue        = "#36b2d4"
+minimal-dblue       = "#2E5894"
+minimal-orange      = "#B7410E"
+minimal-red         = "#d32c5d"
+minimal-lgreen      = "#7fdc59"
+minimal-viridian    = "#437066"
+minimal-eggplant    = "#664864"
+minimal-lred        = "#dc597f"
+minimal-purp        = "#780249"
+minimal-violetred   = "#8b2252"
+minimal-dark_cyan   = "#005959"
+
+minimal-white       = "#FFFFFF" 
+minimal-milk        = "#dad7d5" 
+minimal-lgrey       = "#A6AEBA" 
+minimal-grey        = "#536878"
+minimal-dgrey       = "#565B61" 
+ 
+minimal-base0       = "#13181e"
+minimal-base1       = "#161c23" 
+minimal-base2       = "#232d38"
+minimal-base3       = "#313f4e" 
+minimal-base4       = "#415367" 
+minimal-base5       = "#abb2bf"
+ 
+minimal-fg0         = "#c6b8ad"
+minimal-fg1         = "#e5ded6"
