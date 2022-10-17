@@ -1,5 +1,5 @@
 # Gets the name of the running operating system.
-export def getos [] {
+export def "get os" [] {
 	sys | get host.name
 }
 
@@ -118,9 +118,7 @@ export def "git all" [
 	commit_txt: string	# your commit message
 ] {
 	git add . |
-	sleep 300ms |
 	git commit -m $commit_txt |
-	sleep 300ms |
 	git push origin master
 }
 
@@ -274,7 +272,7 @@ export def "fdrpl" [
 # Get user input in a while loop using recursive function
 export def userinput [
 	match: string	# the matching string to escape the loop
-	msg?: string		# prompt the user a message
+	msg?: string	# prompt the user a message
 ] {
 	if ($msg != null) {
 		echo $"::: ($msg):"
@@ -282,7 +280,7 @@ export def userinput [
 	
 	let inp = (input)
 
-	if $inp == $match {
+	if ($inp == $match) {
 		echo $inp
 	} else {
 		userinput $match $msg
@@ -291,39 +289,44 @@ export def userinput [
 
 # Update tools, languages and more
 export def "up" [
-	--list (-l)			# show everything that gets updated
+	--list (-l)		# show everything that gets updated
 ] {
-	let tools = [scoop rustup vim nvim ghcup]
+	let os = (get os)
 
-	if $list {
-		for $tool in $tools {
-			echo $tool
+	if ($os == "Windows") {
+		let tools = [scoop rustup vim nvim ghcup]
+
+		if $list {
+			for tool in $tools {
+				echo $tool
+			}
+		} else {
+			let inp = (userinput "update" "Enter \"update\" to update")
+
+			if $inp == "update" {
+				echo "::: Updating scoop ..."
+				scoop update
+
+				echo (char nl)
+				echo  "::: Updating rust ..."
+				rustup --verbose update
+
+				echo (char nl)
+				echo  "::: Updating vim ..."
+				vim -c PlugUpdate -c qa
+
+				echo (char nl)
+				echo  "::: Updating nvim ..."
+				nvim -c PlugUpdate -c qa
+
+				echo (char nl)
+				echo  "::: Updating ghcup ..."
+				ghcup --verbose upgrade
+			} else {
+				$nothing
+			}
 		}
 	} else {
-		let inp = (userinput "update" "Enter \"update\" to update")
-
-		if $inp == "update" {
-			echo "::: Updating scoop ..."
-			scoop update
-
-			echo (char nl)
-			echo  "::: Updating rust ..."
-			rustup --verbose update
-
-			echo (char nl)
-			echo  "::: Updating vim ..."
-			vim -c PlugUpdate -c qa
-
-			echo (char nl)
-			echo  "::: Updating nvim ..."
-			nvim -c PlugUpdate -c qa
-
-			echo (char nl)
-			echo  "::: Updating ghcup ..."
-			ghcup --verbose upgrade
-		} else {
-			$nothing
-		}
-
+		echo "Not implemented yet"
 	}
 }
