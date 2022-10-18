@@ -1,4 +1,4 @@
-theme = "bogster"
+theme = "ezz"
 
 [editor]
 line-number = "relative"
@@ -38,7 +38,7 @@ render = true
 character = "╎"
 
 [keys.normal]
-"space" = { w = { w = ":open ~/vimwiki/index.wiki" } }
+"space" = { w = { w = ":open ~/todo.md" } }
 
 [keys.insert]
 q = { q = "normal_mode" }

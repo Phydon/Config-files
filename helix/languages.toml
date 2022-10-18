@@ -7,3 +7,7 @@ config = {format = {"rust-analyzer.rustfmt.extraArgs" = "max_width=80"}}
 name = "nu"
 shebangs = ["nu"]
 indent =  {tab-width = 4, unit = "    "}
+
+[[language]]
+name = "markdown"
+indent =  {tab-width = 4, unit = "    "}
