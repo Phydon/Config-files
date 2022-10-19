@@ -413,7 +413,7 @@ let minimal_theme = {
 let-env config = {
   show_banner: false
   filesize_metric: false
-  table_mode: thin # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+  table_mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
   use_ls_colors: false
   rm_always_trash: true
   color_config: $minimal_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
