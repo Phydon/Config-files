@@ -347,15 +347,15 @@ let ocean_theme = {
 }
 
 # minimal theme
-let steel1 = "#5E6C85"
-let steel2 = "#6F7D95"
-let steel3 = "#808EA5"
-let steel4 = "#909FB6"
-let steel5 = "#A1B0C6"
-let steel6 = "#B2C1D6"
-let rred    = "#d32c5d"
-let lred   = "#dc597f"
-let dgrey  = "#565B61" 
+let steel1      = "#5E6C85"
+let steel2      = "#6F7D95"
+let steel3      = "#808EA5"
+let steel4      = "#909FB6"
+let steel5      = "#A1B0C6"
+let steel6      = "#B2C1D6"
+let rred        = "#d32c5d"
+let lred        = "#dc597f"
+let dgrey       = "#565B61" 
 let violetred   = "#8b2252"
 
 let minimal_theme = {
@@ -456,10 +456,7 @@ let-env config = {
       }]
     }
   }
-# date: { fg: "#4E5BAD" }
-# string: { fg: "#49A699" }
-# shape_operator: { fg: "#fb7b42" }
-# shape_int: { fg: "#b93344" }
+
   menus: [
       # Configuration for default nushell menus
       # Note the lack of souce parameter
@@ -544,9 +541,9 @@ let-env config = {
             page_size: 20
         }
         style: {
-            text: { fg: "#49A699" }
+            text: { fg: $steel6 }
             selected_text: { fg: "#b93344" }
-            description_text: { fg: "#4C74A6" } 
+            description_text: { fg: $steel6 } 
         }
         source: { |buffer, position|
             $nu.scope.vars
