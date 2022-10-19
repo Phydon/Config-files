@@ -435,6 +435,7 @@ let-env config = {
   cd_with_abbreviations: false # set to true to allow you to do things like cd s/o/f and nushell expand it to cd some/other/folder
   case_sensitive_completions: false # set to true to enable case-sensitive completions
   max_external_completion_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
+  show_clickable_links_in_ls: true # true or false to enable or disable clickable links in the ls listing. your terminal has to support links.
 
   # A strategy of managing table view in case of limited space 
   table_trim: {
