@@ -1,58 +1,58 @@
-"attribute"                 = "lgrey"
-"keyword"                   = { fg = "white", modifiers = ["bold"] }
-"keyword.directive"         = "white"
-"namespace"                 = "grey"
-"punctuation"               = "eggplant"
-"punctuation.delimiter"     = "eggplant"
-"operator"                  = { fg = "eggplant", modifiers = ["bold"] }
-"special"                   = "lgrey"
-"variable.other.member"     = "lgrey"
-"variable"                  = "lgrey"
-"variable.parameter"        = "lgrey"
-"type"                      = "viridian"
-"type.builtin"              = { fg = "viridian", modifiers = ["bold"] }
-"constructor"               = "lgrey"
-"function"                  = "teal_blue"
-"function.macro"            = { fg = "teal_blue", modifiers = ["bold"] }
-"function.builtin"          = { fg = "teal_blue", modifiers = ["bold"] }
+"attribute"                 = "steel1"
+"keyword"                   = { fg = "red", modifiers = ["bold"] }
+"keyword.directive"         = "lred"
+"namespace"                 = "steel1"
+"label"                     = "steel1"
+"module"                    = "steel1"
+"punctuation"               = "steel1"
+"punctuation.delimiter"     = "steel1"
+"operator"                  = { fg = "steel1", modifiers = ["bold"] }
+"special"                   = "steel1"
+"variable.other.member"     = "steel2"
+"variable"                  = "steel1"
+"variable.parameter"        = "steel2"
+"type"                      = "steel2"
+"type.builtin"              = { fg = "steel2", modifiers = ["bold"] }
+"constructor"               = "steel3"
+"function"                  = "steel3"
+"function.macro"            = { fg = "steel3", modifiers = ["bold"] }
+"function.builtin"          = { fg = "steel3", modifiers = ["bold"] }
 "comment"                   = { fg = "dgrey", modifiers = ["italic"] }
-"variable.builtin"          = "lgrey"
-"constant"                  = "lgrey"
-"constant.builtin"          = "lgrey"
-"string"                    = "violetred"
-"constant.numeric"          = "umber"
-"constant.character.escape" = { fg = "lgrey", modifiers = ["bold"] }
-"label"                     = "grey"
-"module"                    = "grey"
+"variable.builtin"          = "steel1"
+"constant"                  = "steel4"
+"constant.builtin"          = "steel4"
+"string"                    = "steel6"
+"constant.numeric"          = "steel5"
+"constant.character.escape" = { fg = "steel1", modifiers = ["bold"] }
 
-"markup.heading"            = "violetred"
-"markup.list"               = "red"
-"markup.bold"               = { fg = "viridian", modifiers = ["bold"] }
-"markup.italic"             = { fg = "dark_cyan", modifiers = ["italic"] }
+"markup.heading"            = "viridian"
+"markup.list"               = "steel4"
+"markup.bold"               = { fg = "teal_blue", modifiers = ["bold"] }
+"markup.italic"             = { modifiers = ["italic"] }
 "markup.link.url"           = { fg = "yellow", modifiers = ["underlined"] }
 "markup.link.text"          = "red"
 "markup.quote"              = "eggplant"
 "markup.raw"                = "grey"
 
 "diff.plus"                 = "viridian"
-"diff.delta"                = "orange"
+"diff.delta"                = "teal_blue"
 "diff.minus"                = "violetred"
 
 "ui.background"             = { bg = "base1" }
 "ui.linenr"                 = { fg = "base4" }
 "ui.linenr.selected"        = { fg = "fg1" }
 "ui.cursorline"             = { bg = "base0" }
-"ui.statusline"             = { fg = "fg1", bg = "base2" }
-"ui.statusline.inactive"    = { fg = "fg0", bg = "base2" }
+"ui.statusline"             = { fg = "violetred", bg = "base0" }
+"ui.statusline.inactive"    = { fg = "steel4", bg = "base0" }
 "ui.popup"                  = { bg = "base2" }
 "ui.window"                 = { bg = "base2" }
 "ui.help"                   = { bg = "base2", fg = "fg1" }
 
 "ui.statusline.normal"      = { fg = "base1", bg = "violetred", modifiers = [ "bold" ]}
-"ui.statusline.insert"      = { fg = "base1", bg = "dblue", modifiers = [ "bold" ]}
+"ui.statusline.insert"      = { fg = "base1", bg = "teal_blue", modifiers = [ "bold" ]}
 "ui.statusline.select"      = { fg = "base1", bg = "viridian", modifiers = [ "bold" ] }
 
-"ui.text"                   = { fg = "fg1" }
+"ui.text"                   = { fg = "steel6" }
 "ui.text.focus"             = { fg = "fg1", modifiers= ["bold"] }
 "ui.virtual.lgreyspace"     = "base5"
 "ui.virtual.ruler"          = { bg = "base0" }
@@ -65,7 +65,7 @@
 "ui.menu.selected"          = { bg = "base3" }
 
 "warning"                   = "lred"
-"error"                     = "red"
+"error"                     = "violetred"
 "info"                      = "umber"
 "hint"                      = "lgrey"
 
@@ -81,17 +81,32 @@ blue        = "#36b2d4"
 dblue       = "#2E5894"
 orange      = "#B7410E"
 red         = "#d32c5d"
+chocored    = "#700222"
+brownred    = "#56223F"
+beige  = "#C7A183"
+goldbrown   = "#84563B"
+brown       = "#996A51"
+lbrown      = "#C7A183"
 lgreen      = "#7fdc59"
 viridian    = "#437066"
 eggplant    = "#664864"
 lred        = "#dc597f"
 purp        = "#780249"
+violet      = "#630044"
 violetred   = "#8b2252"
 dark_cyan   = "#005959"
 umber       = "#614D3C"
+burgundy    = "#450022"
+
+steel1       = "#5E6C85"
+steel2       = "#6F7D95"
+steel3       = "#808EA5"
+steel4       = "#909FB6"
+steel5       = "#A1B0C6"
+steel6       = "#B2C1D6"
 
 white       = "#E8E8E8" 
-milk        = "#dad7d5" 
+milk        = "#E3D0C1" 
 lgrey       = "#A6AEBA" 
 grey        = "#536878"
 dgrey       = "#565B61" 

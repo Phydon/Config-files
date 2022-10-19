@@ -1,4 +1,4 @@
-theme = "ezz"
+theme = "minimal"
 
 [editor]
 line-number = "relative"

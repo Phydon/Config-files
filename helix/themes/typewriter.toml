@@ -1,0 +1,84 @@
+"attribute"                 = "#6C6C6C"
+"keyword"                   = { fg = "#BCBCBC", modifiers = ["bold"] }
+"keyword.directive"         = "#BCBCBC"
+"namespace"                 = "#808080"
+"punctuation"               = "#A8A8A8"
+"punctuation.delimiter"     = "#A8A8A8"
+"operator"                  = { fg = "#A8A8A8", modifiers = ["bold"] }
+"special"                   = "#BCBCBC"
+"variable.other.member"     = "#6C6C6C"
+"variable"                  = "#6C6C6C"
+"variable.parameter"        = "#6C6C6C"
+"type"                      = "#A8A8A8"
+"type.builtin"              = { fg = "#A8A8A8", modifiers = ["bold"] }
+"constructor"               = "#808080"
+"function"                  = "#808080"
+"function.macro"            = { fg = "#808080", modifiers = ["bold"] }
+"function.builtin"          = { fg = "#808080", modifiers = ["bold"] }
+"comment"                   = { fg = "#4E4E4E", modifiers = ["italic"] }
+"variable.builtin"          = "#6C6C6C"
+"constant"                  = "#D0D0D0"
+"constant.builtin"          = "#D0D0D0"
+"string"                    = "#6C6C6C"
+"constant.numeric"          = "#D0D0D0"
+"constant.character.escape" = { fg = "#808080", modifiers = ["bold"] }
+"label"                     = "#808080"
+"module"                    = "#808080"
+
+"markup.heading"            = { fg = "#E4E4E4", bg = "#262626", modifiers = ["bold"] }
+"markup.list"               = "#808080"
+"markup.bold"               = { fg = "#6C6C6C", bg = "#262626", modifiers = ["bold"] }
+"markup.italic"             = { fg = "#6C6C6C", modifiers = ["italic"] }
+"markup.link.url"           = { fg = "#E4E4E4", modifiers = ["underlined"] }
+"markup.link.text"          = "#E4E4E4"
+"markup.quote"              = "#6C6C6C"
+"markup.raw"                = "#6C6C6C"
+
+"diff.plus"                 = "#D0D0D0"
+"diff.delta"                = "#808080"
+"diff.minus"                = "#4E4E4E"
+
+"ui.background"             = { bg = "base1" }
+"ui.linenr"                 = { fg = "base4" }
+"ui.linenr.selected"        = { fg = "fg1" }
+"ui.cursorline"             = { bg = "base0" }
+"ui.statusline"             = { fg = "fg1", bg = "base2" }
+"ui.statusline.inactive"    = { fg = "fg0", bg = "base2" }
+"ui.popup"                  = { bg = "base2" }
+"ui.window"                 = { bg = "base2" }
+"ui.help"                   = { bg = "base2", fg = "fg1" }
+
+"ui.statusline.normal"      = { fg = "#E4E4E4", bg = "#262626", modifiers = [ "bold" ]}
+"ui.statusline.insert"      = { fg = "#E4E4E4", bg = "#262626", modifiers = [ "bold" ]}
+"ui.statusline.select"      = { fg = "#E4E4E4", bg = "#262626", modifiers = [ "bold" ] }
+
+"ui.text"                   = { fg = "fg1" }
+"ui.text.focus"             = { fg = "fg1", modifiers= ["bold"] }
+"ui.virtual.lgreyspace"     = "base5"
+"ui.virtual.ruler"          = { bg = "base0" }
+
+"ui.selection"              = { bg = "base3" }
+"ui.cursor.match"           = { fg = "#BCBCBC", bg = "#444444" }
+"ui.cursor"                 = { fg = "base5", modifiers = ["reversed"] }
+
+"ui.menu"                   = { fg = "fg1", bg = "base2" }
+"ui.menu.selected"          = { bg = "base3" }
+
+"warning"                   = "#FF5F00"
+"error"                     = "#E41D91"
+"info"                      = "#E06C75"
+"hint"                      = "#E06C75"
+
+# make diagnostic underlined, to distinguish with selection text.
+diagnostic = { modifiers = ["underlined"] }
+
+[palette]
+base0       = "#13181e"
+base1       = "#161c23" 
+base2       = "#232d38"
+base3       = "#313f4e" 
+base4       = "#415367" 
+base5       = "#abb2bf"
+ 
+fg0         = "#c6b8ad"
+fg1         = "#e5ded6"

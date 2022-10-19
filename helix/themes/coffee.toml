@@ -1,55 +1,55 @@
-"attribute"                 = "lgrey"
-"keyword"                   = { fg = "white", modifiers = ["bold"] }
-"keyword.directive"         = "white"
-"namespace"                 = "grey"
-"punctuation"               = "eggplant"
-"punctuation.delimiter"     = "eggplant"
-"operator"                  = { fg = "eggplant", modifiers = ["bold"] }
-"special"                   = "lgrey"
-"variable.other.member"     = "lgrey"
-"variable"                  = "lgrey"
-"variable.parameter"        = "lgrey"
-"type"                      = "viridian"
-"type.builtin"              = { fg = "viridian", modifiers = ["bold"] }
-"constructor"               = "lgrey"
-"function"                  = "teal_blue"
-"function.macro"            = { fg = "teal_blue", modifiers = ["bold"] }
-"function.builtin"          = { fg = "teal_blue", modifiers = ["bold"] }
-"comment"                   = { fg = "dgrey", modifiers = ["italic"] }
-"variable.builtin"          = "lgrey"
-"constant"                  = "lgrey"
-"constant.builtin"          = "lgrey"
-"string"                    = "violetred"
-"constant.numeric"          = "umber"
-"constant.character.escape" = { fg = "lgrey", modifiers = ["bold"] }
-"label"                     = "grey"
-"module"                    = "grey"
+"attribute"                 = "beige"
+"keyword"                   = { fg = "chocored", modifiers = ["bold"] }
+"keyword.directive"         = "chocored"
+"namespace"                 = "brownred"
+"punctuation"               = "beige"
+"punctuation.delimiter"     = "beige"
+"operator"                  = { fg = "beige", modifiers = ["bold"] }
+"special"                   = "beige"
+"variable.other.member"     = "brown"
+"variable"                  = "brown"
+"variable.parameter"        = "brown"
+"type"                      = "goldbrown"
+"type.builtin"              = { fg = "goldbrown", modifiers = ["bold"] }
+"constructor"               = "brownred"
+"function"                  = "brownred"
+"function.macro"            = { fg = "brownred", modifiers = ["bold"] }
+"function.builtin"          = { fg = "brownred", modifiers = ["bold"] }
+"comment"                   = { fg = "grey", modifiers = ["italic"] }
+"variable.builtin"          = "brown"
+"constant"                  = "lbrown"
+"constant.builtin"          = "lbrown"
+"string"                    = "milk"
+"constant.numeric"          = "lbrown"
+"constant.character.escape" = { fg = "beige", modifiers = ["bold"] }
+"label"                     = "brownred"
+"module"                    = "brownred"
 
-"markup.heading"            = "violetred"
-"markup.list"               = "red"
-"markup.bold"               = { fg = "viridian", modifiers = ["bold"] }
-"markup.italic"             = { fg = "dark_cyan", modifiers = ["italic"] }
+"markup.heading"            = "viridian"
+"markup.list"               = "dark_cyan"
+"markup.bold"               = { fg = "teal_blue", modifiers = ["bold"] }
+"markup.italic"             = { modifiers = ["italic"] }
 "markup.link.url"           = { fg = "yellow", modifiers = ["underlined"] }
 "markup.link.text"          = "red"
 "markup.quote"              = "eggplant"
 "markup.raw"                = "grey"
 
 "diff.plus"                 = "viridian"
-"diff.delta"                = "orange"
+"diff.delta"                = "teal_blue"
 "diff.minus"                = "violetred"
 
 "ui.background"             = { bg = "base1" }
 "ui.linenr"                 = { fg = "base4" }
 "ui.linenr.selected"        = { fg = "fg1" }
 "ui.cursorline"             = { bg = "base0" }
-"ui.statusline"             = { fg = "fg1", bg = "base2" }
-"ui.statusline.inactive"    = { fg = "fg0", bg = "base2" }
+"ui.statusline"             = { fg = "violetred", bg = "base0" }
+"ui.statusline.inactive"    = { fg = "fg0", bg = "base0" }
 "ui.popup"                  = { bg = "base2" }
 "ui.window"                 = { bg = "base2" }
 "ui.help"                   = { bg = "base2", fg = "fg1" }
 
 "ui.statusline.normal"      = { fg = "base1", bg = "violetred", modifiers = [ "bold" ]}
-"ui.statusline.insert"      = { fg = "base1", bg = "dblue", modifiers = [ "bold" ]}
+"ui.statusline.insert"      = { fg = "base1", bg = "teal_blue", modifiers = [ "bold" ]}
 "ui.statusline.select"      = { fg = "base1", bg = "viridian", modifiers = [ "bold" ] }
 
 "ui.text"                   = { fg = "fg1" }
@@ -81,17 +81,25 @@ blue        = "#36b2d4"
 dblue       = "#2E5894"
 orange      = "#B7410E"
 red         = "#d32c5d"
+chocored    = "#700222"
+brownred    = "#56223F"
+beige  = "#C7A183"
+goldbrown   = "#84563B"
+brown       = "#996A51"
+lbrown      = "#C7A183"
 lgreen      = "#7fdc59"
 viridian    = "#437066"
 eggplant    = "#664864"
 lred        = "#dc597f"
 purp        = "#780249"
+violet      = "#630044"
 violetred   = "#8b2252"
 dark_cyan   = "#005959"
 umber       = "#614D3C"
+burgundy    = "#450022"
 
 white       = "#E8E8E8" 
-milk        = "#dad7d5" 
+milk        = "#E3D0C1" 
 lgrey       = "#A6AEBA" 
 grey        = "#536878"
 dgrey       = "#565B61" 
