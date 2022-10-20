@@ -1,5 +1,6 @@
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+style = "fg:#808EA5"
 
 [battery]  
 full_symbol = ""
@@ -21,106 +22,132 @@ discharging_symbol = ""
 threshold = 99
 # style = "green dimmed bold"
 # style = "bold dimmed fg:#4C74A6"
-style = "bold dimmed fg:#49A699"
+# style = "bold dimmed fg:#49A699"
+style = "bold fg:#B2C1D6"
 discharging_symbol = ""
 
 [c]  
 format = '\[[ ($version(-$name))]($style)\]'
 # style = "bold fg:#8F670B"
+style = "fg:#808EA5"
 
 [character]  
 # success_symbol = "[-I❯](bold green dimmed)"
 # success_symbol = "[:❯](bold dimmed fg:#4C74A6)"
 # error_symbol = "[:❯](bold fg:#870000)"
 # vicmd_symbol = "[::❯](bold fg:#b58900) "
-success_symbol = "[:](bold dimmed fg:#4C74A6)"
-error_symbol = "[:](bold fg:#870000)"
+success_symbol = "[:](bold fg:#B2C1D6)"
+error_symbol = "[:](bold fg:#d32c5d)"
 vicmd_symbol = "[::](bold fg:#b58900) "
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [cmd_duration]  
 format = '\[[took $duration]($style)\]'
 # format = '\[[⏱ $duration]($style)\]'
 # style = "bold fg:#8F670B"
-style = "fg:#4e4e4e"
+# style = "fg:#4e4e4e"
+style = "fg:#808EA5"
 
 [cobol]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [conda]
 format = '\[[$symbol$environment]($style)\]'
+style = "fg:#808EA5"
 
 [crystal]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 # [daml]
 # format = '\[[$symbol($version)]($style)\]'
 
 [dart]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [deno]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [directory]  
 read_only = " "
 read_only_style = "red"
 truncation_symbol = ".."
 home_symbol = "~"
-style = "fg:#4e4e4e"
+# style = "fg:#4e4e4e"
+style = "fg:#808EA5"
 
 [docker_context]
 format = '\[[ $context]($style)\]'
+style = "fg:#808EA5"
 
 [dotnet]
 format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
+style = "fg:#808EA5"
 
 [elixir]
 format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
+style = "fg:#808EA5"
 
 [elm]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [erlang]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [gcloud]
 format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
+style = "fg:#808EA5"
 
 [git_branch]  
 format = '\[[git $branch]($style)\]'
+style = "fg:#808EA5"
 
 [git_status]  
 format = '([\[$all_status$ahead_behind\]]($style))'
 
 [golang]  
 format = '\[[ ($version)]($style)\]'
+style = "fg:#808EA5"
 
 [haskell]
 format = '\[[ ($version)]($style)\]'
+style = "fg:#808EA5"
 
 [helm]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [hg_branch]
 format = '\[[$symbol$branch]($style)\]'
+style = "fg:#808EA5"
 
 [java]  
 format = '\[[ ($version)]($style)\]'
+style = "fg:#808EA5"
 
 [julia]  
 format = '\[[ ($version)]($style)\]'
+style = "fg:#808EA5"
 
 [kotlin]  
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [kubernetes]
 format = '\[[$symbol$context( \($namespace\))]($style)\]'
+style = "fg:#808EA5"
 
 [lua]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [memory_usage]  
 disabled = true
@@ -131,49 +158,64 @@ style = "bold fg:#5e0b0f"
 
 [nim]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [nix_shell]
 format = '\[[$symbol$state( \($name\))]($style)\]'
+style = "fg:#808EA5"
 
 [nodejs]
 format = '\[[ ($version)]($style)\]'
+style = "fg:#808EA5"
 
 [ocaml]
 format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
+style = "fg:#808EA5"
 
 [openstack]
 format = '\[[$symbol$cloud(\($project\))]($style)\]'
+style = "fg:#808EA5"
 
 [package]  
 # format = '\[[$symbol$version]($style)\]'
 format = '\[[pkg $version]($style)\]'
+style = "fg:#808EA5"
 
 [perl]  
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [php]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [pulumi]
 format = '\[[$symbol$stack]($style)\]'
+style = "fg:#808EA5"
 
 [purescript]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [python]  
 format = '\[[ ${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+style = "fg:#808EA5"
 
 [red]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [ruby]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [rust]  
 format = '\[[ ($version)]($style)\]'
+style = "fg:#808EA5"
 
 [scala]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [shell]
 format = "[$indicator]($style)"
@@ -188,7 +230,8 @@ elvish_indicator = "esh"
 tcsh_indicator = "tsh"
 xonsh_indicator = "xsh"
 unknown_indicator = "unknown shell"
-style = "bold fg:#8b2252"
+style = "bold fg:#B2C1D6"
+# style = "bold fg:#8b2252"
 # style = "bold fg:#4C74A6"
 # style = "bold fg:#49A699"
 # style = "bold fg:#4e4e4e"
@@ -197,6 +240,7 @@ disabled = false
 
 [spack]
 format = '\[[$symbol$environment]($style)\]'
+style = "fg:#808EA5"
 
 [sudo]  
 format = '\[[as sudo](&style)\]'
@@ -204,22 +248,28 @@ disabled = true
 
 [swift]  
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [terraform]
 format = '\[[$symbol$workspace]($style)\]'
+style = "fg:#808EA5"
 
 [time]
 format = '\[[$time]($style)\]'
+style = "fg:#808EA5"
 
 [username]
 format = '\[[$user]($style)\]'
 
 [vagrant]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [vlang]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
 [zig]
 format = '\[[$symbol($version)]($style)\]'
+style = "fg:#808EA5"
 
