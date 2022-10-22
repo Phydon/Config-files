@@ -2,12 +2,20 @@
 name = "rust"
 # https://rust-analyzer.github.io/manual.html#configuration
 config = {format = {"rust-analyzer.rustfmt.extraArgs" = "max_width=80"}}
+diagnostic-severity = "Warning"
+
+[[language]]
+name = "python"
+config = {"pylsp.plugins.pycodestyle.maxLineLength" = 80, "pylsp.plugins.pycodestyle.ignore" = ["W293"]}
+diagnostic-severity = "Warning"
 
 [[language]]
 name = "nu"
 shebangs = ["nu"]
 indent =  {tab-width = 4, unit = "    "}
+diagnostic-severity = "Warning"
 
 [[language]]
 name = "markdown"
 indent =  {tab-width = 4, unit = "    "}
+diagnostic-severity = "Warning"
