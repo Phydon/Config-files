@@ -19,3 +19,18 @@ diagnostic-severity = "Warning"
 name = "markdown"
 indent =  {tab-width = 4, unit = "    "}
 diagnostic-severity = "Warning"
+
+[[language]]
+name = "c"
+indent =  {tab-width = 4, unit = "    "}
+diagnostic-severity = "Warning"
+
+[[language]]
+name = "cpp"
+indent =  {tab-width = 4, unit = "    "}
+diagnostic-severity = "Warning"
+
+[[language]]
+name = "toml"
+indent =  {tab-width = 4, unit = "    "}
+diagnostic-severity = "Warning"
