@@ -46,7 +46,7 @@
 "ui.statusline.inactive"    = { fg = "steel4", bg = "base0" }
 "ui.popup"                  = { bg = "base2" }
 "ui.window"                 = { bg = "base2" }
-"ui.help"                   = { bg = "base2", fg = "fg1" }
+"ui.help"                   = { bg = "base2", fg = "steel6" }
 
 "ui.statusline.normal"      = { fg = "base1", bg = "violetred", modifiers = [ "bold" ]}
 "ui.statusline.insert"      = { fg = "base1", bg = "teal_blue", modifiers = [ "bold" ]}
@@ -61,7 +61,7 @@
 "ui.cursor.match"           = { fg = "base3", bg = "grey" }
 "ui.cursor"                 = { fg = "base5", modifiers = ["reversed"] }
 
-"ui.menu"                   = { fg = "fg1", bg = "base2" }
+"ui.menu"                   = { fg = "steel6", bg = "base2" }
 "ui.menu.selected"          = { bg = "base3" }
 
 "warning"                   = "lred"
