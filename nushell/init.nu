@@ -330,3 +330,45 @@ export def "up" [
 		echo "Not implemented yet"
 	}
 }
+
+# Mini grep
+# Search for a pattern in files from input stream or given files
+# If no input stream or files are given, it searches in all files in the current directory
+# 
+# Examples: 
+# 	> search the word "wasd" in all files in the current directory
+# 	> mg wasd
+#
+# 	> search the word "wasd" in files from input stream
+# 	> ls | where type == file | where size > 10Mb | get name | mg wasd
+# 
+# 	> search the word "wasd" in the given files
+# 	> mg wasd test1.txt test2.json test3.md
+export def mg [
+    pattern: string     # the pattern to search for
+    ...files: path	    # the files to search in
+] {
+    let input = $in
+    
+    if ($input != $nothing) {
+        $input |
+        par-each {|it|
+            open --raw $it |
+            find $pattern
+        }
+    } else if ($files | is-empty) {
+		ls |
+		where type == file | 
+		get name |
+        par-each {|it|
+            open --raw $it |
+            find $pattern
+        }
+    } else {
+        $files | 
+        par-each {|it|
+            open --raw $it |
+            find $pattern
+        }
+	}
+}
