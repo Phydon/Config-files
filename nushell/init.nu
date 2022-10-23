@@ -333,10 +333,10 @@ export def "up" [
 
 # Mini grep
 # Search for a pattern in files from input stream or given files
-# If no input stream or files are given, it searches in all files in the current directory
+# If no input stream or files are given, it searches in all files recursively from the current directory
 # 
 # Examples: 
-# 	> search the word "wasd" in all files in the current directory
+# 	> search the word "wasd" in all files from the current directory recursively
 # 	> mg wasd
 #
 # 	> search the word "wasd" in files from input stream
@@ -357,7 +357,7 @@ export def mg [
             find $pattern
         }
     } else if ($files | is-empty) {
-		ls |
+		ls **/* |
 		where type == file | 
 		get name |
         par-each {|it|
