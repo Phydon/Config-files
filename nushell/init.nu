@@ -334,6 +334,7 @@ export def "up" [
 # Mini grep
 # Search for a pattern in files from input stream or given files
 # If no input stream or files are given, it searches in all files recursively from the current directory
+# Excluded binaries: exe, xlsx, pdf, zip, pkg, pyc
 # 
 # Examples: 
 # 	> search the word "wasd" in all files from the current directory recursively
@@ -359,6 +360,12 @@ export def mg [
     } else if ($files | is-empty) {
 		ls **/* |
 		where type == file | 
+		where name !~ "(?i)exe$" | 
+		where name !~ "(?i)pdf$" | 
+		where name !~ "(?i)xlsx$" | 
+		where name !~ "(?i)zip$" | 
+		where name !~ "(?i)pkg$" | 
+		where name !~ "(?i)pyc$" | 
 		get name |
         par-each {|it|
             open --raw $it |
