@@ -344,7 +344,8 @@ export def "up" [
 # 	> ls | where type == file | where size > 10Mb | get name | mg wasd
 # 
 # 	> search the word "wasd" in the given files
-# 	> mg wasd test1.txt test2.json test3.md
+# 	> mg wasd test1.txt test2.json test3.md 
+
 export def mg [
     pattern: string     # the pattern to search for
     ...files: path	    # the files to search in
@@ -357,29 +358,27 @@ export def mg [
     let patternfiles = (
         if ($input != $nothing)  {$input} 
         else if ($files | is-empty) {
-            ls **/* |
-    		where type == file | 
-    		get name |
-            path split | 
-            flatten
-			# FIXME remove directories here from this list
-			# otherwise you can`t open it later
-        } 
+	        ls **/* |
+			where type == file | 
+			get name
+		}
         else {$files}
+		# FIXME what`s wrong here??
+		# prints the found pattern several times
     )
     
     $patternfiles | 
     par-each {|it|
-        # get file extension from each file
-        let extension = (
-            $it | 
-            str replace "[a-z0-9A-Z_-~]+" "" | 
-            str replace -s "." ""
-        )
-        
-        if ($extension in $types) {
-            open --raw $it |
-            find $pattern
-        }
+        $it | 
+        path split | 
+        flatten --all |
+        str replace "[a-z0-9A-Z_-~]+" "" | 
+        str replace -s "." "" |
+		par-each {|ext|
+	        if ($ext in $types) {
+	            open --raw $it |
+	            find $pattern
+			}
+		}
     }         
 }
