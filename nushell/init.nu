@@ -350,32 +350,36 @@ export def mg [
     ...files: path	    # the files to search in
 ] {
     let input = $in
+    # TODO move typeslst.txt to another location
+    let types = (
+        open ~/main/nushell_scripts/typeslst.txt
+    )
+    let patternfiles = (
+        if ($input != $nothing)  {$input} 
+        else if ($files | is-empty) {
+            ls **/* |
+    		where type == file | 
+    		get name |
+            path split | 
+            flatten
+			# FIXME remove directories here from this list
+			# otherwise you can`t open it later
+        } 
+        else {$files}
+    )
     
-    if ($input != $nothing) {
-        $input |
-        par-each {|it|
+    $patternfiles | 
+    par-each {|it|
+        # get file extension from each file
+        let extension = (
+            $it | 
+            str replace "[a-z0-9A-Z_-~]+" "" | 
+            str replace -s "." ""
+        )
+        
+        if ($extension in $types) {
             open --raw $it |
             find $pattern
         }
-    } else if ($files | is-empty) {
-		ls **/* |
-		where type == file | 
-		where name !~ "(?i)exe$" | 
-		where name !~ "(?i)pdf$" | 
-		where name !~ "(?i)xlsx$" | 
-		where name !~ "(?i)zip$" | 
-		where name !~ "(?i)pkg$" | 
-		where name !~ "(?i)pyc$" | 
-		get name |
-        par-each {|it|
-            open --raw $it |
-            find $pattern
-        }
-    } else {
-        $files | 
-        par-each {|it|
-            open --raw $it |
-            find $pattern
-        }
-	}
+    }         
 }
