@@ -6,9 +6,9 @@ color-modes = true
 # shell = "nushell"
 
 [editor.statusline]
-left = ["mode", "spinner"]
+left = ["mode", "spinner", "selections"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+right = ["diagnostics", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 
 [editor.lsp]
