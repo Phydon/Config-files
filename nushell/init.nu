@@ -345,7 +345,6 @@ export def "up" [
 # 
 # 	> search the word "wasd" in the given files
 # 	> mg wasd test1.txt test2.json test3.md 
-
 export def mg [
     pattern: string     # the pattern to search for
     ...files: path	    # the files to search in
@@ -367,7 +366,7 @@ export def mg [
 		# prints the found pattern several times
     )
     
-    $patternfiles | 
+    $patternfiles |
     par-each {|it|
         $it | 
         path split | 
