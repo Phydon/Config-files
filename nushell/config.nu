@@ -746,5 +746,5 @@ alias mkdir = mkdir -s
 alias du = dust
 alias ps = procs --sortd cpu
 alias bkp = backup
-alias tldr = tldr --pager
+alias hx = helix
 # }
