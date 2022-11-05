@@ -346,21 +346,84 @@ let ocean_theme = {
     shape_nothing: white
 }
 
+# minimal theme
+let steel1      = "#5E6C85"
+let steel2      = "#6F7D95"
+let steel3      = "#808EA5"
+let steel4      = "#909FB6"
+let steel5      = "#A1B0C6"
+let steel6      = "#B2C1D6"
+let rred        = "#d32c5d"
+let lred        = "#dc597f"
+let dgrey       = "#565B61" 
+let violetred   = "#8b2252"
+
+let minimal_theme = {
+    # color for nushell primitives
+    separator: dgrey
+    leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
+    header: { fg: $violetred}
+    empty: steel6
+    bool: { fg: $steel4 }
+    int: { fg: $steel5 }
+    filesize: { fg: $steel5 }
+    duration: { fg: $steel5 }
+    date: { fg: $steel5 }
+    range: { fg: $steel5 }
+    float: { fg: $steel5 }
+    string: { fg: $steel6 }
+    nothing: steel6
+    binary: { fg: $steel5 }
+    cellpath: dgrey
+    row_index: { fg: $steel1 }
+    record: { fg: $steel3 }
+    list: { fg: $steel3 }
+    block: { fg: $steel3 }
+    hints: dgrey
+
+    # shapes are used to change the cli syntax highlighting
+    shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
+    shape_binary: { fg: $steel5 }
+    shape_bool: { fg: $steel4 }
+    shape_int: { fg: $steel5 }
+    shape_float: { fg: $steel5 }
+    shape_range: { fg: $steel5 }
+    shape_internalcall: { fg: $rred attr: b }
+    shape_external: { fg: $lred attr: b }
+    shape_externalarg: { fg: $steel4 }
+    shape_literal: { fg: $steel4 }
+    shape_operator: { fg: $steel6 }
+    shape_signature: { fg: $steel6 }
+	shape_string : { fg: $steel6 }
+    shape_string_interpolation: { fg: $steel6 }
+    shape_datetime: { fg: $steel5 }
+    shape_list: { fg: $steel3 }
+    shape_table: { fg: $steel3 }
+    shape_record: { fg: $steel3 }
+    shape_block: { fg: $steel3 }
+    shape_filepath: { fg: $steel3 }
+    shape_globpattern: { fg: $steel4 }
+    shape_variable: { fg: $steel2 }
+    shape_flag: { fg: $steel1 }
+    shape_custom: { fg: $rred }
+    shape_nothing: white
+}
+
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
   show_banner: false
   filesize_metric: false
-  table_mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+  table_mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
   use_ls_colors: false
   rm_always_trash: true
-  color_config: $ocean_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme
+  color_config: $minimal_theme# $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   quick_completions: true  # set this to false to prevent auto-selecting completions when only one remains
   partial_completions: true  # set this to false to prevent partial filling of the prompt
   completion_algorithm: "prefix"  # prefix, fuzzy
   float_precision: 2
-  buffer_editor: "nvim" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
+  buffer_editor: "helix" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
   filesize_format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
   edit_mode: vi # emacs, vi
@@ -368,10 +431,11 @@ let-env config = {
   sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
   history_file_format: "plaintext" # "sqlite" or "plaintext"
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
-  disable_table_indexes: false # set to true to remove the index column from tables
+  # disable_table_indexes: false # set to true to remove the index column from tables
   cd_with_abbreviations: false # set to true to allow you to do things like cd s/o/f and nushell expand it to cd some/other/folder
   case_sensitive_completions: false # set to true to enable case-sensitive completions
   max_external_completion_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
+  show_clickable_links_in_ls: true # true or false to enable or disable clickable links in the ls listing. your terminal has to support links.
 
   # A strategy of managing table view in case of limited space 
   table_trim: {
@@ -393,7 +457,7 @@ let-env config = {
       }]
     }
   }
-  menus: [
+ menus: [
       # Configuration for default nushell menus
       # Note the lack of souce parameter
       {
@@ -407,9 +471,9 @@ let-env config = {
             col_padding: 2
         }
         style: {
-            text: { fg: "#49A699" }
+            text: { fg: $steel6 }
             selected_text: { fg: "#b93344" }
-            description_text: { fg: "#4C74A6" } 
+            description_text: { fg: $steel6 } 
         }
       }
       {
@@ -421,9 +485,9 @@ let-env config = {
             page_size: 25
         }
         style: {
-            text: { fg: "#49A699" }
+            text: { fg: $steel6 }
             selected_text: { fg: "#b93344" }
-            description_text: { fg: "#4C74A6" } 
+            description_text: { fg: $steel6 } 
         }
       }
       {
@@ -439,9 +503,9 @@ let-env config = {
             description_rows: 10
         }
         style: {
-            text: { fg: "#49A699" }
+            text: { fg: $steel6 }
             selected_text: { fg: "#b93344" }
-            description_text: { fg: "#4C74A6" } 
+            description_text: { fg: $steel6 } 
         }
       }
       # Example of extra menus created using a nushell source
@@ -458,9 +522,9 @@ let-env config = {
             col_padding: 2
         }
         style: {
-            text: { fg: "#49A699" }
+            text: { fg: $steel6 }
             selected_text: { fg: "#b93344" }
-            description_text: { fg: "#4C74A6" } 
+            description_text: { fg: $steel6 } 
         }
         source: { |buffer, position|
             $nu.scope.commands
@@ -477,9 +541,9 @@ let-env config = {
             page_size: 20
         }
         style: {
-            text: { fg: "#49A699" }
+            text: { fg: $steel6 }
             selected_text: { fg: "#b93344" }
-            description_text: { fg: "#4C74A6" } 
+            description_text: { fg: $steel6 } 
         }
         source: { |buffer, position|
             $nu.scope.vars
@@ -501,9 +565,9 @@ let-env config = {
             description_rows: 10
         }
         style: {
-            text: { fg: "#49A699" }
+            text: { fg: $steel6 }
             selected_text: { fg: "#b93344" }
-            description_text: { fg: "#4C74A6" } 
+            description_text: { fg: $steel6 } 
         }
         source: { |buffer, position|
             $nu.scope.commands
@@ -617,7 +681,7 @@ let-env config = {
 }
 
 # STARSHIP PROMPT
-source ~/.cache/starship/init.nu
+# source ~/.cache/starship/init.nu
 
 # ZOXIDE
 source ~/.zoxide.nu
