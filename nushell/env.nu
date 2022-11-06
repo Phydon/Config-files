@@ -15,10 +15,16 @@
 # }
 
 def create_left_prompt [] {
+    let exit_code_segment = if ($env.LAST_EXIT_CODE == 0) {
+            ""
+        } else {
+            $"(ansi red_bold)($env.LAST_EXIT_CODE) "
+        }
+
     let os_name = (sys | get host.name)    
     let is_home_in_path = ($env.PWD | str starts-with $nu.home-path)
-    if $is_home_in_path {
-        if ($os_name =~ "windows") {
+    let path = if $is_home_in_path {
+        if ($os_name =~ "Windows") {
             let home = ($nu.home-path | str replace -a '\\' '/')
             let pwd = ($env.PWD | str replace -a '\\' '/')
             $pwd | str replace $home '~'
@@ -28,6 +34,14 @@ def create_left_prompt [] {
     } else {
         $env.PWD | str replace -a '\\' '/'
     }
+    
+    let path_segment = if (is-admin) {
+        $"(ansi red_bold)($path)"
+    } else {
+        $"(ansi white_bold)($path)"
+    }
+    
+    [$exit_code_segment, $path_segment] | str join
 }
 
 def create_right_prompt [] {
@@ -43,14 +57,14 @@ let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
 
+let-env PROMPT_INDICATOR = { "$ " }
+let-env PROMPT_INDICATOR_VI_INSERT = { " $ " }
+let-env PROMPT_INDICATOR_VI_NORMAL = { " :: " }
+let-env PROMPT_MULTILINE_INDICATOR = { " ::: " }
 # let-env PROMPT_INDICATOR = { "〉" }
 # let-env PROMPT_INDICATOR_VI_INSERT = { ">> " }
 # let-env PROMPT_INDICATOR_VI_NORMAL = { ">>> " }
 # let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
-let-env PROMPT_INDICATOR = { "$ " }
-let-env PROMPT_INDICATOR_VI_INSERT = { "$ " }
-let-env PROMPT_INDICATOR_VI_NORMAL = { ":: " }
-let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
@@ -84,10 +98,8 @@ let-env NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
-
 # STARSHIP
-# starship init nu | save ~/.cache/starship/init.nu
+starship init nu | save ~/.cache/starship/init.nu
 
 # ZOXIDE
 zoxide init nushell --hook prompt | save ~/.zoxide.nu
-
