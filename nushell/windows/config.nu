@@ -732,6 +732,7 @@ alias bkp = backup
 alias tldr = tldr --pager
 alias ob = start obsidian
 alias firefox = start firefox
+alias pwd = $env.PWD
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
