@@ -1,4 +1,4 @@
-format = "$status$battery$directory $shell$character"
+format = "$status$battery$directory$shell$character"
 
 # Disable the blank line at the start of the prompt
 add_newline = false
