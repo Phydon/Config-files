@@ -4,11 +4,17 @@ theme = "minimal"
 line-number = "relative"
 color-modes = true
 # shell = "nushell"
+auto-completion = true
+completion-trigger-len = 2
+auto-format = true
+auto-info = true
+# bufferline = "multiple"
 
 [editor.statusline]
-left = ["mode", "spinner", "selections"]
+left = ["mode", "spinner"]
 center = ["file-name"]
-right = ["diagnostics", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+# right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 
 [editor.lsp]
@@ -38,7 +44,7 @@ render = true
 character = "╎"
 
 [keys.normal]
-"space" = { w = { w = ":open ~/todo.md" } }
+"space" = { w = { w = ":open ~/obsidian_vault/HelixNotes.md" } }
 
 [keys.insert]
 q = { q = "normal_mode" }
