@@ -1,5 +1,15 @@
+format = "$status$battery$directory $shell$character"
+
 # Disable the blank line at the start of the prompt
 add_newline = false
+
+[line_break]
+disabled = true
+
+[status]
+disabled = false
+symbol = ""
+style = "bold red"
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
@@ -81,6 +91,7 @@ style = "fg:#808EA5"
 [directory]  
 read_only = " "
 read_only_style = "red"
+truncation_length = 2
 truncation_symbol = ".."
 home_symbol = "~"
 # style = "fg:#4e4e4e"
