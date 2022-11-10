@@ -419,7 +419,7 @@ let-env config = {
   color_config: $minimal_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
-  quick_completions: true  # set this to false to prevent auto-selecting completions when only one remains
+  quick_completions: false # set this to false to prevent auto-selecting completions when only one remains
   partial_completions: true  # set this to false to prevent partial filling of the prompt
   completion_algorithm: "prefix"  # prefix, fuzzy
   float_precision: 2
@@ -431,11 +431,13 @@ let-env config = {
   sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
   history_file_format: "plaintext" # "sqlite" or "plaintext"
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
-  disable_table_indexes: false # set to true to remove the index column from tables
+  table_index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
   cd_with_abbreviations: false # set to true to allow you to do things like cd s/o/f and nushell expand it to cd some/other/folder
   case_sensitive_completions: false # set to true to enable case-sensitive completions
+  enable_external_completion: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up my be very slow
   max_external_completion_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
   show_clickable_links_in_ls: true # true or false to enable or disable clickable links in the ls listing. your terminal has to support links.
+  render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
   # A strategy of managing table view in case of limited space 
   table_trim: {
@@ -683,7 +685,7 @@ let-env config = {
 
 
 # STARSHIP PROMPT
-source ~/.cache/starship/init.nu
+# source ~/.cache/starship/init.nu
 
 
 # ZOXIDE
