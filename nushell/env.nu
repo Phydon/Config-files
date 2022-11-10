@@ -45,9 +45,7 @@ def create_left_prompt [] {
 }
 
 def create_right_prompt [] {
-    let white_noise = ($nothing)
-    
-    $white_noise
+    $nothing
 }
 
 # Use nushell functions to define your right and left prompt
@@ -62,9 +60,6 @@ let-env PROMPT_INDICATOR_VI_INSERT = { $"(ansi white_bold) $ " }
 let-env PROMPT_INDICATOR_VI_NORMAL = { $"(ansi white_bold) :: " }
 let-env PROMPT_MULTILINE_INDICATOR = { $"(ansi white_bold)::: " }
 # let-env PROMPT_INDICATOR = { "〉" }
-# let-env PROMPT_INDICATOR_VI_INSERT = { ">> " }
-# let-env PROMPT_INDICATOR_VI_NORMAL = { ">>> " }
-# let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
