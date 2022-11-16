@@ -56,8 +56,8 @@ let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
 # the state of the prompt
 
 let-env PROMPT_INDICATOR = { $"(ansi white_bold) $ " }
-let-env PROMPT_INDICATOR_VI_INSERT = { $"(ansi white_bold) $ " }
-let-env PROMPT_INDICATOR_VI_NORMAL = { $"(ansi white_bold) :: " }
+let-env PROMPT_INDICATOR_VI_INSERT = { $"(ansi white_bold)$ " }
+let-env PROMPT_INDICATOR_VI_NORMAL = { $"(ansi white_bold):: " }
 let-env PROMPT_MULTILINE_INDICATOR = { $"(ansi white_bold)::: " }
 # let-env PROMPT_INDICATOR = { "〉" }
 
