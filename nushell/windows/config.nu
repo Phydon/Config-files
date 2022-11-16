@@ -419,7 +419,7 @@ let-env config = {
   color_config: $minimal_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
-  quick_completions: false # set this to false to prevent auto-selecting completions when only one remains
+  quick_completions: true # set this to false to prevent auto-selecting completions when only one remains
   partial_completions: true  # set this to false to prevent partial filling of the prompt
   completion_algorithm: "prefix"  # prefix, fuzzy
   float_precision: 2
@@ -466,7 +466,7 @@ let-env config = {
       {
         name: completion_menu
         only_buffer_difference: false
-        marker: "| "
+        marker: " | "
         type: {
             layout: columnar
             columns: 4
@@ -482,7 +482,7 @@ let-env config = {
       {
         name: history_menu
         only_buffer_difference: true
-        marker: "? "
+        marker: " ? "
         type: {
             layout: list
             page_size: 25
@@ -496,7 +496,7 @@ let-env config = {
       {
         name: help_menu
         only_buffer_difference: true
-        marker: "? "
+        marker: " ? "
         type: {
             layout: description
             columns: 4
@@ -517,7 +517,7 @@ let-env config = {
       {
         name: commands_menu
         only_buffer_difference: false
-        marker: "# "
+        marker: " # "
         type: {
             layout: columnar
             columns: 4
@@ -538,7 +538,7 @@ let-env config = {
       {
         name: vars_menu
         only_buffer_difference: true
-        marker: "# "
+        marker: " # "
         type: {
             layout: list
             page_size: 20
@@ -558,7 +558,7 @@ let-env config = {
       {
         name: commands_with_description
         only_buffer_difference: true
-        marker: "# "
+        marker: " # "
         type: {
             layout: description
             columns: 4
@@ -685,7 +685,7 @@ let-env config = {
 
 
 # STARSHIP PROMPT
-# source ~/.cache/starship/init.nu
+source ~/.cache/starship/init.nu
 
 
 # ZOXIDE
@@ -735,6 +735,7 @@ alias tldr = tldr --pager
 alias ob = start obsidian
 alias firefox = start firefox
 alias pwd = $env.PWD
+alias emacs = emacs --maximized
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
