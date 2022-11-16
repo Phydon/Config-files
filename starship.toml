@@ -251,7 +251,7 @@ style = "bold fg:#B2C1D6"
 # style = "bold fg:#49A699"
 # style = "bold fg:#4e4e4e"
 # symbol _
-disabled = false
+disabled = true
 
 [spack]
 format = '\[[$symbol$environment]($style)\]'
