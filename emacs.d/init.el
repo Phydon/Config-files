@@ -6,9 +6,9 @@
 (scroll-bar-mode -1)
 ;; (menu-bar-mode -1)
 
-;; Display line numbers in every buffer
-(global-display-line-numbers-mode 1)
-(setq display-line-numbers 'relative)
+;; Display relative line numbers in every buffer
+;; (global-display-line-numbers-mode 1)
+(setq display-line-numbers-type 'relative)
 
 ;; Theme
 (load-theme 'tango-dark t)
@@ -28,12 +28,8 @@
 ;; show completions in find-file
 (ido-mode 1)
 
-;; show completions for M-x
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; old M-x
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
+;; open the config file
+(global-set-key (kbd "M-w") (lambda() (interactive)(find-file "~/Appdata/Roaming/.emacs.d/init.el")))
 
 
 (require 'package)
@@ -43,12 +39,17 @@
 (require 'evil)
 (evil-mode 1)
 
+(require 'evil-multiedit)
+(evil-multiedit-default-keybinds)
+
+;; EVIL
 ;; set leader key in normal state
 (evil-set-leader 'normal (kbd "SPC"))
 ;; set leader key bindings 
 (evil-define-key 'normal 'global (kbd "<leader>b") 'list-buffers)
 (evil-define-key 'normal 'global (kbd "<leader>f") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>t") 'eshell)
+(evil-define-key 'normal 'global (kbd "<leader>ww") '(lambda() (interactive)(find-file "~/obsidian_vault/quicknotes.md")))
 
 ;; vim surround
 (use-package evil-surround
@@ -58,6 +59,14 @@
 
 ;; vim commentary
 (evil-commentary-mode)
+
+
+;; SMEX
+;; show completions for M-x
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; to get the old M-x
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 
 
@@ -72,4 +81,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(smex evil-commentary use-package evil)))
+ '(package-selected-packages
+   '(evil-multiedit deadgrep smex evil-commentary use-package evil)))
