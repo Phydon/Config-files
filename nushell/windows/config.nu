@@ -409,6 +409,83 @@ let minimal_theme = {
     shape_nothing: white
 }
 
+# gruberdarker
+# Colors with _x are lighter. Colors with -x are darker.
+let gruber_darker_fg        = "#e4e4ef"
+let gruber_darker_fg__1      = "#f4f4ff"
+let gruber_darker_fg__2      = "#f5f5f5"
+let gruber_darker_white     = "#ffffff"
+let gruber_darker_black     = "#000000"
+let gruber_darker_bg_1      = "#101010"
+let gruber_darker_bg        = "#181818"
+let gruber_darker_bg__1      = "#282828"
+let gruber_darker_bg__2      = "#453d41"
+let gruber_darker_bg__3      = "#484848"
+let gruber_darker_bg__4      = "#52494e"
+let gruber_darker_red_1     = "#c73c3f"
+let gruber_darker_red       = "#f43841"
+let gruber_darker_red__1     = "#ff4f58"
+let gruber_darker_green     = "#73c936"
+let gruber_darker_yellow    = "#ffdd33"
+let gruber_darker_brown     = "#cc8c3c"
+let gruber_darker_quartz    = "#95a99f"
+let gruber_darker_niagara_2 = "#303540"
+let gruber_darker_niagara_1 = "#565f73"
+let gruber_darker_niagara   = "#96a6c8"
+let gruber_darker_wisteria  = "#9e95c7"
+
+let gruberdarker = {
+    # color for nushell primitives
+    separator: $gruber_darker_quartz
+    leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
+    header: { fg: $gruber_darker_red}
+    empty: { fg: $gruber_darker_fg}
+    bool: { fg: $gruber_darker_yellow}
+    int: { fg: $gruber_darker_quartz}
+    filesize: { fg: $gruber_darker_quartz}
+    duration: { fg: $gruber_darker_quartz}
+    date: { fg: $gruber_darker_niagara_1}
+    range: { fg: $gruber_darker_quartz}
+    float: { fg: $gruber_darker_quartz}
+    string: { fg: $gruber_darker_fg}
+    nothing: { fg: $gruber_darker_fg}
+    binary: { fg: $gruber_darker_quartz}
+    cellpath: { fg: $gruber_darker_fg}
+    row_index: { fg: $gruber_darker_niagara_2}
+    record: { fg: $gruber_darker_quartz}
+    list: { fg: $gruber_darker_quartz}
+    block: { fg: $gruber_darker_quartz}
+    hints: { fg: $gruber_darker_quartz}
+
+    # shapes are used to change the cli syntax highlighting
+    shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
+    shape_binary: { fg: $gruber_darker_quartz}
+    shape_bool: { fg: $gruber_darker_yellow}
+    shape_int: { fg: $gruber_darker_quartz}
+    shape_float: { fg: $gruber_darker_quartz}
+    shape_range: { fg: $gruber_darker_quartz}
+    shape_internalcall: { fg: $gruber_darker_yellow attr: b }
+    shape_external: { fg: $gruber_darker_yellow }
+    shape_externalarg: { fg: $gruber_darker_niagara_1}
+    shape_literal: { fg: $gruber_darker_quartz}
+    shape_operator: { fg: $gruber_darker_fg}
+    shape_signature: { fg: $gruber_darker_fg}
+	shape_string : { fg: $gruber_darker_fg}
+    shape_string_interpolation: { fg: $gruber_darker_fg}
+    shape_datetime: { fg: $gruber_darker_quartz}
+    shape_list: { fg: $gruber_darker_fg}
+    shape_table: { fg: $gruber_darker_fg}
+    shape_record: { fg: $gruber_darker_fg}
+    shape_block: { fg: $gruber_darker_fg}
+    shape_filepath: { fg: $gruber_darker_fg}
+    shape_globpattern: { fg: $gruber_darker_fg}
+    shape_variable: { fg: $gruber_darker_green}
+    shape_flag: { fg: $gruber_darker_niagara_1}
+    shape_custom: { fg: $gruber_darker_brown}
+    shape_nothing: white
+}
+
+
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
   show_banner: false
@@ -416,7 +493,7 @@ let-env config = {
   table_mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
   use_ls_colors: false
   rm_always_trash: true
-  color_config: $minimal_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
+  color_config: $gruberdarker # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   quick_completions: true # set this to false to prevent auto-selecting completions when only one remains
