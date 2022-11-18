@@ -1,0 +1,149 @@
+# "attribute"                 = "steel2"
+"keyword"                   = { fg = "gruber-darker-yellow", modifiers = ["bold"] }
+"keyword.directive"         = { fg = "gruber-darker-yellow"}
+# "namespace"                 = { fg = "gruber-darker-yellow"}
+# "label"                     = { fg = "gruber-darker-yellow"}
+# "module"                    = "steel4"
+# "punctuation"               = "steel1"
+# "punctuation.delimiter"     = "steel1"
+# "operator"                  = { fg = "steel5", modifiers = ["bold"] }
+# "special"                   = "steel5"
+"variable.other.member"     = { fg = "gruber-darker-fg_1"}
+"variable"                  = { fg = "gruber-darker-fg_1"}
+"variable.parameter"        = { fg = "gruber-darker-fg_1"}
+"type"                      = { fg = "gruber-darker-quartz"}
+"type.builtin"              = { fg = "gruber-darker-yellow"}
+# "constructor"               = "steel4"
+"function"                  = { fg = "gruber-darker-niagara"}
+"function.macro"            = { fg = "gruber-darker-niagara"}
+"function.builtin"          = { fg = "gruber-darker-yellow"}
+"comment"                   = { fg = "gruber-darker-brown"}
+"variable.builtin"          = { fg = "gruber-darker-yellow"}
+"constant"                  = { fg = "gruber-darker-quartz"}
+"constant.builtin"          = { fg = "gruber-darker-yellow"}
+"string"                    = { fg = "gruber-darker-green"}
+"constant.numeric"          = { fg = "gruber-darker-quartz"}
+"constant.character.escape" = { fg = "gruber-darker-quartz"}
+
+"markup.heading.1"          = { fg = "gruber-darker-red-1", modifiers = ["bold"]}
+"markup.heading.marker"     = { fg = "gruber-darker-brown", modifiers = ["bold"]}
+"markup.heading"            = { fg = "gruber-darker-yellow", modifiers = ["bold"]}
+"markup.list"               = { fg = "gruber-darker-fg_2"}
+"markup.bold"               = { fg = "gruber-darker-red", modifiers = ["bold"] }
+"markup.italic"             = { modifiers = ["italic"] }
+"markup.link.url"           = { fg = "gruber-darker-niagara", modifiers = ["underlined"] }
+"markup.link.text"          = { fg = "gruber-darker-niagara"}
+"markup.quote"              = { fg = "gruber-darker-green"}
+"markup.raw"                = { fg = "gruber-darker-quartz"}
+
+"diff.plus"                 = "gruber-darker-green"
+"diff.delta"                = "gruber-darker-niagara"
+"diff.minus"                = "gruber-darker-red_1"
+
+"ui.background"             = { bg = "gruber-darker-bg" }
+"ui.linenr"                 = { fg = "gruber-darker-bg_4" }
+"ui.linenr.selected"        = { fg = "gruber-darker-yellow" }
+"ui.cursorline"             = { bg = "base0" }
+"ui.statusline"             = { fg = "gruber-darker-niagara", bg = "gruber-darker-bg_1" }
+"ui.statusline.inactive"    = { fg = "gruber-darker-niagara-2", bg = "gruber-darker-bg-1" }
+"ui.popup"                  = { bg = "gruber-darker-bg" }
+"ui.window"                 = { bg = "gruber-darker-bg" }
+"ui.help"                   = { bg = "gruber-darker-bg", fg = "gruber-darker-fg" }
+
+"ui.statusline.normal"      = { fg = "gruber-darker-yellow", bg = "gruber-darker-black", modifiers = [ "bold" ]}
+"ui.statusline.insert"      = { fg = "gruber-darker-red-1", bg = "gruber-darker-black", modifiers = [ "bold" ]}
+"ui.statusline.select"      = { fg = "gruber-darker-brown", bg = "gruber-darker-black", modifiers = [ "bold" ] }
+
+"ui.text"                   = { fg = "gruber-darker-fg" }
+"ui.text.focus"             = { fg = "gruber-darker-fg_1", modifiers= ["bold"] }
+# "ui.virtual.lgreyspace"     = "base5"
+"ui.virtual.ruler"          = { bg = "gruber-darker-bg" }
+
+"ui.selection"              = { bg = "gruber-darker-bg_3" }
+"ui.cursor.match"           = { fg = "gruber-darker-yellow", modifiers = ["bold"] }
+"ui.cursor"                 = { fg = "gruber-darker-yellow", modifiers = ["reversed"] }
+
+"ui.menu"                   = { fg = "gruber-darker-fg", bg = "gruber-darker-bg" }
+"ui.menu.selected"          = { bg = "gruber-darker-bg_3" }
+
+"warning"                   = { fg = "gruber-darker-red"}
+"error"                     = { fg = "gruber-darker-red_1"}
+"info"                      = { fg = "gruber-darker-niagara"}
+"hint"                      = { fg = "gruber-darker-brown"}
+
+# make diagnostic underlined, to distinguish with selection text.
+diagnostic = { modifiers = ["underlined"] }
+
+[palette]
+yellow      = "#dcb659"
+lblue       = "#59dcd8"
+teal        = "#59dcb7"
+teal_blue   = "#2E6170"
+blue        = "#36b2d4"
+dblue       = "#2E5894"
+orange      = "#B7410E"
+red         = "#d32c5d"
+chocored    = "#700222"
+brownred    = "#56223F"
+beige  = "#C7A183"
+goldbrown   = "#84563B"
+brown       = "#996A51"
+lbrown      = "#C7A183"
+lgreen      = "#7fdc59"
+viridian    = "#437066"
+eggplant    = "#664864"
+lred        = "#dc597f"
+purp        = "#780249"
+violet      = "#630044"
+violetred   = "#8b2252"
+dark_cyan   = "#005959"
+umber       = "#614D3C"
+burgundy    = "#450022"
+
+steel1       = "#5E6C85"
+steel2       = "#6F7D95"
+steel3       = "#808EA5"
+steel4       = "#909FB6"
+steel5       = "#A1B0C6"
+steel6       = "#B2C1D6"
+
+white       = "#E8E8E8" 
+milk        = "#E3D0C1" 
+lgrey       = "#A6AEBA" 
+grey        = "#536878"
+dgrey       = "#565B61" 
+ 
+base0       = "#13181e"
+base1       = "#161c23" 
+base2       = "#232d38"
+base3       = "#313f4e" 
+base4       = "#415367" 
+base5       = "#abb2bf"
+ 
+fg0         = "#c6b8ad"
+fg1         = "#e5ded6"
+
+
+# Colors with _x are lighter. Colors with -x are darker.
+gruber-darker-fg        = "#e4e4ef"
+gruber-darker-fg_1      = "#f4f4ff"
+gruber-darker-fg_2      = "#f5f5f5"
+gruber-darker-white     = "#ffffff"
+gruber-darker-black     = "#000000"
+gruber-darker-bg-1      = "#101010"
+gruber-darker-bg        = "#181818"
+gruber-darker-bg_1      = "#282828"
+gruber-darker-bg_2      = "#453d41"
+gruber-darker-bg_3      = "#484848"
+gruber-darker-bg_4      = "#52494e"
+gruber-darker-red-1     = "#c73c3f"
+gruber-darker-red       = "#f43841"
+gruber-darker-red_1     = "#ff4f58"
+gruber-darker-green     = "#73c936"
+gruber-darker-yellow    = "#ffdd33"
+gruber-darker-brown     = "#cc8c3c"
+gruber-darker-quartz    = "#95a99f"
+gruber-darker-niagara-2 = "#303540"
+gruber-darker-niagara-1 = "#565f73"
+gruber-darker-niagara   = "#96a6c8"
+gruber-darker-wisteria  = "#9e95c7"
