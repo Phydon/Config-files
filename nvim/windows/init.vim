@@ -75,6 +75,7 @@ Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'flazz/vim-colorschemes'
 " Plug 'ulwlu/elly.vim'
+Plug 'drsooch/gruber-darker-vim'
 Plug 'arzg/vim-substrata'
 Plug 'wadackel/vim-dogrun'
 Plug 'logico/typewriter-vim'
@@ -130,7 +131,7 @@ endif
 let g:gruvbox_contrast_dark = 'hard'
 
 " needs to be after plugin load
-colorscheme substrata
+colorscheme GruberDarker
 
 
 " LIGHTLINE
