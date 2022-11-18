@@ -1,9 +1,9 @@
 # "attribute"                 = "steel2"
 "keyword"                   = { fg = "gruber-darker-yellow", modifiers = ["bold"] }
 "keyword.directive"         = { fg = "gruber-darker-yellow"}
-# "namespace"                 = { fg = "gruber-darker-yellow"}
-# "label"                     = { fg = "gruber-darker-yellow"}
-# "module"                    = "steel4"
+"namespace"                 = { fg = "gruber-darker-quartz"}
+"label"                     = { fg = "gruber-darker-quartz"}
+"module"                    = { fg = "gruber-darker-quartz"}
 # "punctuation"               = "steel1"
 # "punctuation.delimiter"     = "steel1"
 # "operator"                  = { fg = "steel5", modifiers = ["bold"] }
@@ -15,11 +15,11 @@
 "type.builtin"              = { fg = "gruber-darker-yellow"}
 # "constructor"               = "steel4"
 "function"                  = { fg = "gruber-darker-niagara"}
-"function.macro"            = { fg = "gruber-darker-niagara"}
+"function.macro"            = { fg = "gruber-darker-yellow"}
 "function.builtin"          = { fg = "gruber-darker-yellow"}
 "comment"                   = { fg = "gruber-darker-brown"}
 "variable.builtin"          = { fg = "gruber-darker-yellow"}
-"constant"                  = { fg = "gruber-darker-quartz"}
+"constant"                  = { fg = "gruber-darker-fg_1"}
 "constant.builtin"          = { fg = "gruber-darker-yellow"}
 "string"                    = { fg = "gruber-darker-green"}
 "constant.numeric"          = { fg = "gruber-darker-quartz"}
