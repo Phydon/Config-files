@@ -109,6 +109,7 @@ Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'flazz/vim-colorschemes'
 " Plug 'ulwlu/elly.vim'
+Plug 'drsooch/gruber-darker-vim'
 Plug 'arzg/vim-substrata'
 Plug 'wadackel/vim-dogrun'
 Plug 'logico/typewriter-vim'
@@ -141,7 +142,7 @@ call plug#end()
 " thornbird, lucius, stormpetrel, Spink, redblack, abra
 " light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
 " laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme substrata
+colorscheme GruberDarker
 
 " for PAPERCOLOR light theme
 " set background=light
