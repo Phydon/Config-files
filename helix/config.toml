@@ -1,4 +1,4 @@
-theme = "minimal"
+theme = "gruberdarker"
 
 [editor]
 line-number = "relative"
@@ -44,7 +44,7 @@ render = true
 character = "╎"
 
 [keys.normal]
-"space" = { w = { w = ":open ~/obsidian_vault/HelixNotes.md" } }
+"space" = { w = { w = ":open ~/obsidian_vault/quicknotes.md" } }
 
 [keys.insert]
 q = { q = "normal_mode" }
