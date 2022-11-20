@@ -46,7 +46,7 @@
 "ui.cursorline"             = { bg = "base0" }
 "ui.statusline"             = { fg = "gruber-darker-niagara", bg = "gruber-darker-bg_1" }
 "ui.statusline.inactive"    = { fg = "gruber-darker-niagara-2", bg = "gruber-darker-bg-1" }
-"ui.popup"                  = { bg = "gruber-darker-bg" }
+"ui.popup"                  = { bg = "gruber-darker-bg_1" }
 "ui.window"                 = { bg = "gruber-darker-bg" }
 "ui.help"                   = { bg = "gruber-darker-bg", fg = "gruber-darker-fg" }
 
