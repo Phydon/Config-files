@@ -19,6 +19,7 @@ export def "get aliases" [] {
 	rename Alias Command | 
 	update Alias {
 		|f| $f.Alias | 
+		str trim |
 		split row " " | 
 		last
 	} | 
