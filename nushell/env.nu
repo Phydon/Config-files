@@ -94,8 +94,10 @@ let-env NU_PLUGIN_DIRS = [
 # let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
 # STARSHIP
-starship init nu | save ~/.cache/starship/init.nu
-starship init nu | str replace --string "size -c" size | save ~/.cache/starship/init.nu
+starship init nu | save -f ~/.cache/starship/init.nu
+starship init nu | str replace --string "size -c" size | save -f ~/.cache/starship/init.nu
 
 # ZOXIDE
-zoxide init nushell --hook prompt | save ~/.zoxide.nu
+zoxide init nushell --hook prompt | save -f ~/.zoxide.nu
+zoxide init nushell | str replace --string "&&" "and" | save -f ~/.zoxide.nu
+zoxide init nushell | str replace --string "||" "or" | save -f ~/.zoxide.nu
