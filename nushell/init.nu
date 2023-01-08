@@ -3,12 +3,12 @@ export def "get os" [] {
 	sys | get host.name
 }
 
-# Exiting the shell, the "VIM way".
+# Exit the shell, the "VIM way".
 export def ":q" [] {
 	exit
 }
 
-# Gets all active aliases.
+# Get all active aliases.
 export def "get aliases" [] {
 	open $nu.config-path | 
 	lines | 
@@ -25,25 +25,27 @@ export def "get aliases" [] {
 	sort-by Alias
 }
 
-# Creates a backup of your nushell command history.
+# Create a backup of your nushell command history.
 export def "history backup" [] {
 	mkdir ~/backup
 	open $nu.history-path | 
 	save ~/backup/history.txt
 }
 
+# TODO dataframes are no longer supported in the standard nushell version
+# need to download with feature "dataframe" via cargo
 # Creates a backup of your nushell command history and removes all duplicates in the $nu.history-path.
-export def "history remove_duplicates" [] {
-	history backup
+# export def "history remove_duplicates" [] {
+# 	history backup
 
-	open $nu.history-path | 
-	lines | 
-	into df | 
-	drop-duplicates | 
-	into nu | 
-	get "0" | 
-	save $nu.history-path
-}
+# 	open $nu.history-path | 
+# 	lines | 
+# 	into df | 
+# 	drop-duplicates | 
+# 	into nu | 
+# 	get "0" | 
+# 	save $nu.history-path
+# }
 
 # Get input by words as a table.
 # Returns the words stored in a table seperated into rows by default.
@@ -140,15 +142,16 @@ export def "watch cargo" [
 	}
 }
 
+# FIXME
 # Log all changes in any file in the given path to 'watched_changes.log'.
-export def "watch log" [
-	path: string = "~/main"		# path to folder to watch for file changes; default is '~/main'	
-] {
-	watch $path {
-		|op, path| $"($op) - ($path)(char nl)" |
-		save --append watched_changes.log
-	}
-}
+# export def "watch log" [
+# 	path: string = "~/main"		# path to folder to watch for file changes; default is '~/main'	
+# ] {
+# 	watch $path {
+# 		|op, path| $"($op) - ($path)(char nl)" |
+# 		save --append watched_changes.log
+# 	}
+# }
 
 # Get the current date and time.
 export def now [
@@ -192,7 +195,7 @@ export def backup [
 ] {
 	if $verbose {
 		echo "::: Create backup folder ..."
-		mkdir -s nubackup
+		mkdir -v nubackup
 
 		echo "::: Make backup ..."
 
@@ -205,8 +208,8 @@ export def backup [
 		} else {
 			for $file in $files {
 				cp --verbose $file nubackup/ 
-			} |
-			flatten
+			} 
+			# | flatten
 		}
 	} else {
 		mkdir nubackup
@@ -220,8 +223,8 @@ export def backup [
 		} else {
 			for $file in $files {
 				cp $file nubackup/ 
-			} |
-			flatten
+			} 
+			# | flatten
 		}
 	}
 }
@@ -334,7 +337,7 @@ export def "up" [
 # Mini grep
 # Search for a pattern in files from input stream or given files
 # If no input stream or files are given, it searches in all files recursively from the current directory
-# Excluded binaries: exe, xlsx, pdf, zip, pkg, pyc
+# Tries to exclude binaries
 # 
 # Examples: 
 # 	> search the word "wasd" in all files from the current directory recursively
