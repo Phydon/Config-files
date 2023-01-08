@@ -489,11 +489,7 @@ let gruberdarker = {
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
   show_banner: false
-  filesize_metric: false
-  table_mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
-  use_ls_colors: false
-  rm_always_trash: true
-  color_config: $gruberdarker # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
+  color_config: $minimal_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   quick_completions: true # set this to false to prevent auto-selecting completions when only one remains
@@ -502,26 +498,56 @@ let-env config = {
   float_precision: 2
   buffer_editor: "helix" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
-  filesize_format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
   edit_mode: vi # emacs, vi
   max_history_size: 20000 # Session has to be reloaded for this to take effect
   sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
   history_file_format: "plaintext" # "sqlite" or "plaintext"
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
-  table_index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
-  cd_with_abbreviations: false # set to true to allow you to do things like cd s/o/f and nushell expand it to cd some/other/folder
   case_sensitive_completions: false # set to true to enable case-sensitive completions
   enable_external_completion: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up my be very slow
   max_external_completion_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
-  show_clickable_links_in_ls: true # true or false to enable or disable clickable links in the ls listing. your terminal has to support links.
   render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
-  # A strategy of managing table view in case of limited space 
-  table_trim: {
-	  methodology: wrapping, # wrapping, truncating
-	  wrapping_try_keep_words: true, # A strategy which will be used by 'wrapping' methodology
-	  # truncating_suffix: "..." # A suffix which will be used with 'truncating' methodology
+  ls: {
+      use_ls_colors: false # use the LS_COLORS environment variable to colorize output
+      clickable_links: true # enable or disable clickable links. Your terminal has to support links.
+    }
+  rm: {
+    always_trash: true # always act as if -t was given. Can be overridden with -p
   }
+  cd: {
+    abbreviations: true # allows `cd s/o/f` to expand to `cd some/other/folder`
+  }
+  table: {
+    mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+    index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
+    trim: {
+      methodology: wrapping # wrapping or truncating
+      wrapping_try_keep_words: true # A strategy used by the 'wrapping' methodology
+      truncating_suffix: "..." # A suffix used by the 'truncating' methodology
+    }
+  }
+  history: {
+    max_size: 10000 # Session has to be reloaded for this to take effect
+    sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
+    file_format: "plaintext" # "sqlite" or "plaintext"
+  }
+  completions: {
+    case_sensitive: false # set to true to enable case-sensitive completions
+    quick: true  # set this to false to prevent auto-selecting completions when only one remains
+    partial: true  # set this to false to prevent partial filling of the prompt
+    algorithm: "prefix"  # prefix or fuzzy
+    external: {
+      enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up my be very slow
+      max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
+      completer: null # check 'carapace_completer' above as an example
+    }
+  }
+  filesize: {
+    metric: true # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
+    format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
+  }
+
 
   hooks: {
     pre_prompt: [{
@@ -769,6 +795,7 @@ source ~/.cache/starship/init.nu
 source ~/.zoxide.nu
 
 
+# FIXME TODO
 # import init.nu
 use ~/Appdata/Roaming/nushell/init.nu *
 
@@ -792,15 +819,19 @@ let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
 
 # ALIASES
 # if ((getos) == Windows) {
-alias sf = C:\Aliases\Programs\sf.exe
-alias fd = C:\Aliases\Programs\fd.exe
-alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
-alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
-alias rg = C:\Aliases\Programs\rg.exe --stats --no-messages --with-filename
+# alias sf = C:\Aliases\Programs\sf.exe
+# alias fd = C:\Aliases\Programs\fd.exe
+# alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
+# alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
+# alias rg = C:\Aliases\Programs\rg.exe --stats --no-messages --with-filename
+alias fzf = fzf --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
+alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
+alias rg = rg --stats --no-messages --with-filename
 alias gs = git status
 alias ga = git all
 alias cal = cal --week-start monday --month-names --year
-alias diff = C:\Aliases\Programs\delta.exe
+# alias diff = C:\Aliases\Programs\delta.exe
+alias diff = delta
 alias cd = z
 alias cdi  = zi
 alias mv = mv --verbose
