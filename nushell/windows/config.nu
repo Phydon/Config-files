@@ -824,8 +824,8 @@ let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
 # alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
 # alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
 # alias rg = C:\Aliases\Programs\rg.exe --stats --no-messages --with-filename
-alias fzf = fzf --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
-alias cat = bat --theme "Sublime Snazzy" --style=numbers --color=always
+alias fzf = fzf --preview 'bat --theme "GitHub" --style=numbers --color=always --line-range :500 {}'
+alias cat = bat --theme "GitHub" --style=numbers --color=always
 alias rg = rg --stats --no-messages --with-filename
 alias gs = git status
 alias ga = git all
