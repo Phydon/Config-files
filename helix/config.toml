@@ -1,4 +1,4 @@
-theme = "gruberdarker"
+theme = "minimal2"
 
 [editor]
 line-number = "relative"
@@ -18,7 +18,7 @@ right = ["diagnostics", "selections", "position", "position-percentage", "file-e
 separator = "│"
 
 [editor.lsp]
-display-messages = false
+display-messages = false 
 
 [editor.cursor-shape]
 insert = "bar"
@@ -44,10 +44,16 @@ render = true
 character = "╎"
 
 [keys.normal]
-"space" = { w = { w = ":open ~/obsidian_vault/quicknotes.md" } }
+G = "goto_file_end"
+X = "extend_line_above"
+ret = ["move_line_down", "goto_line_start"]
 
-[keys.insert]
-q = { q = "normal_mode" }
+[keys.normal.space]
+w = { w = ":open ~/obsidian_vault/quicknotes.md" }
+r = ":reflow"
 
-[keys.select]
-q = { q = "normal_mode" }
+[keys.insert.q]
+q = "normal_mode"
+
+[keys.select.q]
+q = "normal_mode"
