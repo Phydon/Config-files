@@ -1,4 +1,4 @@
-# Gets the name of the running operating system.
+# Get the name of the running operating system.
 export def "get os" [] {
 	sys | get host.name
 }
@@ -384,4 +384,22 @@ export def mg [
 			}
 		}
     }         
+}
+
+# Get all installed python packages from pip
+export def pypkg [
+	--count (-c) # get the number of all installed packages
+] {
+	if ($count) {
+		py -m pip list | 
+		lines | 
+		skip 2 |
+		length
+	} else {
+		py -m pip list | 
+		parse "{pkgname} {version}" |
+		str trim |
+		skip 2 |
+		explore
+	}
 }
