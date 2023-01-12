@@ -492,20 +492,11 @@ let-env config = {
   color_config: $minimal_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
-  quick_completions: true # set this to false to prevent auto-selecting completions when only one remains
-  partial_completions: true  # set this to false to prevent partial filling of the prompt
-  completion_algorithm: "prefix"  # prefix, fuzzy
   float_precision: 2
   buffer_editor: "helix" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
   edit_mode: vi # emacs, vi
-  max_history_size: 20000 # Session has to be reloaded for this to take effect
-  sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
-  history_file_format: "plaintext" # "sqlite" or "plaintext"
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
-  case_sensitive_completions: false # set to true to enable case-sensitive completions
-  enable_external_completion: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up my be very slow
-  max_external_completion_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
   render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
   ls: {
@@ -819,18 +810,12 @@ let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
 
 # ALIASES
 # if ((getos) == Windows) {
-# alias sf = C:\Aliases\Programs\sf.exe
-# alias fd = C:\Aliases\Programs\fd.exe
-# alias fzf = C:\Aliases\Programs\fzf.exe --preview 'C:\Aliases\Programs\bat.exe --style=numbers --color=always --line-range :500 {}'
-# alias cat = C:\Aliases\Programs\bat.exe --theme "Sublime Snazzy" --style=numbers --color=always
-# alias rg = C:\Aliases\Programs\rg.exe --stats --no-messages --with-filename
 alias fzf = fzf --preview 'bat --theme "GitHub" --style=numbers --color=always --line-range :500 {}'
 alias cat = bat --theme "GitHub" --style=numbers --color=always
 alias rg = rg --stats --no-messages --with-filename
 alias gs = git status
 alias ga = git all
 alias cal = cal --week-start monday --month-names --year
-# alias diff = C:\Aliases\Programs\delta.exe
 alias diff = delta
 alias cd = z
 alias cdi  = zi
