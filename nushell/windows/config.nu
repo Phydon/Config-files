@@ -829,6 +829,8 @@ alias ob = start obsidian
 alias firefox = start firefox
 alias pwd = $env.PWD
 alias emacs = runemacs --maximized
+alias aml = overlay use ~\main\Machine_Learning\mlenv\Scripts\activate.nu as mlenv
+alias dml = overlay hide mlenv
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
