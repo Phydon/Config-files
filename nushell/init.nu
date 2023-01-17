@@ -187,6 +187,17 @@ export def now [
 	$dt
 }
 
+# Get the current day from the calendar.
+export def today [] {
+	let today = (
+		date now |
+		date format %d
+	)
+
+	cal --week-start monday --month-names --year |
+	find $today
+}
+
 # Create a backup of a given file.
 # If no file is given, a backup of all files in the current folder is created.
 # Hidden files included.
