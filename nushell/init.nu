@@ -154,6 +154,7 @@ export def "watch cargo" [
 # 	}
 # }
 
+# FIXME
 # Get the current date and time.
 export def now [
 	--time (-t)		# only show time
@@ -302,49 +303,49 @@ export def userinput [
 	}
 }
 
-# Update tools, languages and more
-export def "up" [
-	--list (-l)		# show everything that gets updated
-] {
-	let os = (get os)
+# # Update tools, languages and more
+# export def "up" [
+# 	--list (-l)		# show everything that gets updated
+# ] {
+# 	let os = (get os)
 
-	if ($os == "Windows") {
-		let tools = [scoop rustup vim nvim ghcup]
+# 	if ($os == "Windows") {
+# 		let tools = [scoop rustup vim nvim ghcup]
 
-		if $list {
-			for tool in $tools {
-				echo $tool
-			}
-		} else {
-			let inp = (userinput "update" "Enter \"update\" to update")
+# 		if $list {
+# 			for tool in $tools {
+# 				echo $tool
+# 			}
+# 		} else {
+# 			let inp = (userinput "update" "Enter \"update\" to update")
 
-			if $inp == "update" {
-				echo "::: Updating scoop ..."
-				scoop update
+# 			if $inp == "update" {
+# 				echo "::: Updating scoop ..."
+# 				scoop update
 
-				echo (char nl)
-				echo  "::: Updating rust ..."
-				rustup --verbose update
+# 				echo (char nl)
+# 				echo  "::: Updating rust ..."
+# 				rustup --verbose update
 
-				echo (char nl)
-				echo  "::: Updating vim ..."
-				vim -c PlugUpdate -c qa
+# 				echo (char nl)
+# 				echo  "::: Updating vim ..."
+# 				vim -c PlugUpdate -c qa
 
-				echo (char nl)
-				echo  "::: Updating nvim ..."
-				nvim -c PlugUpdate -c qa
+# 				echo (char nl)
+# 				echo  "::: Updating nvim ..."
+# 				nvim -c PlugUpdate -c qa
 
-				echo (char nl)
-				echo  "::: Updating ghcup ..."
-				ghcup --verbose upgrade
-			} else {
-				$nothing
-			}
-		}
-	} else {
-		echo "Not implemented yet"
-	}
-}
+# 				echo (char nl)
+# 				echo  "::: Updating ghcup ..."
+# 				ghcup --verbose upgrade
+# 			} else {
+# 				$nothing
+# 			}
+# 		}
+# 	} else {
+# 		echo "Not implemented yet"
+# 	}
+# }
 
 # Mini grep
 # Search for a pattern in files from input stream or given files
