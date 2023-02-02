@@ -833,6 +833,7 @@ alias aml = overlay use ~\main\Machine_Learning\mlenv\Scripts\activate.nu as mle
 alias dml = overlay hide mlenv
 alias time = benchmark
 alias ii = start .
+alias up = ~/main/Rust/up/target/release/up.exe
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
