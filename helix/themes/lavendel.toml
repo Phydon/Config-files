@@ -74,15 +74,15 @@
 "special" = { fg = "t7", modifiers = ["bold"] }
 
 "markup.heading.marker" = { fg = "highlight_two" }
-"markup.heading.1" = { fg = "highlight", modifiers = ["bold", "underlined"] }
-"markup.heading.2" = { fg = "highlight", modifiers = ["bold"] }
+"markup.heading.1" = { fg = "highlight_two", modifiers = ["bold", "underlined"] }
+"markup.heading.2" = { fg = "highlight_two", modifiers = ["bold"] }
 "markup.heading.3" = { fg = "t4", modifiers = ["bold", "underlined"] }
 "markup.heading.4" = { fg = "t4", modifiers = ["bold"] }
-"markup.list" = { fg = "t18" }
-"markup.bold" = { fg = "highlight_two" , modifiers = ["bold"]}
+"markup.list" = { fg = "t13" }
+"markup.bold" = { fg = "highlight" , modifiers = ["bold"]}
 "markup.italic" = { fg = "t14", modifiers = ["italic"] }
 "markup.link.url" = { fg = "t4", modifiers = ["underlined"] }
-"markup.link.text" = { fg = "t13" }
+"markup.link.text" = { fg = "t18" }
 "markup.quote" = { fg = "comment" }
 "markup.raw" = { fg = "t4" }
 
