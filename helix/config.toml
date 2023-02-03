@@ -1,4 +1,4 @@
-theme = "minimal2"
+theme = "lavendel"
 
 [editor]
 line-number = "relative"
@@ -18,7 +18,7 @@ right = ["diagnostics", "selections", "position", "position-percentage", "file-e
 separator = "│"
 
 [editor.lsp]
-display-messages = false 
+display-messages = true 
 
 [editor.cursor-shape]
 insert = "bar"
@@ -51,9 +51,15 @@ ret = ["move_line_down", "goto_line_start"]
 [keys.normal.space]
 w = { w = ":open ~/obsidian_vault/quicknotes.md" }
 r = ":reflow"
+u = "switch_to_lowercase"
+U = "switch_to_uppercase"
 
 [keys.insert.q]
 q = "normal_mode"
 
 [keys.select.q]
 q = "normal_mode"
+
+[keys.select.space]
+u = "switch_to_lowercase"
+U = "switch_to_uppercase"
