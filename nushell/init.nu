@@ -192,7 +192,8 @@ export def now [
 export def today [] {
 	let today = (
 		date now |
-		date format %d
+		date format %d |
+		into int
 	)
 
 	cal --week-start monday --month-names --year |

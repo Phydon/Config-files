@@ -229,6 +229,8 @@ export-env {
     let t17 = "#664864"
     let t18 = "#2E6170"
 
+    let t19 = "#7F53BF"
+
     let diff_minus = "#ff0900"
     let diff_delta = "#0078bd"
     let diff_plus = "#87a800"
@@ -254,16 +256,16 @@ export-env {
         # color for nushell primitives
         separator: $t3        
         leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
-        header: { fg: $t18 bg: $selection attr: b}
+        header: { fg: $t19 attr: bd }
         empty: { fg: $t4}
         bool: { fg: $t14}
         int: { fg: $t14}
-        filesize: { fg: $t4}
+        filesize: { fg: $t14}
         duration: { fg: $t4}
-        date: { fg: $t9}
+        date: { fg: $t6}
         range: { fg: $t9}
         float: { fg: $t14}
-        string: { fg: $t6 attr: i}
+        string: { fg: $t9 }
         nothing: { fg: $t4}
         binary: { fg: $t7}
         cellpath: { fg: $t7}
@@ -275,7 +277,7 @@ export-env {
 
         # shapes are used to change the cli syntax highlighting
         shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
-        shape_binary: { fg: $t7}
+        shape_binary: { fg: $t11}
         shape_bool: { fg: $t14}
         shape_int: { fg: $t14}
         shape_float: { fg: $t14}
@@ -286,16 +288,16 @@ export-env {
         shape_literal: { fg: $t4}
         shape_operator: { fg: $t8}
         shape_signature: { fg: $t9}
-    	shape_string : { fg: $t6 attr: i}
+    	shape_string : { fg: $t9 attr: i }
         shape_string_interpolation: { fg: $t6}
-        shape_datetime: { fg: $t9}
+        shape_datetime: { fg: $t8}
         shape_list: { fg: $t4}
         shape_table: { fg: $t4}
         shape_record: { fg: $t4}
         shape_block: { fg: $t4}
         shape_filepath: { fg: $t7}
         shape_globpattern: { fg: $t7}
-        shape_variable: { fg: $t11}
+        shape_variable: { fg: $t7}
         shape_flag: { fg: $t4}
         shape_custom: { fg: $t4}
         shape_nothing: white
