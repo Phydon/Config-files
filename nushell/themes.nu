@@ -260,9 +260,9 @@ export-env {
         empty: { fg: $t4}
         bool: { fg: $t14}
         int: { fg: $t14}
-        filesize: { fg: $t14}
+        filesize: { fg: $t9}
         duration: { fg: $t4}
-        date: { fg: $t6}
+        date: { fg: $t9}
         range: { fg: $t9}
         float: { fg: $t14}
         string: { fg: $t9 }
