@@ -284,7 +284,7 @@ export-env {
         shape_range: { fg: $t9}
         shape_internalcall: { fg: $highlight bg: $selection attr: b }
         shape_external: { fg: $highlight bg: $selection}
-        shape_externalarg: { fg: $t4}
+        shape_externalarg: { fg: $t4 attr: i}
         shape_literal: { fg: $t4}
         shape_operator: { fg: $t8}
         shape_signature: { fg: $t9}
@@ -298,7 +298,7 @@ export-env {
         shape_filepath: { fg: $t7}
         shape_globpattern: { fg: $t7}
         shape_variable: { fg: $t7}
-        shape_flag: { fg: $t4}
+        shape_flag: { fg: $t4 attr: i}
         shape_custom: { fg: $t4}
         shape_nothing: white
     }
