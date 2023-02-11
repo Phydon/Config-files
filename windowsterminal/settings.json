@@ -50,17 +50,17 @@
     {
         "defaults": 
         {
-            "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
+            "backgroundImage": "C:\\Users\\Pohl\\Pictures\\Saved Pictures\\dark grey.jpg",
             "backgroundImageAlignment": "left",
-            "backgroundImageOpacity": 0.59999999999999998,
+            "backgroundImageOpacity": 0.6,
             "bellStyle": "window",
             "closeOnExit": "graceful",
-            "colorScheme": "One Half Dark",
+            "colorScheme": "Endeavour",
             "cursorShape": "filledBox",
             "font": 
             {
-                "face": "Hack NF",
-                "size": 15,
+                "face": "FiraCode NF",
+                "size": 15.0,
                 "weight": "medium"
             },
             "historySize": 9999,
@@ -73,17 +73,18 @@
         "list": 
         [
             {
-                "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
+                "backgroundImage": "C:\\Users\\Pohl\\Pictures\\Saved Pictures\\dark grey.jpg",
                 "backgroundImageAlignment": "left",
-                "backgroundImageOpacity": 0.59999999999999998,
+                "backgroundImageOpacity": 0.6,
                 "bellStyle": "window",
                 "colorScheme": "One Half Dark",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe /nologo",
                 "cursorShape": "filledBox",
                 "elevate": false,
                 "experimental.retroTerminalEffect": false,
                 "font": 
                 {
-                    "size": 15,
+                    "size": 15.0,
                     "weight": "medium"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -119,8 +120,8 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
-                "backgroundImageOpacity": 0.59999999999999998,
+                "backgroundImage": "C:\\Users\\Pohl\\Pictures\\Saved Pictures\\dark grey.jpg",
+                "backgroundImageOpacity": 0.6,
                 "closeOnExit": "graceful",
                 "commandline": "C:\\Program Files\\nu\\bin\\nu.exe",
                 "cursorShape": "filledBox",
@@ -128,7 +129,7 @@
                 "guid": "{ae8007d9-e6e7-4aaa-aa76-05c6d487233b}",
                 "hidden": false,
                 "historySize": 9999,
-                "icon": "~\\Pictures\\Saved Pictures\\nushell.png",
+                "icon": "C:\\Users\\Pohl\\Pictures\\Saved Pictures\\nushell.png",
                 "intenseTextStyle": "all",
                 "name": "NuShell",
                 "opacity": 100,
@@ -189,6 +190,29 @@
         },
         {
             "background": "#181818",
+            "black": "#0C0C0C",
+            "blue": "#706EFF",
+            "brightBlack": "#343436",
+            "brightBlue": "#7FBAFF",
+            "brightCyan": "#5F86D9",
+            "brightGreen": "#47B35D",
+            "brightPurple": "#CC3980",
+            "brightRed": "#FF463D",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F0D775",
+            "cursorColor": "#FFF3EB",
+            "cyan": "#7F6FDB",
+            "foreground": "#E3E3EA",
+            "green": "#296932",
+            "name": "Endeavour",
+            "purple": "#743ABF",
+            "red": "#A31912",
+            "selectionBackground": "#290019",
+            "white": "#CDCCDB",
+            "yellow": "#C19C00"
+        },
+        {
+            "background": "#121212",
             "black": "#282C34",
             "blue": "#61AFEF",
             "brightBlack": "#5A6374",
@@ -354,5 +378,6 @@
     "startOnUserLogin": true,
     "tabWidthMode": "equal",
     "theme": "dark",
+    "themes": [],
     "useAcrylicInTabRow": true
 }
