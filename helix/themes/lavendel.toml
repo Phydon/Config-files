@@ -84,7 +84,7 @@
 "markup.link.url" = { fg = "t4", modifiers = ["underlined", "dim"] }
 "markup.link.text" = { fg = "t18" }
 "markup.quote" = { fg = "comment" }
-"markup.raw" = { fg = "t4" }
+"markup.raw" = { fg = "t7" }
 
 [palette]
 t1 = "#0e0e0d"
