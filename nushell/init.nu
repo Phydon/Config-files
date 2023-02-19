@@ -121,8 +121,10 @@ export def "git all" [
 	commit_txt: string	# your commit message
 ] {
 	git add . |
+	sleep 2sec |
 	git commit -m $commit_txt |
-	git push origin master
+	sleep 2sec |
+	git push 
 }
 
 # Run 'cargo check' or 'cargo test' on every file change.
@@ -404,12 +406,12 @@ export def pypkg [
 	--count (-c) # get the number of all installed packages
 ] {
 	if ($count) {
-		py -m pip list | 
+		python -m pip list | 
 		lines | 
 		skip 2 |
 		length
 	} else {
-		py -m pip list | 
+		python -m pip list | 
 		parse "{pkgname} {version}" |
 		str trim |
 		skip 2 |
