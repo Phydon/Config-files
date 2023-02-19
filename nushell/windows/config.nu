@@ -310,7 +310,7 @@ let-env config = {
     abbreviations: true # allows `cd s/o/f` to expand to `cd some/other/folder`
   }
   table: {
-    mode: compact # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+    mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
     index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
     trim: {
       methodology: wrapping # wrapping or truncating
@@ -636,6 +636,7 @@ alias dml = overlay hide mlenv
 alias time = benchmark
 alias ii = start .
 alias up = ~/main/Rust/up/target/release/up.exe
+alias py = python
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
