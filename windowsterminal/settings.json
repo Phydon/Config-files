@@ -50,7 +50,7 @@
     {
         "defaults": 
         {
-            "backgroundImage": "C:\\Users\\Pohl\\Pictures\\Saved Pictures\\dark grey.jpg",
+            "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
             "backgroundImageAlignment": "left",
             "backgroundImageOpacity": 0.6,
             "bellStyle": "window",
@@ -73,7 +73,7 @@
         "list": 
         [
             {
-                "backgroundImage": "C:\\Users\\Pohl\\Pictures\\Saved Pictures\\dark grey.jpg",
+                "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
                 "backgroundImageAlignment": "left",
                 "backgroundImageOpacity": 0.6,
                 "bellStyle": "window",
@@ -120,7 +120,7 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "backgroundImage": "C:\\Users\\Pohl\\Pictures\\Saved Pictures\\dark grey.jpg",
+                "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
                 "backgroundImageOpacity": 0.6,
                 "closeOnExit": "graceful",
                 "commandline": "C:\\Program Files\\nu\\bin\\nu.exe",
@@ -129,7 +129,7 @@
                 "guid": "{ae8007d9-e6e7-4aaa-aa76-05c6d487233b}",
                 "hidden": false,
                 "historySize": 9999,
-                "icon": "C:\\Users\\Pohl\\Pictures\\Saved Pictures\\nushell.png",
+                "icon": "~\\Pictures\\Saved Pictures\\nushell.png",
                 "intenseTextStyle": "all",
                 "name": "NuShell",
                 "opacity": 100,
