@@ -14,6 +14,40 @@ New-Alias -Name .. -Value cdback
 Function vimquit {exit}
 New-Alias -Name :q -Value vimquit
 
+New-Alias -Name 'up' -Value ~/main/Rust/up/target/release/up.exe
+
+New-Alias -Name 'help' -Value Get-Help
+
+Function pypackages {
+	py -m pip list
+}
+New-Alias -Name 'pypkg' -Value pypackages
+
+function shorten-path([string] $path) {
+   $loc = $path.Replace($HOME, '~')
+   # remove prefix for UNC paths
+   $loc = $loc -replace '^[^:]+::', ''
+   # make path shorter like tabs in Vim,
+   # handle paths starting with \\ and . correctly
+   return ($loc -replace '\\(\.?)([^\\])[^\\]*(?=\\)','\$1$2')
+}
+
+function prompt {
+   # our theme
+   $cdelim = [ConsoleColor]::DarkCyan
+   $chost = [ConsoleColor]::Green
+   $cloc = [ConsoleColor]::Cyan
+   $cadm = [ConsoleColor]::Red
+   $IsAdmin = (New-Object Security.Principal.WindowsPrincipal ([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
+
+   # write-host ([net.dns]::GetHostName()) -n -f $chost
+   write-Host ($(if ($IsAdmin) { 'admin ' } else { '' })) -n -f $cadm
+   write-host '[' -n -f $cdelim
+   write-host (shorten-path (pwd).Path) -n -f $cloc
+   write-host '] ' -n -f $cdelim
+   write-host "$([char]0x24)" -n -f $chost
+   return ' ' 
+}
 
 # # greeting function
 # $Hour = (Get-Date).Hour
@@ -21,8 +55,10 @@ New-Alias -Name :q -Value vimquit
 # ElseIf ($Hour -gt 17) {"Good Evening $($Env:UserName)"}
 # Else {"Welcome $($Env:UserName)"}
 
+Set-PSReadLineOption -Colors @{ "Command"=[ConsoleColor]::Magenta }
+
 # use starship prompt
-Invoke-Expression (&starship init powershell)
+# Invoke-Expression (&starship init powershell)
 
 # For zoxide v0.8.0+
 Invoke-Expression (& {
