@@ -1,4 +1,4 @@
-format = "$status$battery$hostname$git_status$directory$shell$character"
+format = "$status$battery$sudo$username$hostname$git_status$directory$shell$character"
 
 # Disable the blank line at the start of the prompt
 add_newline = false
@@ -270,7 +270,8 @@ style = "fg:#808EA5"
 
 [sudo]  
 format = '\[[as sudo](&style)\]'
-disabled = true
+allow_windows = true
+disabled = false
 
 [swift]  
 format = '\[[$symbol($version)]($style)\]'
@@ -285,7 +286,11 @@ format = '\[[$time]($style)\]'
 style = "fg:#808EA5"
 
 [username]
-format = '\[[$user]($style)\]'
+format = '\[[$user]($style)\] '
+style_root = "bold red"
+style_user = "bold white"
+show_always = false
+disabled = false
 
 [vagrant]
 format = '\[[$symbol($version)]($style)\]'
