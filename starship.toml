@@ -1,4 +1,16 @@
-format = "$status$battery$sudo$username$hostname$git_status$directory$shell$character"
+format = """
+$status\
+$battery\
+$sudo\
+$username\
+$hostname\
+$git_status\
+$directory\
+$shell\
+$character
+"""
+
+palette = "lav"
 
 # Disable the blank line at the start of the prompt
 add_newline = false
@@ -6,10 +18,17 @@ add_newline = false
 [line_break]
 disabled = true
 
+[palettes.lav]
+purple = "#7F6FDB"
+dark_purple = "#743ABF"
+bright_magenta = "#CC3980"
+dark_blue = "#706EFF"
+bright_green = "#3BB38C"
+
 [status]
 disabled = false
 symbol = ""
-style = "bold red"
+style = "red"
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
@@ -24,11 +43,11 @@ empty_symbol = ""
 disabled = false
 [[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 25%
 threshold = 25
-style = "bold red"
+style = "red"
 discharging_symbol = ""
 [[battery.display]] # "bold yellow" style and   symbol when capacity is between 25% and 35%
 threshold = 35
-style = "bold yellow"
+style = "bright_magenta"
 # style = "bold fg:#b58900"
 discharging_symbol = ""
 [[battery.display]]
@@ -36,7 +55,8 @@ threshold = 99
 # style = "green dimmed bold"
 # style = "bold dimmed fg:#4C74A6"
 # style = "bold dimmed fg:#49A699"
-style = "bold fg:#B2C1D6"
+# style = "fg:#B2C1D6"
+style = "bright_green"
 discharging_symbol = ""
 
 [c]  
@@ -50,9 +70,12 @@ disabled = true
 # success_symbol = "[:❯](bold dimmed fg:#4C74A6)"
 # error_symbol = "[:❯](bold fg:#870000)"
 # vicmd_symbol = "[::❯](bold fg:#b58900) "
-success_symbol = "[:](bold fg:#B2C1D6)"
-error_symbol = "[:](bold fg:#d32c5d)"
-vicmd_symbol = "[::](bold fg:#b58900) "
+# success_symbol = "[:](bold fg:#B2C1D6)"
+# error_symbol = "[:](bold fg:#d32c5d)"
+# vicmd_symbol = "[::](bold fg:#b58900) "
+success_symbol = "[:](bold dark_purple)"
+error_symbol = "[:](bold dark_purple)"
+vicmd_symbol = "[::](bold dark_purple) "
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
@@ -96,7 +119,8 @@ truncation_symbol = ".."
 truncate_to_repo = false
 home_symbol = "~"
 # style = "fg:#4e4e4e"
-style = "fg:#808EA5"
+# style = "fg:#808EA5"
+style = "purple"
 
 [docker_context]
 format = '\[[ $context]($style)\]'
@@ -131,6 +155,7 @@ format = '([\[$all_status$ahead_behind\]]($style))'
 ahead = '⇡${count}'
 diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
+style = "dark_blue"
 
 [golang]  
 format = '\[[ ($version)]($style)\]'
