@@ -54,11 +54,14 @@ let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-
-let-env PROMPT_INDICATOR = { $"(ansi white_bold) $ " }
-let-env PROMPT_INDICATOR_VI_INSERT = { $"(ansi white_bold)$ " }
-let-env PROMPT_INDICATOR_VI_NORMAL = { $"(ansi white_bold):: " }
-let-env PROMPT_MULTILINE_INDICATOR = { $"(ansi white_bold)::: " }
+let-env PROMPT_INDICATOR = { $"(ansi -e { fg: '#743ABF'}) $ " }
+let-env PROMPT_INDICATOR_VI_INSERT = { $"(ansi -e { fg: '#743ABF'})$ " }
+let-env PROMPT_INDICATOR_VI_NORMAL = { $"(ansi -e { fg: '#743ABF'}):: " }
+let-env PROMPT_MULTILINE_INDICATOR = { $"(ansi -e { fg: '#743ABF'})::: " }
+# let-env PROMPT_INDICATOR = { $"(ansi white_bold) $ " }
+# let-env PROMPT_INDICATOR_VI_INSERT = { $"(ansi white_bold)$ " }
+# let-env PROMPT_INDICATOR_VI_NORMAL = { $"(ansi white_bold):: " }
+# let-env PROMPT_MULTILINE_INDICATOR = { $"(ansi white_bold)::: " }
 # let-env PROMPT_INDICATOR = { "〉" }
 
 # Specifies how environment variables are:
