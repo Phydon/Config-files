@@ -50,7 +50,7 @@
     {
         "defaults": 
         {
-            "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
+            "backgroundImage": null,
             "backgroundImageAlignment": "left",
             "backgroundImageOpacity": 0.6,
             "bellStyle": "window",
@@ -73,7 +73,7 @@
         "list": 
         [
             {
-                "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
+                "backgroundImage": null,
                 "backgroundImageAlignment": "left",
                 "backgroundImageOpacity": 0.6,
                 "bellStyle": "window",
@@ -120,7 +120,7 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "backgroundImage": "~\\Pictures\\Saved Pictures\\dark grey.jpg",
+                "backgroundImage": null,
                 "backgroundImageOpacity": 0.6,
                 "closeOnExit": "graceful",
                 "commandline": "C:\\Program Files\\nu\\bin\\nu.exe",
@@ -129,7 +129,7 @@
                 "guid": "{ae8007d9-e6e7-4aaa-aa76-05c6d487233b}",
                 "hidden": false,
                 "historySize": 9999,
-                "icon": "~\\Pictures\\Saved Pictures\\nushell.png",
+                "icon": "C:\\Program Files\\nu\\nushell.png",
                 "intenseTextStyle": "all",
                 "name": "NuShell",
                 "opacity": 100,
@@ -197,7 +197,7 @@
             "brightCyan": "#5F86D9",
             "brightGreen": "#3BB38C",
             "brightPurple": "#CC3980",
-            "brightRed": "#FF463D",
+            "brightRed": "#FA0068",
             "brightWhite": "#F2F2F2",
             "brightYellow": "#F0D775",
             "cursorColor": "#FFF3EB",
@@ -206,10 +206,10 @@
             "green": "#296932",
             "name": "Endeavour",
             "purple": "#743ABF",
-            "red": "#A31912",
+            "red": "#FF0900",
             "selectionBackground": "#290019",
             "white": "#CDCCDB",
-            "yellow": "#C19C00"
+            "yellow": "#FFBF00"
         },
         {
             "background": "#121212",
