@@ -612,9 +612,9 @@ let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
 
 # ALIASES
 # if ((getos) == Windows) {
-alias fzf = fzf --preview 'bat --theme "GitHub" --style=numbers --color=always --line-range :500 {}'
+alias fzf = fzf --multi --preview 'bat --theme "GitHub" --style=numbers --color=always --line-range :500 {}'
 alias cat = bat --theme "GitHub" --style=numbers --color=always
-alias rg = rg --stats --no-messages --with-filename
+alias rg = rg --stats --no-messages --with-filename --context 1 --smart-case --pretty
 alias gs = git status
 alias ga = git all
 alias cal = cal --week-start monday --month-names --year
@@ -627,8 +627,8 @@ alias rm = rm --verbose
 alias mkdir = mkdir --verbose
 alias bkp = backup
 alias tldr = tldr --pager
-alias ob = start obsidian
-alias firefox = start firefox
+alias ob = ^start obsidian
+alias firefox = ^start firefox
 alias pwd = $env.PWD
 alias emacs = runemacs --maximized
 alias aml = overlay use ~\main\Machine_Learning\mlenv\Scripts\activate.nu as mlenv
@@ -637,6 +637,9 @@ alias time = benchmark
 alias ii = start .
 alias up = ~/main/Rust/up/target/release/up.exe
 alias py = python
+alias rga = rga --rga-adapters="poppler,zip"
+alias powershell = powershell /nologo
+alias rech = ~/main/Rust/rechifina/target/release/rechifina.exe
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
