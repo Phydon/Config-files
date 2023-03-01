@@ -640,6 +640,8 @@ alias py = python
 alias rga = rga --rga-adapters="poppler,zip"
 alias powershell = powershell /nologo
 alias rech = ~/main/Rust/rechifina/target/release/rechifina.exe
+alias hyp = hyperfine --warmup 2 --style full
+alias du = dust
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
