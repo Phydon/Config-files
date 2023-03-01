@@ -241,6 +241,7 @@ export-env {
     let highlight_three = "#ff0900"
 
     let black = "#000000"
+    let white = "#F0F0F0"
 
     let selection = "#290019"
 
@@ -260,12 +261,12 @@ export-env {
         empty: { fg: $t4}
         bool: { fg: $t14}
         int: { fg: $t14}
-        filesize: { fg: $t9}
+        filesize: { fg: $white}
         duration: { fg: $t4}
-        date: { fg: $t9}
-        range: { fg: $t9}
+        date: { fg: $white}
+        range: { fg: $white}
         float: { fg: $t14}
-        string: { fg: $t9 }
+        string: { fg: $white }
         nothing: { fg: $t4}
         binary: { fg: $t7}
         cellpath: { fg: $t7}
