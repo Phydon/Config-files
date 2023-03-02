@@ -3,18 +3,17 @@ theme = "lavendel"
 [editor]
 line-number = "relative"
 color-modes = true
-# shell = "nushell"
+shell = ["nu", "-c"]
 auto-completion = true
 completion-trigger-len = 2
 auto-format = true
 auto-info = true
-# bufferline = "multiple"
+bufferline = "multiple"
 
 [editor.statusline]
 left = ["mode", "spinner"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
-# right = ["diagnostics", "selections", "position", "position-percentage", "total-line-numbers", "file-encoding", "file-line-ending", "file-type"]
+right = ["diagnostics", "selections", "total-line-numbers", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 
 [editor.lsp]
