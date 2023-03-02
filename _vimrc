@@ -130,6 +130,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'voldikss/vim-floaterm'
 Plug 'ron-rs/ron.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'mg979/vim-visual-multi'
 call plug#end()
 
 
@@ -139,10 +140,10 @@ call plug#end()
 " hydrangea, nord, 256_noir, iceberg, hybrid, tender, apprentice,
 " deus, pencil, nofrils-dark, afterglow, sierra, deep-space,
 " revolutions, Revolution, zenburn,tetragrammaton, strange, cabin, muon,
-" thornbird, lucius, stormpetrel, Spink, redblack, abra
+" thornbird, lucius, stormpetrel, Spink, redblack, abra, arcadia
 " light themes: Tomorrow, PaperColor Light, vylight, zenesque, louver,
 " laederon, lightcolors, kalt, Light, rainbow_autumn
-colorscheme GruberDarker
+colorscheme vydark
 
 " for PAPERCOLOR light theme
 " set background=light
@@ -301,6 +302,7 @@ let g:floaterm_keymap_toggle = "<Leader>FT"
 
 " INDENTLINE
 nnoremap <leader>ii <cmd>IndentLinesToggle<cr>
+let g:indentLine_char_list = ['┊', '┆', '¦', '|']
 
 
 " Vim with all enhancements
