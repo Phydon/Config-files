@@ -289,7 +289,7 @@ let description = "#61586f"
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
   show_banner: false
-  color_config: $env.lavendel # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme
+  color_config: $env.lavendel # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme, env.lavendel
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   float_precision: 2
@@ -625,7 +625,7 @@ alias mv = mv --verbose
 alias cp = cp --verbose
 alias rm = rm --verbose
 alias mkdir = mkdir --verbose
-alias bkp = backup
+alias bkp = ~/main/Rust/bkp/target/release/bkp.exe
 alias tldr = tldr --pager
 alias ob = ^start obsidian
 alias firefox = ^start firefox
@@ -633,7 +633,7 @@ alias pwd = $env.PWD
 alias emacs = runemacs --maximized
 alias aml = overlay use ~\main\Machine_Learning\mlenv\Scripts\activate.nu as mlenv
 alias dml = overlay hide mlenv
-alias time = benchmark
+alias time = timeit
 alias ii = start .
 alias up = ~/main/Rust/up/target/release/up.exe
 alias py = python
@@ -642,6 +642,8 @@ alias powershell = powershell /nologo
 alias rech = ~/main/Rust/rechifina/target/release/rechifina.exe
 alias hyp = hyperfine --warmup 2 --style full
 alias du = dust
+alias sl = ~/main/Rust/sl/target/release/sl.exe
+alias sf = ~/main/Rust/sf/target/release/sf.exe
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
