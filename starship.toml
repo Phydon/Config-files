@@ -112,7 +112,7 @@ format = '\[[$symbol($version)]($style)\]'
 style = "fg:#808EA5"
 
 [directory]  
-read_only = " "
+read_only = "  "
 read_only_style = "red"
 truncation_length = 3
 truncation_symbol = ".."
