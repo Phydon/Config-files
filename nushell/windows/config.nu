@@ -625,7 +625,6 @@ alias mv = mv --verbose
 alias cp = cp --verbose
 alias rm = rm --verbose
 alias mkdir = mkdir --verbose
-alias bkp = ~/main/Rust/bkp/target/release/bkp.exe
 alias tldr = tldr --pager
 alias ob = ^start obsidian
 alias firefox = ^start firefox
@@ -635,15 +634,18 @@ alias aml = overlay use ~\main\Machine_Learning\mlenv\Scripts\activate.nu as mle
 alias dml = overlay hide mlenv
 alias time = timeit
 alias ii = start .
-alias up = ~/main/Rust/up/target/release/up.exe
 alias py = python
 alias rga = rga --rga-adapters="poppler,zip"
 alias powershell = powershell /nologo
-alias rech = ~/main/Rust/rechifina/target/release/rechifina.exe
-alias hyp = hyperfine --warmup 2 --style full
+alias hyp = hyperfine --warmup 2 --style full 
 alias du = dust
+alias fd = fd --color never
+alias up = ~/main/Rust/up/target/release/up.exe
+alias rech = ~/main/Rust/rechifina/target/release/rechifina.exe
+alias bkp = ~/main/Rust/bkp/target/release/bkp.exe
 alias sl = ~/main/Rust/sl/target/release/sl.exe
 alias sf = ~/main/Rust/sf/target/release/sf.exe
+
 # } else {
 # alias sf = ~/Aliases/sf
 # alias fzf = fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
