@@ -14,7 +14,7 @@ export def "get aliases" [] {
 	lines | 
 	find alias | 
 	find -v "#" | 
-	split column "=" | 
+	split column " = " | 
 	select column1 column2 | 
 	rename Alias Command | 
 	update Alias {
