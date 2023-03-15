@@ -617,6 +617,7 @@ alias cat = bat --theme "GitHub" --style=numbers --color=always
 alias rg = rg --stats --no-messages --with-filename --context 1 --smart-case --pretty
 alias gs = git status
 alias ga = git all
+alias gd = git diff
 alias cal = cal --week-start monday --month-names --year
 alias diff = delta
 alias cd = z
