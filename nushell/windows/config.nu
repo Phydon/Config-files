@@ -646,6 +646,7 @@ alias rech = ~/main/Rust/rechifina/target/release/rechifina.exe
 alias bkp = ~/main/Rust/bkp/target/release/bkp.exe
 alias sl = ~/main/Rust/sl/target/release/sl.exe
 alias sf = ~/main/Rust/sf/target/release/sf.exe
+alias mg = ~/main/Rust/mg/target/release/mg.exe
 
 # } else {
 # alias sf = ~/Aliases/sf
