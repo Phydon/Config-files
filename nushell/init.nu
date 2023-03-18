@@ -350,56 +350,56 @@ export def userinput [
 # 	}
 # }
 
-# Mini grep
-# Search for a pattern in files from input stream or given files
-# If no input stream or files are given, it searches in all files recursively from the current directory
-# Tries to exclude binaries
-# 
-# Examples: 
-# 	> search the word "wasd" in all files from the current directory recursively
-# 	> mg wasd
-#
-# 	> search the word "wasd" in files from input stream
-# 	> ls | where type == file | where size > 10Mb | get name | mg wasd
-# 
-# 	> search the word "wasd" in the given files
-# 	> mg wasd test1.txt test2.json test3.md 
-export def mg [
-    pattern: string     # the pattern to search for
-    ...files: path	    # the files to search in
-] {
-    let input = $in
-    # TODO move typeslst.txt to another location
-    let types = (
-        open ~/main/nushell_scripts/typeslst.txt
-    )
-    let patternfiles = (
-        if ($input != $nothing)  {$input} 
-        else if ($files | is-empty) {
-	        ls **/* |
-			where type == file | 
-			get name
-		}
-        else {$files}
-		# FIXME what`s wrong here??
-		# prints the found pattern several times
-    )
+# # Mini grep
+# # Search for a pattern in files from input stream or given files
+# # If no input stream or files are given, it searches in all files recursively from the current directory
+# # Tries to exclude binaries
+# # 
+# # Examples: 
+# # 	> search the word "wasd" in all files from the current directory recursively
+# # 	> mg wasd
+# #
+# # 	> search the word "wasd" in files from input stream
+# # 	> ls | where type == file | where size > 10Mb | get name | mg wasd
+# # 
+# # 	> search the word "wasd" in the given files
+# # 	> mg wasd test1.txt test2.json test3.md 
+# export def mg [
+#     pattern: string     # the pattern to search for
+#     ...files: path	    # the files to search in
+# ] {
+#     let input = $in
+#     # TODO move typeslst.txt to another location
+#     let types = (
+#         open ~/main/nushell_scripts/typeslst.txt
+#     )
+#     let patternfiles = (
+#         if ($input != $nothing)  {$input} 
+#         else if ($files | is-empty) {
+# 	        ls **/* |
+# 			where type == file | 
+# 			get name
+# 		}
+#         else {$files}
+# 		# FIXME what`s wrong here??
+# 		# prints the found pattern several times
+#     )
     
-    $patternfiles |
-    par-each {|it|
-        $it | 
-        path split | 
-        flatten --all |
-        str replace "[a-z0-9A-Z_-~]+" "" | 
-        str replace -s "." "" |
-		par-each {|ext|
-	        if ($ext in $types) {
-	            open --raw $it |
-	            find $pattern
-			}
-		}
-    }         
-}
+#     $patternfiles |
+#     par-each {|it|
+#         $it | 
+#         path split | 
+#         flatten --all |
+#         str replace "[a-z0-9A-Z_-~]+" "" | 
+#         str replace -s "." "" |
+# 		par-each {|ext|
+# 	        if ($ext in $types) {
+# 	            open --raw $it |
+# 	            find $pattern
+# 			}
+# 		}
+#     }         
+# }
 
 # Get all installed python packages from pip
 export def pypkg [
