@@ -35,29 +35,32 @@ format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 style = "fg:#808EA5"
 
 [battery]  
-full_symbol = ""
-charging_symbol = ""
-discharging_symbol = ""
-unknown_symbol = ""
-empty_symbol = ""
 disabled = false
-[[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 25%
+full_symbol = ""
+unknown_symbol = "❔"
+empty_symbol = "☠️"
+# full_symbol = ""
+# charging_symbol = ""
+# unknown_symbol = ""
+# empty_symbol = ""
+[[battery.display]] 
 threshold = 25
 style = "red"
-discharging_symbol = ""
-[[battery.display]] # "bold yellow" style and   symbol when capacity is between 25% and 35%
+discharging_symbol = "☠️"
+charging_symbol = "🗲"
+# discharging_symbol = ""
+[[battery.display]] 
 threshold = 35
 style = "bright_magenta"
-# style = "bold fg:#b58900"
-discharging_symbol = ""
+discharging_symbol = "↘"
+charging_symbol = "🗲"
+# discharging_symbol = ""
 [[battery.display]]
 threshold = 99
-# style = "green dimmed bold"
-# style = "bold dimmed fg:#4C74A6"
-# style = "bold dimmed fg:#49A699"
-# style = "fg:#B2C1D6"
 style = "bright_green"
-discharging_symbol = ""
+charging_symbol = "🗲"
+discharging_symbol = "↘"
+# discharging_symbol = ""
 
 [c]  
 format = '\[[ ($version(-$name))]($style)\]'
