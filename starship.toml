@@ -37,8 +37,12 @@ style = "fg:#808EA5"
 [battery]  
 disabled = false
 full_symbol = ""
-unknown_symbol = "❔"
-empty_symbol = "☠️"
+unknown_symbol = ""
+empty_symbol = ""
+discharging_symbol = ""
+# full_symbol = ""
+# unknown_symbol = "❔"
+# empty_symbol = "☠️"
 # full_symbol = ""
 # charging_symbol = ""
 # unknown_symbol = ""
@@ -46,21 +50,18 @@ empty_symbol = "☠️"
 [[battery.display]] 
 threshold = 25
 style = "red"
-discharging_symbol = "☠️"
+# discharging_symbol = "☠️"
 charging_symbol = "🗲"
-# discharging_symbol = ""
 [[battery.display]] 
 threshold = 35
 style = "bright_magenta"
-discharging_symbol = "↘"
+# discharging_symbol = "↘"
 charging_symbol = "🗲"
-# discharging_symbol = ""
 [[battery.display]]
 threshold = 99
 style = "bright_green"
 charging_symbol = "🗲"
-discharging_symbol = "↘"
-# discharging_symbol = ""
+# discharging_symbol = "↘"
 
 [c]  
 format = '\[[ ($version(-$name))]($style)\]'
