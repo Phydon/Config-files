@@ -42,6 +42,12 @@ smart-case = false
 render = true
 character = "╎"
 
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 40
+wrap-indicator = "↪"  # set wrap-indicator to "" to hide it
+
 [keys.normal]
 G = "goto_file_end"
 X = "extend_line_above"
