@@ -341,10 +341,10 @@ let-env config = {
 
 
   hooks: {
-    pre_prompt: [{
+    pre_prompt: [{||
       $nothing  # replace with source code to run before the prompt is shown
     }]
-    pre_execution: [{
+    pre_execution: [{||
       $nothing  # replace with source code to run before the repl input is run
     }]
     env_change: {
@@ -352,7 +352,13 @@ let-env config = {
         $nothing  # replace with source code to run if the PWD environment is different since the last repl input
       }]
     }
-  }
+    display_output: {||
+          if (term size).columns >= 100 { table -e } else { table }
+        }
+        command_not_found: {||
+          null  # replace with source code to return an error message when a command is not found
+        }
+      }
 
   menus: [
       # Configuration for default nushell menus
@@ -612,8 +618,8 @@ let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
 
 # ALIASES
 # if ((getos) == Windows) {
-alias fzf = fzf --multi --preview 'bat --theme "GitHub" --style=numbers --color=always --line-range :500 {}'
-alias cat = bat --theme "GitHub" --style=numbers --color=always
+alias fzf = fzf --multi --preview 'bat --theme "1337" --style=numbers --color=always --line-range :500 {}'
+alias cat = bat --theme "1337" --style=numbers --color=always
 alias rg = rg --stats --no-messages --with-filename --context 1 --smart-case --pretty
 alias gs = git status
 alias ga = git all
@@ -640,7 +646,7 @@ alias rga = rga --rga-adapters="poppler,zip"
 alias powershell = powershell /nologo
 alias hyp = hyperfine --warmup 2 --style full 
 alias du = dust
-alias fd = fd --color never
+# alias fd = fd --color never
 alias up = ~/main/Rust/up/target/release/up.exe
 alias rech = ~/main/Rust/rechifina/target/release/rechifina.exe
 alias bkp = ~/main/Rust/bkp/target/release/bkp.exe
