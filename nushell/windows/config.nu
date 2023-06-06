@@ -300,7 +300,7 @@ let-env config = {
   render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
   ls: {
-      use_ls_colors: false # use the LS_COLORS environment variable to colorize output
+      use_ls_colors: true # use the LS_COLORS environment variable to colorize output
       clickable_links: true # enable or disable clickable links. Your terminal has to support links.
     }
   rm: {
@@ -319,7 +319,7 @@ let-env config = {
     }
   }
   history: {
-    max_size: 10000 # Session has to be reloaded for this to take effect
+    max_size: 50000 # Session has to be reloaded for this to take effect
     sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
     file_format: "plaintext" # "sqlite" or "plaintext"
   }
@@ -653,6 +653,9 @@ alias bkp = ~/main/Rust/bkp/target/release/bkp.exe
 alias sl = ~/main/Rust/sl/target/release/sl.exe
 alias sf = ~/main/Rust/sf/target/release/sf.exe
 alias mg = ~/main/Rust/mg/target/release/mg.exe
+alias ls = lsd
+alias ll = lsd -l
+alias la = lsd -la
 
 # } else {
 # alias sf = ~/Aliases/sf
