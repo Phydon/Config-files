@@ -607,6 +607,8 @@ let-env themes-path = "~/AppData/Roaming/nushell/themes.nu"
 let-env nvim-path = "~/AppData/Local/nvim/init.vim"
 # path to vim`s vimrc
 let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
+# LS_Colors 
+let-env LS_COLORS = (vivid generate iceberg-dark | str trim)
 # -- LINUX --
 # # set path to init.nu -> available via "$env.init-path"
 # let-env init-path = ""
@@ -643,7 +645,7 @@ alias time = timeit
 alias ii = start .
 alias py = python
 alias rga = rga --rga-adapters="poppler,zip"
-alias powershell = powershell /nologo
+alias pwsh = powershell /nologo
 alias hyp = hyperfine --warmup 2 --style full 
 alias du = dust
 # alias fd = fd --color never
