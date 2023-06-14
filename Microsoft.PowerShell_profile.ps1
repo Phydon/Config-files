@@ -1,10 +1,3 @@
-# generate new aliases for specific programs
-# New-Alias -Name sf -Value C:/Aliases/Programs/sf.exe 
-# New-Alias -Name fzf -Value C:/Aliases/Programs/fzf.exe 
-# New-Alias -Name bat -Value C:/Aliases/Programs/bat.exe 
-# New-Alias -Name delta -Value C:/Aliases/Programs/delta.exe 
-# New-Alias -Name rg -Value C:/Aliases/Programs/rg.exe 
-
 Function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
 New-Alias -Name fd -Value Find
 
@@ -15,6 +8,11 @@ Function vimquit {exit}
 New-Alias -Name :q -Value vimquit
 
 New-Alias -Name 'up' -Value ~/main/Rust/up/target/release/up.exe
+New-Alias -Name 'bkp' -Value ~/main/Rust/bkp/target/release/bkp.exe
+del alias:sl -Force
+New-Alias -Name 'sl' -Value ~/main/Rust/sl/target/release/sl.exe
+New-Alias -Name 'sf' -Value ~/main/Rust/sf/target/release/sf.exe
+New-Alias -Name 'mg' -Value ~/main/Rust/mg/target/release/mg.exe
 
 New-Alias -Name 'help' -Value Get-Help
 
