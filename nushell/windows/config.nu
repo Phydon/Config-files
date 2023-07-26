@@ -287,7 +287,7 @@ let highlight = "#ff2e5f"
 let description = "#61586f"
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   show_banner: false
   color_config: $env.lavendel # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme, env.lavendel
   use_grid_icons: true
@@ -600,22 +600,22 @@ use ~/Appdata/Roaming/nushell/init.nu *
 # ENVIRONMENT VARIABLES
 # -- WINDOWS --
 # set path to init.nu -> available via "$env.init-path"
-let-env init-path = "~/AppData/Roaming/nushell/init.nu"
+$env.init-path = "~/AppData/Roaming/nushell/init.nu"
 # path to nushells themes.nu
-let-env themes-path = "~/AppData/Roaming/nushell/themes.nu"
+$env.themes-path = "~/AppData/Roaming/nushell/themes.nu"
 # path to nvim`s init.vim
-let-env nvim-path = "~/AppData/Local/nvim/init.vim"
+$env.nvim-path = "~/AppData/Local/nvim/init.vim"
 # path to vim`s vimrc
-let-env vim-path = "C:/Program Files (x86)/Vim/_vimrc"
+$env.vim-path = "C:/Program Files (x86)/Vim/_vimrc"
 # LS_Colors 
-let-env LS_COLORS = (vivid generate iceberg-dark | str trim)
+$env.LS_COLORS = (vivid generate iceberg-dark | str trim)
 # -- LINUX --
 # # set path to init.nu -> available via "$env.init-path"
-# let-env init-path = ""
+# $env.init-path = ""
 # # path to nvim`s init.vim
-# let-env nvim-path = ""
+# $env.nvim-path = ""
 # # path to vim`s vimrc
-# let-env vim-path = ""
+# $env.vim-path = ""
 
 
 # ALIASES
