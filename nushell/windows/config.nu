@@ -659,6 +659,8 @@ alias ls = sl -c
 alias ll = sl -lc
 alias la = sl -lac
 alias john = ~/main/johntheripper/run/john.exe
+alias hxy = hx ~/dailytodo.md
+alias file = ~/main/Rust/witchfile/target/release/witchfile.exe
 
 # } else {
 # alias sf = ~/Aliases/sf
