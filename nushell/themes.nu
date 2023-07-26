@@ -11,7 +11,7 @@
 	# https://www.schemecolor.com/endless-sea.php
 
 export-env {
-    let-env ocean_theme = {
+    $env.ocean_theme = {
         # color for nushell primitives
         separator: dark_gray
         leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
@@ -80,7 +80,7 @@ export-env {
     let dgrey       = "#565B61" 
     let violetred   = "#8b2252"
 
-    let-env minimal_theme = {
+    $env.minimal_theme = {
         # color for nushell primitives
         separator: dgrey
         leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
@@ -156,7 +156,7 @@ export-env {
     let gruber_darker_niagara   = "#96a6c8"
     let gruber_darker_wisteria  = "#9e95c7"
 
-    let-env gruberdarker = {
+    $env.gruberdarker = {
         # color for nushell primitives
         separator: $gruber_darker_quartz
         leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
@@ -253,7 +253,7 @@ export-env {
     let display = "#57ff89"
     let info = "#dad7d5"
 
-    let-env lavendel = {
+    $env.lavendel = {
         # color for nushell primitives
         separator: $t3        
         leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
