@@ -99,10 +99,10 @@ $env.NU_PLUGIN_DIRS = [
 # STARSHIP
 starship init nu | save -f ~/.cache/starship/init.nu
 # starship init nu | str replace --string "size -c" size | save -f ~/.cache/starship/init.nu
-starship init nu | str replace --all --string "let-env " "$env." | save -f ~/.cache/starship/init.nu
+# starship init nu | str replace --all --string "let-env " "$env." | save -f ~/.cache/starship/init.nu
 
 # ZOXIDE
 zoxide init nushell --hook prompt | save -f ~/.zoxide.nu
 # zoxide init nushell | str replace --string "&&" "and" | save -f ~/.zoxide.nu
 # zoxide init nushell | str replace --string "||" "or" | save -f ~/.zoxide.nu
-zoxide init nushell | str replace --all --string "let-env " "$env." | str replace --all --string "length)" "str length).0" | save -f ~/.zoxide.nu
+# zoxide init nushell | str replace --all --string "let-env " "$env." | str replace --all --string "length)" "str length).0" | save -f ~/.zoxide.nu
