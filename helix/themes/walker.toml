@@ -1,0 +1,143 @@
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { bg = "comment_doc", modifiers = ["italic"] }
+
+"constant" = { fg = "maroon" }
+"constant.builtin" = { fg = "maroon" }
+"constant.numeric" = { fg = "ruby" }
+"constant.character.escape" = { fg = "ruby" }
+"function" = { fg = "cornblue" }
+# "function.method" = { fg = "aqua" }
+# "function.macro" = { fg = "aqua" }
+"keyword.storage.modifier" = { fg = "t7" }
+"keyword.control.import" = { fg = "t8" }
+# "keyword.control" = { fg = "t12", modifiers = ["bold"] }
+# "keyword.function" = { fg = "t12", modifiers = ["bold"] }
+"keyword" = { fg = "aqua", modifiers = ["bold"] }
+"operator" = { fg = "t13" }
+"special" = { fg = "t13" }
+"punctuation" = { fg = "t9" }
+"string" = { fg = "t19" }
+"string.regexp" = { fg = "t19" }
+"tag" = { fg = "t4" }
+"type" = { fg = "t8" }
+"namespace" = { fg = "aqua_dark" }
+"variable" = { fg = "querz" }
+"label" = { fg = "t4" }
+
+"diff.plus" = { fg = "diff_plus" }
+"diff.delta" = { fg = "diff_delta" }
+"diff.delta.moved" = { fg = "diff_delta_moved" }
+"diff.minus" = { fg = "diff_minus" }
+
+"ui.cursor.insert" = { fg = "t2", bg = "highlight" }
+"ui.cursor.select" = { fg = "t2", bg = "highlight_two" }
+"ui.cursor" = { fg = "t1", bg = "highlight_three" }
+"ui.cursor.match" = { fg = "highlight", bg = "selection", modifiers = ["bold"] }
+
+"ui.linenr" = { fg = "t3", bg = "t2" }
+"ui.linenr.selected" = { fg = "highlight", bg = "t2" }
+"ui.gutter" = { bg = "t2" }
+
+"ui.background" = { fg = "t4", bg = "t2" }
+"ui.background.separator" = { fg = "t3" }
+"ui.help" = { fg = "t4", bg = "t1" }
+"ui.menu" = { fg = "t4", bg = "t1" }
+"ui.menu.selected" = { fg = "highlight_three", bg = "t1" }
+"ui.popup" = { fg = "t4", bg = "t1" }
+"ui.window" = { fg = "t4" }
+
+"ui.selection.primary" = { bg = "selection" }
+"ui.selection" = { bg = "selection" }
+
+"ui.cursorline.primary" = { bg = "t1" }
+
+"ui.statusline" = { fg = "t4", bg = "t1" }
+"ui.statusline.inactive" = { fg = "t4", bg = "t1" }
+"ui.statusline.normal" = { fg = "highlight", bg = "t1" }
+"ui.statusline.insert" = { fg = "highlight_two", bg = "t1" }
+"ui.statusline.select" = { fg = "highlight", bg = "t4" }
+
+"ui.text" = { fg = "t19" }
+"ui.text.focus" = { fg = "highlight_three", modifiers = ["bold"] }
+
+"ui.virtual.ruler" = { bg = "t1" }
+"ui.virtual.indent-guide" = { fg = "t3" }
+"ui.virtual.whitespace" = { fg = "t3" }
+
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "warning", style = "curl" } }
+"diagnostic.info" = { underline = { color = "info", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "display", style = "curl" } }
+
+"error" = { fg = "error", modifiers = ["bold"] }
+"warning" = { fg = "warning", modifiers = ["bold"] }
+"info" = { fg = "info", modifiers = ["bold"] }
+"hint" = { fg = "display", modifiers = ["bold"] }
+
+"markup.heading.marker" = { fg = "highlight_two" }
+"markup.heading.1" = { fg = "#FF6666", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "#FFA64D", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "#FFE666", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "#66FF7F", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "#6699FF", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "#B366FF", modifiers = ["bold"] }
+"markup.list" = { fg = "t13" }
+"markup.bold" = { fg = "highlight" , modifiers = ["bold"]}
+"markup.italic" = { fg = "t6" , modifiers = ["italic"] }
+"markup.link.url" = { fg = "t4", modifiers = ["underlined", "dim"] }
+"markup.link.text" = { fg = "t18" }
+"markup.quote" = { fg = "comment" }
+"markup.raw" = { fg = "t7" }
+
+[palette]
+t1 = "#141414"
+t2 = "#151717"
+t3 = "#2b3444"
+t4 = "#61586f"
+t5 = "#686e73"
+t6 = "#e0d7c8"
+t7 = "#897dca"
+t8 = "#7b89a3"
+t9 = "#bcb6ba"
+t10 = "#9db2b8"
+t11 = "#a0c7cf"
+t12 = "#9aacfe"
+
+# markdown 
+t13 = "#0affa9"
+t14 = "#6272a4"
+t15 = "#d32c5d"
+t16 = "#dcb659"
+t17 = "#664864"
+t18 = "#2E6170"
+
+t19 = "#c9d8ff"
+
+diff_minus = "#DE6F6F"
+diff_delta = "#56223F"
+diff_plus = "#94A876"
+diff_delta_moved = "#585858"
+
+highlight = "#ff2e5f"
+highlight_two = "#dad7d5"
+highlight_three = "#ff0900"
+
+black = "#000000"
+
+selection = "#212a2e"
+
+comment = "#61586f"
+comment_doc = "#61586f"
+
+error = "#ff0900"
+warning = "#ffbf00"
+display = "#57ff89"
+info = "#dad7d5"
+
+aqua_light = "#a4deda"
+aqua = "#00e8c2"
+aqua_dark = "#8d9ceb"
+querz = "#d6dded"
+cornblue = "#5562b5"
+ruby = "#e8175d"
+maroon = "#b31056"
