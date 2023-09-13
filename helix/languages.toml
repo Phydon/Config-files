@@ -6,7 +6,11 @@ diagnostic-severity = "Warning"
 
 [[language]]
 name = "python"
-config = {"pylsp.plugins.pycodestyle.maxLineLength" = 80, "pylsp.plugins.pycodestyle.ignore" = ["W293"]}
+scope = "source.python"
+language-server = { command = "ruff-lsp" }
+config = { settings = { args = ["--config=~/AppData/Roaming/helix/pyproject.toml"] } }
+# config = {"pylsp.plugins.pycodestyle.maxLineLength" = 80, "pylsp.plugins.pycodestyle.ignore" = ["W293"]}
+# config = {"pylsp.plugins.ruff.enabled" = true, "pylsp.plugins.ruff.lineLength" = 80, "pylsp.plugins.ruff.ignore" = ["W293"]}
 diagnostic-severity = "Warning"
 
 [[language]]
