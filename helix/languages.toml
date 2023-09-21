@@ -7,11 +7,27 @@ diagnostic-severity = "Warning"
 [[language]]
 name = "python"
 scope = "source.python"
-language-server = { command = "ruff-lsp" }
-config = { settings = { args = ["--config=~/AppData/Roaming/helix/pyproject.toml"] } }
-# config = {"pylsp.plugins.pycodestyle.maxLineLength" = 80, "pylsp.plugins.pycodestyle.ignore" = ["W293"]}
-# config = {"pylsp.plugins.ruff.enabled" = true, "pylsp.plugins.ruff.lineLength" = 80, "pylsp.plugins.ruff.ignore" = ["W293"]}
+# INFO py -m pip install python-lsp-server python-lsp-ruff
+language-server = { command = "pylsp" }
+# INFO only use 'ruff'
+# language-server = { command = "ruff-lsp" }
+# config = { settings = { args = ["--config=~/AppData/Roaming/helix/pyproject.toml"] } }
+# INFO use 'black' as the python formatter
+formatter = { command = "black", args = ["--quiet", "-"] }
+auto-format = true
 diagnostic-severity = "Warning"
+
+# INFO disable everything from 'pylsp' except for 'ruff'
+[language.config.pylsp.plugins]
+flake8 = {enabled = false}
+autopep8 = {enabled = false}
+mccabe = {enabled = false}
+pycodestyle = {enabled = false}
+pyflakes = {enabled = false}
+pylint = {enabled = false}
+yapf = {enabled = false}
+ruff = { enabled = true, ignore = ["W293"], lineLength = 80, config = "~/AppData/Roaming/helix/pyproject.toml" }
+
 
 [[language]]
 name = "nu"
