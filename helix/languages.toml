@@ -26,7 +26,7 @@ pycodestyle = {enabled = false}
 pyflakes = {enabled = false}
 pylint = {enabled = false}
 yapf = {enabled = false}
-ruff = { enabled = true, ignore = ["W293"], lineLength = 80, config = "~/AppData/Roaming/helix/pyproject.toml" }
+ruff = { enabled = true, ignore = ["W293"], lineLength = 80, cache-dir = "~/.cache/ruff", config = "~/AppData/Roaming/helix/pyproject.toml" }
 
 
 [[language]]
