@@ -1,5 +1,5 @@
 [tool.ruff]
-ignore = ["W293"]
+ignore = ["W293", "E501"]
 line-length = 80
 cache-dir = "~/.cache/ruff"
 
