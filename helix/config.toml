@@ -1,4 +1,5 @@
-theme = "lavendel"
+theme = "walker"
+# theme = "lavendel"
 
 [editor]
 line-number = "relative"
@@ -58,6 +59,8 @@ w = { w = ":open ~/obsidian_vault/quicknotes.md" }
 r = ":reflow"
 u = "switch_to_lowercase"
 U = "switch_to_uppercase"
+C-k = "kill_to_line_end"
+C-u = "kill_to_line_start"
 
 [keys.insert.q]
 q = "normal_mode"
