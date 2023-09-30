@@ -58,10 +58,14 @@ style = "bright_magenta"
 # discharging_symbol = "↘"
 charging_symbol = "🗲"
 [[battery.display]]
-threshold = 99
+threshold = 79
 style = "bright_green"
 charging_symbol = "🗲"
 # discharging_symbol = "↘"
+[[battery.display]]
+threshold = 100
+style = "dark_purple"
+charging_symbol = "∞"
 
 [c]  
 format = '\[[ ($version(-$name))]($style)\]'
