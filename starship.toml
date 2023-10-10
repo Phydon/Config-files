@@ -58,7 +58,7 @@ style = "bright_magenta"
 # discharging_symbol = "↘"
 charging_symbol = "🗲"
 [[battery.display]]
-threshold = 79
+threshold = 80
 style = "bright_green"
 charging_symbol = "🗲"
 # discharging_symbol = "↘"
