@@ -19,8 +19,12 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": "unbound",
-            "keys": "ctrl+v"
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "left"
+            },
+            "keys": "alt+shift+h"
         },
         {
             "command": 
@@ -32,8 +36,154 @@
             "keys": "alt+shift+d"
         },
         {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
             "command": "toggleFocusMode",
             "keys": "f10"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "keys": "alt+l"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "keys": "alt+h"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "keys": "alt+j"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right"
+            },
+            "keys": "ctrl+alt+right"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right"
+            },
+            "keys": "ctrl+alt+l"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "up"
+            },
+            "keys": "alt+k"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+alt+down"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+alt+j"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "left"
+            },
+            "keys": "ctrl+alt+left"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "left"
+            },
+            "keys": "ctrl+alt+h"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "down"
+            },
+            "keys": "alt+shift+j"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "up"
+            },
+            "keys": "ctrl+alt+up"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "up"
+            },
+            "keys": "ctrl+alt+k"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "right"
+            },
+            "keys": "alt+shift+l"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "up"
+            },
+            "keys": "alt+shift+k"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollDown"
+            },
+            "keys": "ctrl+shift+j"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollUp"
+            },
+            "keys": "ctrl+shift+k"
+        },
+        {
+            "command": "scrollDownPage",
+            "keys": "ctrl+shift+d"
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": "ctrl+shift+u"
         }
     ],
     "alwaysShowTabs": false,
@@ -46,6 +196,12 @@
     "initialRows": 25,
     "language": "en-US",
     "launchMode": "maximized",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
     "profiles": 
     {
         "defaults": 
@@ -59,11 +215,11 @@
             "cursorShape": "filledBox",
             "font": 
             {
-                "face": "FiraCode NF",
+                "face": "FiraCode Nerd Font",
                 "size": 15.0,
                 "weight": "medium"
             },
-            "historySize": 9999,
+            "historySize": 100000,
             "intenseTextStyle": "all",
             "opacity": 100,
             "padding": "6",
@@ -121,14 +277,14 @@
             },
             {
                 "backgroundImage": null,
-                "backgroundImageOpacity": 0.6,
+                "backgroundImageOpacity": 0.1,
                 "closeOnExit": "graceful",
-                "commandline": "C:\\Program Files\\nu\\bin\\nu.exe",
+                "commandline": "C:\\Users\\Pohl\\scoop\\apps\\nu\\current\\nu.exe",
                 "cursorShape": "filledBox",
                 "elevate": false,
                 "guid": "{ae8007d9-e6e7-4aaa-aa76-05c6d487233b}",
                 "hidden": false,
-                "historySize": 9999,
+                "historySize": 100000,
                 "icon": "C:\\Program Files\\nu\\nushell.png",
                 "intenseTextStyle": "all",
                 "name": "NuShell",
@@ -136,7 +292,27 @@
                 "padding": "6",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
-                "tabTitle": "NuShell"
+                "tabTitle": "Nu"
+            },
+            {
+                "backgroundImage": null,
+                "backgroundImageOpacity": 0.1,
+                "closeOnExit": "graceful",
+                "colorScheme": "Endeavour Light",
+                "commandline": "C:\\Users\\Pohl\\scoop\\apps\\nu\\current\\nu.exe",
+                "cursorShape": "filledBox",
+                "elevate": false,
+                "guid": "{e356f3c4-9e38-4937-a687-7b5c04070654}",
+                "hidden": false,
+                "historySize": 100000,
+                "icon": "C:\\Program Files\\nu\\nushell.png",
+                "intenseTextStyle": "all",
+                "name": "NuShell (Bright)",
+                "opacity": 100,
+                "padding": "6",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Nu"
             }
         ]
     },
@@ -210,6 +386,29 @@
             "selectionBackground": "#290019",
             "white": "#CDCCDB",
             "yellow": "#FFBF00"
+        },
+        {
+            "background": "#FFFFFF",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#C9C385",
+            "cursorColor": "#000000",
+            "cyan": "#3A96DD",
+            "foreground": "#000000",
+            "green": "#13A10E",
+            "name": "Endeavour Light",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#6B6B6B",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
         },
         {
             "background": "#121212",
@@ -378,6 +577,50 @@
     "startOnUserLogin": true,
     "tabWidthMode": "equal",
     "theme": "dark",
-    "themes": [],
+    "themes": 
+    [
+        {
+            "name": "legacyDark",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "dark",
+                "useMica": false
+            }
+        },
+        {
+            "name": "legacyLight",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "light",
+                "useMica": false
+            }
+        },
+        {
+            "name": "legacySystem",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "system",
+                "useMica": false
+            }
+        }
+    ],
     "useAcrylicInTabRow": true
 }
