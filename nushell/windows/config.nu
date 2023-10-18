@@ -621,7 +621,7 @@ $env.LS_COLORS = (vivid generate iceberg-dark | str trim)
 # ALIASES
 # if ((getos) == Windows) {
 alias fzf = fzf --multi --preview 'bat --theme "1337" --style=numbers --color=always --line-range :500 {}'
-alias cat = bat --theme "1337" --style=numbers --color=always
+alias cat = bat --theme "1337" --color=always --style=plain
 alias rg = rg --stats --no-messages --with-filename --context 1 --smart-case --pretty
 alias gs = git status
 alias ga = git all
