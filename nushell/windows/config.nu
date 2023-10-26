@@ -661,6 +661,7 @@ alias file = ~/main/Rust/witchfile/target/release/witchfile.exe
 alias gib = ~/main/Rust/gib/target/release/gib.exe
 alias map = ~/main/Rust/map/target/release/map.exe
 alias btm = btm --battery --color gruvbox --tree --rate 750
+alias cx = ~/main/Rust/cx/target/release/cx.exe
 
 # } else {
 # alias sf = ~/Aliases/sf
