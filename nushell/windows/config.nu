@@ -279,7 +279,13 @@ let light_theme = {
 }
 
 # import custom themes
-use ~/Appdata/Roaming/nushell/themes.nu *
+use ~/Appdata/Roaming/nushell/themes/themes.nu *
+use ~/Appdata/Roaming/nushell/themes/catppucin-mocha.nu *
+use ~/Appdata/Roaming/nushell/themes/gooey.nu *
+use ~/Appdata/Roaming/nushell/themes/greyscale-dark.nu *
+use ~/Appdata/Roaming/nushell/themes/gruvbit.nu *
+use ~/Appdata/Roaming/nushell/themes/heetch.nu *
+use ~/Appdata/Roaming/nushell/themes/substrata.nu *
 
 # for menu and completion selection 
 let selection = "#290019" 
@@ -289,7 +295,7 @@ let description = "#61586f"
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
   show_banner: false
-  color_config: $env.ocean_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme, env.lavendel
+  color_config: (heetch) # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme, env.lavendel, or imported themes (catppucin-mocha, heetch, etc.)
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   float_precision: 2
