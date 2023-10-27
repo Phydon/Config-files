@@ -289,7 +289,7 @@ let description = "#61586f"
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
   show_banner: false
-  color_config: $env.lavendel # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme, env.lavendel
+  color_config: $env.ocean_theme # $default_theme, $dark_theme, $light_theme, $ocean_theme, $minimal_theme, env.lavendel
   use_grid_icons: true
   footer_mode: "25" # always, never, number_of_rows, auto
   float_precision: 2
@@ -301,22 +301,44 @@ $env.config = {
 
   ls: {
       use_ls_colors: true # use the LS_COLORS environment variable to colorize output
-      clickable_links: true # enable or disable clickable links. Your terminal has to support links.
+      clickable_links: false # enable or disable clickable links. Your terminal has to support links.
     }
   rm: {
     always_trash: true # always act as if -t was given. Can be overridden with -p
   }
   table: {
-    mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+    mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
     index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
+    show_empty: true # show 'empty list' and 'empty record' placeholders for command output
     trim: {
       methodology: wrapping # wrapping or truncating
       wrapping_try_keep_words: true # A strategy used by the 'wrapping' methodology
       truncating_suffix: "..." # A suffix used by the 'truncating' methodology
     }
+    header_on_separator: false # show header text on separator/border line
   }
+  datetime_format: {
+          # normal: '%a, %d %b %Y %H:%M:%S %z'    # shows up in displays of variables or other datetime's outside of tables
+          table: '%d.%m.%y %I:%M:%S%p'          # generally shows up in tabular outputs such as ls. commenting this out will change it to the default human readable datetime format
+      }
+  explore: {
+          status_bar_background: {fg: "#1D1F21", bg: "#C4C9C6"},
+          command_bar_text: {fg: "#C4C9C6"},
+          highlight: {fg: "black", bg: "yellow"},
+          status: {
+              error: {fg: "white", bg: "red"},
+              warn: {}
+              info: {}
+          },
+          table: {
+              split_line: {fg: "#404040"},
+              selected_cell: {bg: light_blue},
+              selected_row: {},
+              selected_column: {},
+          },
+      }
   history: {
-    max_size: 50000 # Session has to be reloaded for this to take effect
+    max_size: 100000 # Session has to be reloaded for this to take effect
     sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
     file_format: "plaintext" # "sqlite" or "plaintext"
   }
@@ -335,6 +357,11 @@ $env.config = {
     metric: true # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
     format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
   }
+  cursor_shape: {
+          emacs: block # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (line is the default)
+          vi_insert: block # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (block is the default)
+          vi_normal: block # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (underscore is the default)
+      }
 
 
   hooks: {
