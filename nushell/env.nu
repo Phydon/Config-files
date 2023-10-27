@@ -45,7 +45,7 @@ def create_left_prompt [] {
 }
 
 def create_right_prompt [] {
-    $nothing
+    null
 }
 
 # Use nushell functions to define your right and left prompt

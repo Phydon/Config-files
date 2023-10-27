@@ -133,12 +133,12 @@ export def "watch cargo" [
 	--test (-t)		# run 'cargo test' whenever a rust file changes
 ] {
 	if $check {
-		watch . --glob=**/*.rs {(
+		watch . --glob=**/*.rs {|| (
 			echo "(char nl)" |
 			cargo check
 		)}
 	} else if $test {
-		watch . --glob=**/*.rs {
+		watch . --glob=**/*.rs {||
 			echo "(char nl)" |
 			cargo test -- --show-output
 		}
@@ -342,7 +342,7 @@ export def userinput [
 # 				echo  "::: Updating ghcup ..."
 # 				ghcup --verbose upgrade
 # 			} else {
-# 				$nothing
+# 				null
 # 			}
 # 		}
 # 	} else {
@@ -374,7 +374,7 @@ export def userinput [
 #         open ~/main/nushell_scripts/typeslst.txt
 #     )
 #     let patternfiles = (
-#         if ($input != $nothing)  {$input} 
+#         if ($input != null)  {$input} 
 #         else if ($files | is-empty) {
 # 	        ls **/* |
 # 			where type == file | 
