@@ -45,3 +45,6 @@ sf "" . -e rs -p | str trim | lines | par-each {|in| mg FIXME $in -p}
 
 # extract all filenames with file extension from all python files in a specific folder (with 'sf' and 'map')
 sf "" Rust\ -e py -p | map '(?mR)(.+)\\(?<a>\w+)\.(?<b>\w+)$' '$a.$b'
+
+# count all words in all files in the current directory using 'cx' (exclude binaries)
+ls | where type == file | where name !~ .exe | par-each {|it| cx $it.name} | into int | math sum
