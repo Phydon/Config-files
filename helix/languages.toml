@@ -1,14 +1,17 @@
 [[language]]
 name = "rust"
 # https://rust-analyzer.github.io/manual.html#configuration
-config = {format = {"rust-analyzer.rustfmt.extraArgs" = "max_width=80"}}
 diagnostic-severity = "Warning"
+language-servers = ["rust-analyzer"]
+
+[language-server.rust-analyzer]
+config = {format = {"rust-analyzer.rustfmt.extraArgs" = "max_width=80"}}
 
 [[language]]
 name = "python"
 scope = "source.python"
 # INFO py -m pip install python-lsp-server python-lsp-ruff
-language-server = { command = "pylsp" }
+language-servers = ["pylsp"]
 # INFO only use 'ruff'
 # language-server = { command = "ruff-lsp" }
 # config = { settings = { args = ["--config=~/AppData/Roaming/helix/pyproject.toml"] } }
@@ -18,7 +21,7 @@ auto-format = true
 diagnostic-severity = "Warning"
 
 # INFO disable everything from 'pylsp' except for 'ruff'
-[language.config.pylsp.plugins]
+[language-server.pylsp.plugins]
 flake8 = {enabled = false}
 autopep8 = {enabled = false}
 mccabe = {enabled = false}
