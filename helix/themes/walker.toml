@@ -76,11 +76,11 @@
 
 "markup.heading.marker" = { fg = "highlight_two" }
 "markup.heading.1" = { fg = "#FF6666", modifiers = ["bold"] }
-"markup.heading.2" = { fg = "#FFA64D", modifiers = ["bold"] }
-"markup.heading.3" = { fg = "#FFE666", modifiers = ["bold"] }
-"markup.heading.4" = { fg = "#66FF7F", modifiers = ["bold"] }
-"markup.heading.5" = { fg = "#6699FF", modifiers = ["bold"] }
-"markup.heading.6" = { fg = "#B366FF", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "#66FF7F", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "#6699FF", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "#B366FF", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "#FFA64D", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "#FFE666", modifiers = ["bold"] }
 "markup.list" = { fg = "t13" }
 "markup.bold" = { fg = "highlight" , modifiers = ["bold"]}
 "markup.italic" = { fg = "t6" , modifiers = ["italic"] }
