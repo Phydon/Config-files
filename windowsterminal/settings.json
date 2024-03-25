@@ -7,6 +7,26 @@
             "command": "paste"
         },
         {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+alt+down"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+alt+j"
+        },
+        {
             "command": 
             {
                 "action": "copy",
@@ -15,16 +35,16 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
             "command": 
             {
                 "action": "resizePane",
                 "direction": "left"
             },
             "keys": "alt+shift+h"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": 
@@ -36,8 +56,11 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": "unbound",
-            "keys": "ctrl+v"
+            "command": 
+            {
+                "action": "scrollDown"
+            },
+            "keys": "ctrl+shift+j"
         },
         {
             "command": "toggleFocusMode",
@@ -62,14 +85,6 @@
         {
             "command": 
             {
-                "action": "moveFocus",
-                "direction": "down"
-            },
-            "keys": "alt+j"
-        },
-        {
-            "command": 
-            {
                 "action": "splitPane",
                 "split": "right"
             },
@@ -87,6 +102,14 @@
             "command": 
             {
                 "action": "moveFocus",
+                "direction": "down"
+            },
+            "keys": "alt+j"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
                 "direction": "up"
             },
             "keys": "alt+k"
@@ -94,18 +117,9 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "down"
+                "action": "scrollUp"
             },
-            "keys": "ctrl+alt+down"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "down"
-            },
-            "keys": "ctrl+alt+j"
+            "keys": "ctrl+shift+k"
         },
         {
             "command": 
@@ -164,20 +178,6 @@
             "keys": "alt+shift+k"
         },
         {
-            "command": 
-            {
-                "action": "scrollDown"
-            },
-            "keys": "ctrl+shift+j"
-        },
-        {
-            "command": 
-            {
-                "action": "scrollUp"
-            },
-            "keys": "ctrl+shift+k"
-        },
-        {
             "command": "scrollDownPage",
             "keys": "ctrl+shift+d"
         },
@@ -189,7 +189,7 @@
     "alwaysShowTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{ae8007d9-e6e7-4aaa-aa76-05c6d487233b}",
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "disableAnimations": true,
     "experimental.detectURLs": false,
     "initialCols": 90,
@@ -233,7 +233,7 @@
                 "backgroundImageAlignment": "left",
                 "backgroundImageOpacity": 0.6,
                 "bellStyle": "window",
-                "colorScheme": "Endeavour",
+                "colorScheme": "EasyColors",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe /nologo",
                 "cursorShape": "filledBox",
                 "elevate": false,
@@ -264,55 +264,16 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{79fafc19-4ac7-5f01-a6ff-68714acb602f}",
+                "guid": "{e559962d-0c5f-5f51-9499-8946a9bfaa40}",
                 "hidden": false,
-                "name": "Developer Command Prompt for VS 2019",
+                "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{2d2fd73f-5ee4-5e46-b900-632a9e437dc0}",
+                "guid": "{c79ff89c-6d60-5b38-957e-1f18df5283bf}",
                 "hidden": false,
-                "name": "Developer PowerShell for VS 2019",
+                "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "backgroundImage": null,
-                "backgroundImageOpacity": 0.1,
-                "closeOnExit": "graceful",
-                "commandline": "C:\\Users\\Pohl\\scoop\\apps\\nu\\current\\nu.exe",
-                "cursorShape": "filledBox",
-                "elevate": false,
-                "guid": "{ae8007d9-e6e7-4aaa-aa76-05c6d487233b}",
-                "hidden": false,
-                "historySize": 100000,
-                "icon": "C:\\Program Files\\nu\\nushell.png",
-                "intenseTextStyle": "all",
-                "name": "NuShell",
-                "opacity": 100,
-                "padding": "6",
-                "startingDirectory": "%USERPROFILE%",
-                "suppressApplicationTitle": true,
-                "tabTitle": "Nu"
-            },
-            {
-                "backgroundImage": null,
-                "backgroundImageOpacity": 0.1,
-                "closeOnExit": "graceful",
-                "colorScheme": "Endeavour Light",
-                "commandline": "C:\\Users\\Pohl\\scoop\\apps\\nu\\current\\nu.exe",
-                "cursorShape": "filledBox",
-                "elevate": false,
-                "guid": "{e356f3c4-9e38-4937-a687-7b5c04070654}",
-                "hidden": false,
-                "historySize": 100000,
-                "icon": "C:\\Program Files\\nu\\nushell.png",
-                "intenseTextStyle": "all",
-                "name": "NuShell (Bright)",
-                "opacity": 100,
-                "padding": "6",
-                "startingDirectory": "%USERPROFILE%",
-                "suppressApplicationTitle": true,
-                "tabTitle": "Nu"
             }
         ]
     },
@@ -363,6 +324,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
+        },
+        {
+            "background": "#141414",
+            "black": "#0C0C0C",
+            "blue": "#3037AB",
+            "brightBlack": "#767676",
+            "brightBlue": "#566AD6",
+            "brightCyan": "#52BD9F",
+            "brightGreen": "#44C67D",
+            "brightPurple": "#4A63C9",
+            "brightRed": "#E73C43",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9CE7C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#2C756D",
+            "foreground": "#FFFFFF",
+            "green": "#2FA15E",
+            "name": "EasyColors",
+            "purple": "#3749AB",
+            "red": "#C52325",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#AB9636"
         },
         {
             "background": "#181818",
@@ -574,53 +558,9 @@
     ],
     "showTabsInTitlebar": true,
     "showTerminalTitleInTitlebar": false,
-    "startOnUserLogin": true,
+    "startOnUserLogin": false,
     "tabWidthMode": "equal",
     "theme": "dark",
-    "themes": 
-    [
-        {
-            "name": "legacyDark",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacyLight",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacySystem",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "system",
-                "useMica": false
-            }
-        }
-    ],
+    "themes": [],
     "useAcrylicInTabRow": true
 }
