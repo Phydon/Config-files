@@ -7,19 +7,43 @@ New-Alias -Name .. -Value cdback
 Function vimquit {exit}
 New-Alias -Name :q -Value vimquit
 
-New-Alias -Name 'up' -Value ~/main/Rust/up/target/release/up.exe
-New-Alias -Name 'bkp' -Value ~/main/Rust/bkp/target/release/bkp.exe
 del alias:sl -Force
-New-Alias -Name 'sl' -Value ~/main/Rust/sl/target/release/sl.exe
-New-Alias -Name 'sf' -Value ~/main/Rust/sf/target/release/sf.exe
-New-Alias -Name 'mg' -Value ~/main/Rust/mg/target/release/mg.exe
+New-Alias -Name 'sl' -Value ~/.local/sl.exe
+Function sllong { sl -l $args[0] }
+New-Alias -Name 'll' -Value sllong
+Function sllonga { sl -la $args[0] }
+New-Alias -Name 'la' -Value sllonga
+New-Alias -Name 'sf' -Value ~/.local/sf.exe
+New-Alias -Name 'mg' -Value ~/.local/mg.exe
+New-Alias -Name 'cx' -Value ~/.local/cx.exe
+New-Alias -Name 'gib' -Value ~/.local/gib.exe
+New-Alias -Name 'map' -Value ~/.local/map.exe
+New-Alias -Name 'file' -Value ~/.local/witchfile.exe
+New-Alias -Name 'up' -Value ~/.local/up.exe
+del alias:ii -Force
+Function startcurrent { start . }
+New-Alias -Name 'ii' -Value startcurrent
+
+Function create_new_file { [void](New-Item -Path . -ItemType "file" -Name $args[0])}
+New-Alias -Name 'touch' -Value create_new_file
 
 New-Alias -Name 'help' -Value Get-Help
+New-Alias -Name 'py' -Value python
 
-Function pypackages {
-	py -m pip list
-}
+Function hxquicknotes { hx 'G:\Meine Ablage\Obsidian\Main\Quicknotes.md' }
+New-Alias -Name 'hxy' -Value hxquicknotes
+
+Function pypackages { py -m pip list }
 New-Alias -Name 'pypkg' -Value pypackages
+
+Function gitstatus { git status }
+New-Alias -Name 'gs' -Value gitstatus
+Function gitall { git add .; git commit -m $args[0]; git push }
+New-Alias -Name 'ga' -Value gitall
+
+del alias:cd -Force
+New-Alias -Name 'cd' -Value z
+New-Alias -Name 'cdi' -Value zi
 
 function shorten-path([string] $path) {
    $loc = $path.Replace($HOME, '~')
@@ -47,19 +71,15 @@ function prompt {
    return ' ' 
 }
 
-# # greeting function
-# $Hour = (Get-Date).Hour
-# If ($Hour -lt 9) {"Good Morning $($Env:UserName)"}
-# ElseIf ($Hour -gt 17) {"Good Evening $($Env:UserName)"}
-# Else {"Welcome $($Env:UserName)"}
-
 Set-PSReadLineOption -Colors @{ "Command"=[ConsoleColor]::Magenta }
 
 # use starship prompt
 # Invoke-Expression (&starship init powershell)
 
 # For zoxide v0.8.0+
-Invoke-Expression (& {
-    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-    (zoxide init --hook $hook powershell | Out-String)
-})
+# Invoke-Expression (& {
+#     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+#     (zoxide init --hook $hook powershell | Out-String)
+# })
+# For zoxide v0.9.4
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
