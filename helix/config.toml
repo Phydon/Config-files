@@ -1,10 +1,13 @@
-theme = "walker"
-# theme = "lavendel"
+# theme = "walker"
+# theme = "kaolin-dark"
+# theme = "mellow"
+# theme = "serika-darker"
+theme = "ttoxed"
 
 [editor]
 line-number = "relative"
 color-modes = true
-shell = ["nu", "-c"]
+shell = ["powershell", "-c"]
 auto-completion = true
 completion-trigger-len = 2
 auto-format = true
@@ -12,9 +15,9 @@ auto-info = true
 bufferline = "multiple"
 
 [editor.statusline]
-left = ["mode", "spinner"]
-center = ["file-name"]
-right = ["diagnostics", "selections", "total-line-numbers", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+left = ["mode", "spinner", "diagnostics", "spacer", "spacer", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = ["selections", "primary-selection-length"]
+right = ["total-line-numbers", "position", "position-percentage", "spacer", "register", "spacer", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 
 [editor.lsp]
@@ -39,9 +42,25 @@ hidden = false
 [editor.search]
 smart-case = false
 
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
 [editor.indent-guides]
 render = true
-character = "╎"
+character = "╎" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
+skip-levels = 1
 
 [editor.soft-wrap]
 enable = true
@@ -49,13 +68,16 @@ max-wrap = 25 # increase value to reduce forced mid-word wrapping
 max-indent-retain = 40
 wrap-indicator = "↪"  # set wrap-indicator to "" to hide it
 
+[editor.smart-tab]
+enable = false
+
 [keys.normal]
 G = "goto_file_end"
 X = "extend_line_above"
 ret = ["move_line_down", "goto_line_start"]
 
 [keys.normal.space]
-w = { w = ":open ~/obsidian_vault/quicknotes.md" }
+w = { w = ":open 'G:/Meine Ablage/Obsidian/Main/Quicknotes.md'" }
 r = ":reflow"
 u = "switch_to_lowercase"
 U = "switch_to_uppercase"
