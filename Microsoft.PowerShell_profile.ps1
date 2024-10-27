@@ -8,18 +8,27 @@ Function vimquit {exit}
 New-Alias -Name :q -Value vimquit
 
 del alias:sl -Force
-New-Alias -Name 'sl' -Value ~/.local/sl.exe
+New-Alias -Name 'sl' -Value ~/.local/bin/sl.exe
 Function sllong { sl -l $args[0] }
 New-Alias -Name 'll' -Value sllong
 Function sllonga { sl -la $args[0] }
 New-Alias -Name 'la' -Value sllonga
-New-Alias -Name 'sf' -Value ~/.local/sf.exe
-New-Alias -Name 'mg' -Value ~/.local/mg.exe
-New-Alias -Name 'cx' -Value ~/.local/cx.exe
-New-Alias -Name 'gib' -Value ~/.local/gib.exe
-New-Alias -Name 'map' -Value ~/.local/map.exe
-New-Alias -Name 'file' -Value ~/.local/witchfile.exe
-New-Alias -Name 'up' -Value ~/.local/up.exe
+New-Alias -Name 'sf' -Value ~/.local/bin/sf.exe
+New-Alias -Name 'mg' -Value ~/.local/bin/mg.exe
+New-Alias -Name 'cx' -Value ~/.local/bin/cx.exe
+New-Alias -Name 'gib' -Value ~/.local/bin/gib.exe
+New-Alias -Name 'map' -Value ~/.local/bin/map.exe
+New-Alias -Name 'file' -Value ~/.local/bin/witchfile.exe
+New-Alias -Name 'up' -Value ~/.local/bin/up.exe
+New-Alias -Name 'pf' -Value ~/.local/bin/pf.exe
+New-Alias -Name 'ms' -Value ~/.local/bin/ms.exe
+New-Alias -Name 'xa' -Value ~/.local/bin/xa.exe
+New-Alias -Name 'gerf' -Value ~/.local/bin/gerf.exe
+New-Alias -Name 'lc' -Value ~/.local/bin/leanncore.ps1
+del alias:sp -Force
+New-Alias -Name 'sp' -Value ~/.local/bin/sp.exe
+New-Alias -Name 'sg' -Value ~/.local/bin/sg.exe
+
 del alias:ii -Force
 Function startcurrent { start . }
 New-Alias -Name 'ii' -Value startcurrent
