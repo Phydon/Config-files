@@ -1,7 +1,7 @@
 [[language]]
 name = "rust"
 # https://rust-analyzer.github.io/manual.html#configuration
-diagnostic-severity = "Warning"
+diagnostic-severity = "warning"
 language-servers = ["rust-analyzer"]
 
 [language-server.rust-analyzer]
@@ -12,13 +12,11 @@ name = "python"
 scope = "source.python"
 # INFO py -m pip install python-lsp-server python-lsp-ruff
 language-servers = ["pylsp"]
-# INFO only use 'ruff'
-# language-server = { command = "ruff-lsp" }
-# config = { settings = { args = ["--config=~/AppData/Roaming/helix/pyproject.toml"] } }
+
 # INFO use 'black' as the python formatter
 formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
-diagnostic-severity = "Warning"
+diagnostic-severity = "warning"
 
 # INFO disable everything from 'pylsp' except for 'ruff'
 [language-server.pylsp.plugins]
@@ -36,24 +34,24 @@ ruff = { enabled = true, ignore = ["W293"], lineLength = 80, cache-dir = "~/.cac
 name = "nu"
 shebangs = ["nu"]
 indent =  {tab-width = 4, unit = "    "}
-diagnostic-severity = "Warning"
+diagnostic-severity = "warning"
 
 [[language]]
 name = "markdown"
 indent =  {tab-width = 4, unit = "    "}
-diagnostic-severity = "Warning"
+diagnostic-severity = "warning"
 
 [[language]]
 name = "c"
 indent =  {tab-width = 4, unit = "    "}
-diagnostic-severity = "Warning"
+diagnostic-severity = "warning"
 
 [[language]]
 name = "cpp"
 indent =  {tab-width = 4, unit = "    "}
-diagnostic-severity = "Warning"
+diagnostic-severity = "warning"
 
 [[language]]
 name = "toml"
 indent =  {tab-width = 4, unit = "    "}
-diagnostic-severity = "Warning"
+diagnostic-severity = "warning"
