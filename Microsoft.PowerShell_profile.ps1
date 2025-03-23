@@ -47,6 +47,9 @@ New-Alias -Name 'pypkg' -Value pypackages
 
 Function gitstatus { git status }
 New-Alias -Name 'gs' -Value gitstatus
+del alias:gl -Force
+Function gitlog { git log --oneline }
+New-Alias -Name 'gl' -Value gitlog
 Function gitall { git add .; git commit -m $args[0]; git push }
 New-Alias -Name 'ga' -Value gitall
 
