@@ -1,8 +1,9 @@
 # theme = "walker"
 # theme = "kaolin-dark"
 # theme = "mellow"
-# theme = "serika-darker"
-theme = "ttoxed"
+theme = "serika-darker"
+# theme = "ttoxed"
+# theme = "gruber-darker"
 
 [editor]
 line-number = "relative"
@@ -83,6 +84,8 @@ u = "switch_to_lowercase"
 U = "switch_to_uppercase"
 C-k = "kill_to_line_end"
 C-u = "kill_to_line_start"
+C-c = ":run-shell-command Cargo check"
+C-r = ":run-shell-command Cargo run"
 
 [keys.insert.q]
 q = "normal_mode"
