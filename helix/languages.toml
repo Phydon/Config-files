@@ -9,25 +9,62 @@ config = {format = {"rust-analyzer.rustfmt.extraArgs" = "max_width=80"}}
 
 [[language]]
 name = "python"
-scope = "source.python"
-# INFO py -m pip install python-lsp-server python-lsp-ruff
-language-servers = ["pylsp"]
-
-# INFO use 'black' as the python formatter
-formatter = { command = "black", args = ["--quiet", "-"] }
+language-servers = ["ruff", "pylsp"]
 auto-format = true
-diagnostic-severity = "warning"
+indent = { tab-width = 4, unit = "    " }
 
-# INFO disable everything from 'pylsp' except for 'ruff'
-[language-server.pylsp.plugins]
-flake8 = {enabled = false}
-autopep8 = {enabled = false}
-mccabe = {enabled = false}
-pycodestyle = {enabled = false}
-pyflakes = {enabled = false}
-pylint = {enabled = false}
-yapf = {enabled = false}
-ruff = { enabled = true, ignore = ["W293"], lineLength = 80, cache-dir = "~/.cache/ruff", config = "~/AppData/Roaming/helix/pyproject.toml" }
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.ruff.config.settings]
+# logLevel = "warn"
+logLevel = "info"
+lineLength = 80
+
+[language-server.ruff.config.settings.lint]
+select = ["E4", "E7"]
+preview = false
+
+[language-server.ruff.config.settings.format]
+preview = true
+
+[language-server.pylsp]
+command = "pylsp"
+
+[language-server.pylsp.config.pylsp]
+plugins.jedi_completion.environment = "C:/Users/huber/scoop/apps/python/current/python.exe"
+plugins.jedi_completion.enabled = true
+plugins.jedi_hover.enabled = true
+plugins.jedi_references.enabled = true
+plugins.jedi_signature_help.enabled = false
+plugins.jedi_symbols.enabled = true
+plugins.pyflakes.enabled = true
+plugins.pylint.enabled = false
+plugins.pycodestyle.enabled = false
+
+
+# [[language]]
+# name = "python"
+# scope = "source.python"
+# # INFO py -m pip install python-lsp-server python-lsp-ruff
+# language-servers = ["pylsp"]
+
+# # INFO use 'black' as the python formatter
+# formatter = { command = "black", args = ["--quiet", "-"] }
+# auto-format = true
+# diagnostic-severity = "warning"
+
+# # INFO disable everything from 'pylsp' except for 'ruff'
+# [language-server.pylsp.plugins]
+# flake8 = {enabled = false}
+# autopep8 = {enabled = false}
+# mccabe = {enabled = false}
+# pycodestyle = {enabled = false}
+# pyflakes = {enabled = false}
+# pylint = {enabled = false}
+# yapf = {enabled = false}
+# ruff = { enabled = true, ignore = ["W293"], lineLength = 80, cache-dir = "~/.cache/ruff", config = "~/AppData/Roaming/helix/pyproject.toml" }
 
 
 [[language]]
