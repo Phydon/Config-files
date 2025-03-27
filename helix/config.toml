@@ -1,9 +1,10 @@
 # theme = "walker"
 # theme = "kaolin-dark"
 # theme = "mellow"
-theme = "serika-darker"
+# theme = "serika-darker"
 # theme = "ttoxed"
 # theme = "gruber-darker"
+theme = "grubered"
 
 [editor]
 line-number = "relative"
