@@ -87,6 +87,10 @@ C-k = "kill_to_line_end"
 C-u = "kill_to_line_start"
 C-c = ":run-shell-command Cargo check"
 C-r = ":run-shell-command Cargo run"
+C-t = ":run-shell-command Cargo test"
+n = ":hsplit-new"
+# C-c = ["insert_newline", "insert_newline", "goto_line_start", ":insert-output Cargo check", "normal_mode", ":append-output echo ' '", "normal_mode", "insert_newline"]
+# C-r = ["insert_newline", "insert_newline", "goto_line_start", ":insert-output Cargo run", "normal_mode", ":append-output echo ' '", "normal_mode", "insert_newline"]
 
 [keys.insert.q]
 q = "normal_mode"
