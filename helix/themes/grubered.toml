@@ -62,7 +62,7 @@
 "ui.text.focus" = { bg = "bg5", modifiers = ["bold"] }
 "ui.selection" = { bg = "bg2" }
 "ui.selection.primary" = { bg = "bg5" }
-"ui.cursor.primary" = { bg = "fg0", fg = "niagara1" }
+"ui.cursor.primary" = { bg = "yellow0", fg = "niagara1", modifiers = ["slow_blink"] }
 "ui.cursor.match" = { bg = "yellow1" }
 "ui.menu" = { fg = "fg0", bg = "bg6" }
 "ui.menu.selected" = { fg = "fg0", bg = "bg5", modifiers = ["bold"] }
