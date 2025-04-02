@@ -52,6 +52,8 @@ Function gitlog { git log --oneline }
 New-Alias -Name 'gl' -Value gitlog
 Function gitall { git add .; git commit -m $args[0]; git push }
 New-Alias -Name 'ga' -Value gitall
+Function gitdiff { git diff }
+New-Alias -Name 'gd' -Value gitdiff
 
 del alias:cd -Force
 New-Alias -Name 'cd' -Value z
