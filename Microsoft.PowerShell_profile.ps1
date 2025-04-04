@@ -1,3 +1,5 @@
+# ALIASES
+ 
 Function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
 New-Alias -Name fd -Value Find
 
@@ -59,6 +61,51 @@ del alias:cd -Force
 New-Alias -Name 'cd' -Value z
 New-Alias -Name 'cdi' -Value zi
 
+# EDIT LAST COMMAND
+function Edit-LastCommand {
+    # Get the last command from history
+    $lastCommand = (Get-History -Count 1).CommandLine
+    if (-not $lastCommand) {
+        Write-Host "No command history found" -ForegroundColor Red
+        return
+    }
+
+    # Write to a temporary .txt file
+    $tempFile = "$env:TEMP\elc.txt"
+    $lastCommand | Set-Content -Encoding UTF8 $tempFile
+
+    # Start editing with the default text editor (use process information)
+    $editorProcess = Start-Process $tempFile -PassThru
+    
+    if (-not $editorProcess) {
+        Write-Host "Failed to start the default text editor." -ForegroundColor Red
+        return
+    }
+
+    # Wait for the editor process to close
+    while ($true) {
+        Start-Sleep -Milliseconds 200
+        # Check if the editor process has exited
+        if ($editorProcess.HasExited) { break }
+    }
+
+    # Read the edited command from the file, removing any carriage return characters
+    $edited = (Get-Content $tempFile -Raw).Replace("`r", "").Trim()
+   
+    # Clear the current line in the terminal input
+    [Microsoft.PowerShell.PSConsoleReadLine]::DeleteLine()
+
+    # Insert the edited command
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert($edited)
+   
+}
+
+# Bind Ctrl+E to the function
+Set-PSReadLineKeyHandler -Chord 'Ctrl+e' -ScriptBlock { Edit-LastCommand }
+ 
+
+# CUSTOME PROMT
+
 function shorten-path([string] $path) {
    $loc = $path.Replace($HOME, '~')
    # remove prefix for UNC paths
@@ -87,7 +134,7 @@ function prompt {
 
 Set-PSReadLineOption -Colors @{ "Command"=[ConsoleColor]::Magenta }
 
-# use starship prompt
+# USE STARSHIP PROMPT
 # Invoke-Expression (&starship init powershell)
 
 # For zoxide v0.8.0+
@@ -95,5 +142,5 @@ Set-PSReadLineOption -Colors @{ "Command"=[ConsoleColor]::Magenta }
 #     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
 #     (zoxide init --hook $hook powershell | Out-String)
 # })
-# For zoxide v0.9.4
+# FOR ZOXIDE V0.9.4
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
