@@ -1,19 +1,19 @@
 # ALIASES
  
-Function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
+function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
 New-Alias -Name fd -Value Find
 
-Function cdback {cd ..}
+function cdback {cd ..}
 New-Alias -Name .. -Value cdback
 
-Function vimquit {exit}
+function vimquit {exit}
 New-Alias -Name :q -Value vimquit
 
 del alias:sl -Force
 New-Alias -Name 'sl' -Value ~/.local/bin/sl.exe
-Function sllong { sl -l $args[0] }
+function sllong { sl -l $args[0] }
 New-Alias -Name 'll' -Value sllong
-Function sllonga { sl -la $args[0] }
+function sllonga { sl -la $args[0] }
 New-Alias -Name 'la' -Value sllonga
 New-Alias -Name 'sf' -Value ~/.local/bin/sf.exe
 New-Alias -Name 'mg' -Value ~/.local/bin/mg.exe
@@ -32,34 +32,39 @@ New-Alias -Name 'sp' -Value ~/.local/bin/sp.exe
 New-Alias -Name 'sg' -Value ~/.local/bin/sg.exe
 
 del alias:ii -Force
-Function startcurrent { start . }
+function startcurrent { start . }
 New-Alias -Name 'ii' -Value startcurrent
 
-Function create_new_file { [void](New-Item -Path . -ItemType "file" -Name $args[0])}
+function create_new_file { [void](New-Item -Path . -ItemType "file" -Name $args[0])}
 New-Alias -Name 'touch' -Value create_new_file
 
 New-Alias -Name 'help' -Value Get-Help
 New-Alias -Name 'py' -Value python
 
-Function hxquicknotes { hx 'G:\Meine Ablage\Obsidian\Main\Quicknotes.md' }
+function hxquicknotes { hx 'G:\Meine Ablage\Obsidian\Main\Quicknotes.md' }
 New-Alias -Name 'hxy' -Value hxquicknotes
 
-Function pypackages { py -m pip list }
+function pypackages { py -m pip list }
 New-Alias -Name 'pypkg' -Value pypackages
 
-Function gitstatus { git status }
+function gitstatus { git status }
 New-Alias -Name 'gs' -Value gitstatus
 del alias:gl -Force
-Function gitlog { git log --oneline }
+function gitlog { git log --oneline }
 New-Alias -Name 'gl' -Value gitlog
-Function gitall { git add .; git commit -m $args[0]; git push }
+function gitall { git add .; git commit -m $args[0]; git push }
 New-Alias -Name 'ga' -Value gitall
-Function gitdiff { git diff }
+function gitdiff { git diff }
 New-Alias -Name 'gd' -Value gitdiff
 
 del alias:cd -Force
 New-Alias -Name 'cd' -Value z
 New-Alias -Name 'cdi' -Value zi
+
+function cd_and_ls {
+    cd $args[0] | ll
+}
+New-Alias -Name 'cdl' -Value cd_and_ls
 
 # EDIT LAST COMMAND
 function Edit-LastCommand {
