@@ -41,9 +41,6 @@ New-Alias -Name 'touch' -Value create_new_file
 New-Alias -Name 'help' -Value Get-Help
 New-Alias -Name 'py' -Value python
 
-function hxquicknotes { hx 'G:\Meine Ablage\Obsidian\Main\Quicknotes.md' }
-New-Alias -Name 'hxy' -Value hxquicknotes
-
 function pypackages { py -m pip list }
 New-Alias -Name 'pypkg' -Value pypackages
 
