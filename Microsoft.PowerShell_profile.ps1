@@ -66,6 +66,8 @@ function cd_and_ls {
 }
 New-Alias -Name 'cdl' -Value cd_and_ls
 
+New-Alias -Name 'libreoffice' -Value "C:\Program Files\LibreOffice\program\soffice.exe"
+
 # EDIT LAST COMMAND
 function Edit-LastCommand {
     # Get the last command from history
