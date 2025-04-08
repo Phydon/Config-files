@@ -65,6 +65,12 @@ New-Alias -Name 'cdl' -Value cd_and_ls
 
 New-Alias -Name 'libreoffice' -Value "C:\Program Files\LibreOffice\program\soffice.exe"
 
+del alias:cat -Force
+function batcat {
+    bat --theme="Nord" $args[0]
+}
+New-Alias -Name 'cat' -Value batcat
+
 # EDIT LAST COMMAND
 function Edit-LastCommand {
     # Get the last command from history
