@@ -71,6 +71,12 @@ function batcat {
 }
 New-Alias -Name 'cat' -Value batcat
 
+# PAGER
+function less {
+    param ()
+    $input | Out-Host -Paging
+}
+
 # EDIT LAST COMMAND
 function Edit-LastCommand {
     # Get the last command from history
