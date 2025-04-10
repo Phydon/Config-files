@@ -112,6 +112,11 @@ function Edit-LastCommand {
 
 # Bind Ctrl+E to the function
 Set-PSReadLineKeyHandler -Chord 'Ctrl+e' -ScriptBlock { Edit-LastCommand }
+
+
+# DISABLE TELEMETRY 
+
+$POWERSHELL_TELEMETRY_OPTOUT = 1
  
 
 # CUSTOME PROMT
