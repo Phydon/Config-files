@@ -1,3 +1,6 @@
+# START RECORDING THE POWERSHELL SESSION
+Start-Transcript -Path $HOME\Documents\PowerShell\powershell_transcript.txt -Append -IncludeInvocationHeader
+
 # ALIASES
  
 function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
