@@ -257,7 +257,7 @@
             {
                 "face": "FiraCode Nerd Font",
                 "size": 15,
-                "weight": "medium"
+                "weight": "normal"
             },
             "historySize": 100000,
             "intenseTextStyle": "all",
@@ -356,7 +356,7 @@
                 "experimental.retroTerminalEffect": false,
                 "font": 
                 {
-                    "weight": "medium"
+                    "weight": "normal"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
