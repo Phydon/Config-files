@@ -71,6 +71,43 @@ function batcat {
 }
 New-Alias -Name 'cat' -Value batcat
 
+# Always remove to recycle bin
+function recycle {
+    param(
+        [Parameter(ValueFromPipeline, Mandatory=$true)]
+        [string[]]$Path
+    )
+
+    begin {
+        $shell = New-Object -ComObject 'Shell.Application'
+    }
+
+    process {
+        foreach ($p in $Path) {
+            # Resolve the full path, which handles aliases like '.' and '~'
+            $fullPath = Resolve-Path -Path $p -ErrorAction SilentlyContinue
+
+            if ($null -eq $fullPath) {
+                Write-Warning "Cannot find path '$p' because it does not exist."
+                continue
+            }
+
+            try {
+                # Get the folder and item references from the shell
+                $folder = $shell.Namespace((Get-Item -Path $fullPath).DirectoryName)
+                $item = $folder.ParseName((Get-Item -Path $fullPath).Name)
+
+                # Invoke the verb "Delete" on the item, which sends it to the Recycle Bin
+                $item.InvokeVerb('Delete')
+            } catch {
+                Write-Error "Could not move '$p' to the Recycle Bin. Original error: $_"
+            }
+        }
+    }
+}
+del alias:rm -Force
+New-Alias -Name 'rm' -Value recycle
+
 # PAGER
 function less {
     param ()
