@@ -1,5 +1,5 @@
 # ALIASES
- 
+
 function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
 New-Alias -Name fd -Value Find
 
@@ -70,6 +70,8 @@ function batcat {
     bat --theme="Nord" $args[0]
 }
 New-Alias -Name 'cat' -Value batcat
+
+New-Alias -Name 'uu' -Value uutils.exe
 
 # Always remove to recycle bin
 function recycle {
