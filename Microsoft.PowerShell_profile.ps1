@@ -1,8 +1,5 @@
 # ALIASES
 
-function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
-New-Alias -Name fd -Value Find
-
 function cdback {cd ..}
 New-Alias -Name .. -Value cdback
 
@@ -35,8 +32,11 @@ del alias:ii -Force
 function startcurrent { start . }
 New-Alias -Name 'ii' -Value startcurrent
 
-function create_new_file { [void](New-Item -Path . -ItemType "file" -Name $args[0])}
-New-Alias -Name 'touch' -Value create_new_file
+# function create_new_file { [void](New-Item -Path . -ItemType "file" -Name $args[0])}
+# New-Alias -Name 'touch' -Value create_new_file
+
+# function Find {gci -r -erroraction 'silentlycontinue' | where Name -match $args[0] | select FullName}
+# New-Alias -Name fd -Value Find
 
 New-Alias -Name 'help' -Value Get-Help
 New-Alias -Name 'py' -Value python
@@ -65,56 +65,123 @@ New-Alias -Name 'cdl' -Value cd_and_ls
 
 New-Alias -Name 'libreoffice' -Value "C:\Program Files\LibreOffice\program\soffice.exe"
 
-del alias:cat -Force
-function batcat {
-    bat --theme="Nord" $args[0]
-}
-New-Alias -Name 'cat' -Value batcat
-
+# UUTILS 
 New-Alias -Name 'uu' -Value uutils.exe
 
-# Always remove to recycle bin
-function recycle {
-    param(
-        [Parameter(ValueFromPipeline, Mandatory=$true)]
-        [string[]]$Path
-    )
-
-    begin {
-        $shell = New-Object -ComObject 'Shell.Application'
-    }
-
-    process {
-        foreach ($p in $Path) {
-            # Resolve the full path, which handles aliases like '.' and '~'
-            $fullPath = Resolve-Path -Path $p -ErrorAction SilentlyContinue
-
-            if ($null -eq $fullPath) {
-                Write-Warning "Cannot find path '$p' because it does not exist."
-                continue
-            }
-
-            try {
-                # Get the folder and item references from the shell
-                $folder = $shell.Namespace((Get-Item -Path $fullPath).DirectoryName)
-                $item = $folder.ParseName((Get-Item -Path $fullPath).Name)
-
-                # Invoke the verb "Delete" on the item, which sends it to the Recycle Bin
-                $item.InvokeVerb('Delete')
-            } catch {
-                Write-Error "Could not move '$p' to the Recycle Bin. Original error: $_"
-            }
-        }
-    }
+del alias:cat -Force
+function cat_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe cat $args
 }
+New-Alias -Name "cat" -Value cat_func
+
+del alias:cp -Force
+function cp_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe cp $args
+}
+New-Alias -Name "cp" -Value cp_func
+
+del alias:dir -Force
+function dir_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe dir $args
+}
+New-Alias -Name "dir" -Value dir_func
+
+del alias:echo -Force
+function echo_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe echo $args
+}
+New-Alias -Name "echo" -Value echo_func
+
+del alias:ls -Force
+function ls_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe ls --color=always $args
+}
+New-Alias -Name "ls" -Value ls_func
+
+del alias:mv -Force
+function mv_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe mv $args
+}
+New-Alias -Name "mv" -Value mv_func
+
+del alias:pwd -Force
+function pwd_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe pwd $args
+}
+New-Alias -Name "pwd" -Value pwd_func
+
 del alias:rm -Force
-New-Alias -Name 'rm' -Value recycle
+function rm_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe rm $args
+}
+New-Alias -Name "rm" -Value rm_func
+
+del alias:rmdir -Force
+function rmdir_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe rmdir $args
+}
+New-Alias -Name "rmdir" -Value rmdir_func
+
+del alias:sleep -Force
+function sleep_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe sleep $args
+}
+New-Alias -Name "sleep" -Value sleep_func
+
+del alias:sort -Force
+function sort_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe sort $args
+}
+New-Alias -Name "sort" -Value sort_func
+
+del alias:tee -Force
+function tee_func {
+    ~/scoop/apps/uutils-coreutils/current/coreutils.exe tee $args
+}
+New-Alias -Name "tee" -Value tee_func
+
+# # Always remove to recycle bin
+# function recycle {
+#     param(
+#         [Parameter(ValueFromPipeline, Mandatory=$true)]
+#         [string[]]$Path
+#     )
+
+#     begin {
+#         $shell = New-Object -ComObject 'Shell.Application'
+#     }
+
+#     process {
+#         foreach ($p in $Path) {
+#             # Resolve the full path, which handles aliases like '.' and '~'
+#             $fullPath = Resolve-Path -Path $p -ErrorAction SilentlyContinue
+
+#             if ($null -eq $fullPath) {
+#                 Write-Warning "Cannot find path '$p' because it does not exist."
+#                 continue
+#             }
+
+#             try {
+#                 # Get the folder and item references from the shell
+#                 $folder = $shell.Namespace((Get-Item -Path $fullPath).DirectoryName)
+#                 $item = $folder.ParseName((Get-Item -Path $fullPath).Name)
+
+#                 # Invoke the verb "Delete" on the item, which sends it to the Recycle Bin
+#                 $item.InvokeVerb('Delete')
+#             } catch {
+#                 Write-Error "Could not move '$p' to the Recycle Bin. Original error: $_"
+#             }
+#         }
+#     }
+# }
+# del alias:rm -Force
+# New-Alias -Name 'rm' -Value recycle
 
 # PAGER
-function less {
-    param ()
-    $input | Out-Host -Paging
-}
+# function less {
+#     param ()
+#     $input | Out-Host -Paging
+# }
 
 # EDIT LAST COMMAND
 function Edit-LastCommand {
@@ -160,12 +227,10 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+e' -ScriptBlock { Edit-LastCommand }
 
 
 # DISABLE TELEMETRY 
-
 $POWERSHELL_TELEMETRY_OPTOUT = 1
  
 
 # CUSTOME PROMT
-
 function shorten-path([string] $path) {
    $loc = $path.Replace($HOME, '~')
    # remove prefix for UNC paths
@@ -186,7 +251,7 @@ function prompt {
    # write-host ([net.dns]::GetHostName()) -n -f $chost
    write-Host ($(if ($IsAdmin) { 'admin ' } else { '' })) -n -f $cadm
    write-host '[' -n -f $cdelim
-   write-host (shorten-path (pwd).Path) -n -f $cloc
+   write-host (shorten-path (Get-Location).Path) -n -f $cloc
    write-host '] ' -n -f $cdelim
    write-host "$([char]0x24)" -n -f $chost
    return ' ' 
@@ -197,10 +262,5 @@ Set-PSReadLineOption -Colors @{ "Command"=[ConsoleColor]::Magenta }
 # USE STARSHIP PROMPT
 # Invoke-Expression (&starship init powershell)
 
-# For zoxide v0.8.0+
-# Invoke-Expression (& {
-#     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-#     (zoxide init --hook $hook powershell | Out-String)
-# })
-# FOR ZOXIDE V0.9.4
+# ZOXIDE V0.9.4
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
