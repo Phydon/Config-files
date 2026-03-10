@@ -1,12 +1,12 @@
 [window]
-padding = { x = 2, y = 2 }
+padding = { x = 5, y = 5 }
 dynamic_padding = true
 decorations = "None"
 startup_mode = "Maximized"
 
 [scrolling]
 history = 100000
-multiplier = 3
+multiplier = 5
 
 [font]
 normal = { family = "Fira Code", style = "Regular" }
