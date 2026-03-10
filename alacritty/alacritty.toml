@@ -1,0 +1,17 @@
+[window]
+padding = { x = 2, y = 2 }
+dynamic_padding = true
+decorations = "None"
+startup_mode = "Maximized"
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[font]
+normal = { family = "Fira Code", style = "Regular" }
+size = 17
+offset = { x = 0, y = 0 } 
+
+[terminal]
+shell = "/bin/fish"
