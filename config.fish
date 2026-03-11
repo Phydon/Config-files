@@ -19,6 +19,7 @@ alias py="python3"
 alias cat="bat --theme=zenburn --style=plain"
 alias gs="git status"
 alias gd="git diff"
+alias fzf="fzf --height 50% --layout reverse --border"
 alias hf="hx (fzf)"
 
 # ZELLIJ AUTOSTART
