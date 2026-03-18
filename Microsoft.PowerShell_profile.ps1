@@ -8,10 +8,10 @@ New-Alias -Name :q -Value vimquit
 
 del alias:sl -Force
 New-Alias -Name 'sl' -Value ~/.local/bin/sl.exe
-function sllong { sl -l $args[0] }
-New-Alias -Name 'll' -Value sllong
-function sllonga { sl -la $args[0] }
-New-Alias -Name 'la' -Value sllonga
+# function sllong { sl -l $args[0] }
+# New-Alias -Name 'll' -Value sllong
+# function sllonga { sl -la $args[0] }
+# New-Alias -Name 'la' -Value sllonga
 New-Alias -Name 'sf' -Value ~/.local/bin/sf.exe
 New-Alias -Name 'mg' -Value ~/.local/bin/mg.exe
 New-Alias -Name 'cx' -Value ~/.local/bin/cx.exe
@@ -31,6 +31,8 @@ New-Alias -Name 'sg' -Value ~/.local/bin/sg.exe
 del alias:ii -Force
 function startcurrent { start . }
 New-Alias -Name 'ii' -Value startcurrent
+
+function hf { hx (fzf) }
 
 # function create_new_file { [void](New-Item -Path . -ItemType "file" -Name $args[0])}
 # New-Alias -Name 'touch' -Value create_new_file
@@ -65,80 +67,93 @@ New-Alias -Name 'cdl' -Value cd_and_ls
 
 New-Alias -Name 'libreoffice' -Value "C:\Program Files\LibreOffice\program\soffice.exe"
 
+
+
+
+
 # UUTILS 
 New-Alias -Name 'uu' -Value uutils.exe
 
 del alias:cat -Force
 function cat_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe cat $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe cat $args
 }
 New-Alias -Name "cat" -Value cat_func
 
 del alias:cp -Force
 function cp_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe cp $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe cp $args
 }
 New-Alias -Name "cp" -Value cp_func
 
 del alias:dir -Force
 function dir_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe dir $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe dir $args
 }
 New-Alias -Name "dir" -Value dir_func
 
 del alias:echo -Force
 function echo_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe echo $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe echo $args
 }
 New-Alias -Name "echo" -Value echo_func
 
 del alias:ls -Force
 function ls_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe ls --color=always $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe ls --color=always $args
 }
 New-Alias -Name "ls" -Value ls_func
+function sllong { ls -lhG --time-style=long-iso $args[0] }
+New-Alias -Name 'll' -Value sllong
+function sllonga { ls -lAhG --time-style=long-iso $args[0] }
+New-Alias -Name 'la' -Value sllonga
 
 del alias:mv -Force
 function mv_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe mv $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe mv $args
 }
 New-Alias -Name "mv" -Value mv_func
 
 del alias:pwd -Force
 function pwd_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe pwd $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe pwd $args
 }
 New-Alias -Name "pwd" -Value pwd_func
 
 del alias:rm -Force
 function rm_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe rm $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe rm $args
 }
 New-Alias -Name "rm" -Value rm_func
 
 del alias:rmdir -Force
 function rmdir_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe rmdir $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe rmdir $args
 }
 New-Alias -Name "rmdir" -Value rmdir_func
 
 del alias:sleep -Force
 function sleep_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe sleep $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe sleep $args
 }
 New-Alias -Name "sleep" -Value sleep_func
 
 del alias:sort -Force
 function sort_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe sort $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe sort $args
 }
 New-Alias -Name "sort" -Value sort_func
 
 del alias:tee -Force
 function tee_func {
-    ~/scoop/apps/uutils-coreutils/current/coreutils.exe tee $args
+    ~/scoop/apps/uutils-coreutils-lean/current/coreutils.exe tee $args
 }
 New-Alias -Name "tee" -Value tee_func
+
+
+
+
+
 
 # # Always remove to recycle bin
 # function recycle {
