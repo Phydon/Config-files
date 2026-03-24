@@ -1,5 +1,6 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    and not set -q TMUX
+    exec tmux
 end
 
 set -g fish_greeting ""
@@ -12,6 +13,7 @@ set -gx EDITOR hx
 
 alias ..="cd .."
 alias :q="exit"
+alias cls="clear"
 alias ls="eza"
 alias ll="ls -l --smart-group --time-style long-iso"
 alias la="ls -lA --smart-group --time-style long-iso"
@@ -22,8 +24,11 @@ alias gd="git diff"
 alias fzf="fzf --height 50% --layout reverse --border"
 alias hf="hx (fzf)"
 
-# ZELLIJ AUTOSTART
-if set -q ZELLIJ
-else
-    zellij
-end
+# zellij autostart
+# if set -q ZELLIJ
+# else
+#     zellij
+# end
+
+# Set up fzf key bindings
+fzf --fish | source
