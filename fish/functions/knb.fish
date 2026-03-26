@@ -8,9 +8,7 @@ function knb --description 'Search and display Markdown files'
     end
 
     set -l pattern $argv[1]
-
     set -l matches (fd -i -t f -e md -- "$pattern" "$knb_dir")
-
     set -l count (count $matches)
 
     if test $count -eq 0
