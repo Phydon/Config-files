@@ -240,6 +240,55 @@ function Edit-LastCommand {
 # Bind Ctrl+E to the function
 Set-PSReadLineKeyHandler -Chord 'Ctrl+e' -ScriptBlock { Edit-LastCommand }
 
+function knb {
+    param(
+        [Parameter(Mandatory=$false, Position=0)]
+        [string]$Pattern
+    )
+
+    # --- CONFIGURATION ---
+    $knb_dir = "$HOME\main\testing"
+    # ---------------------
+
+    if ([string]::IsNullOrWhiteSpace($Pattern)) {
+        Write-Host "Usage: knb <pattern>" -ForegroundColor Yellow
+        return
+    }
+
+    # Use -0 (null-terminated) and -Split to handle paths safely
+    # This prevents PowerShell from adding extra characters to the path string
+    $matches = (fd -i -t f -e md --absolute-path -- "$Pattern" "$knb_dir").Trim()
+
+    # Check if we have an array or a single string
+    $count = 0
+    if ($matches) {
+        $count = $matches.Count
+    }
+
+    if ($count -eq 0) {
+        Write-Host "No direct match for '$Pattern'. Opening full directory search..." -ForegroundColor Cyan
+        
+        # In the fallback, we pipe directly to fzf
+        $selection = fd -i -t f -e md --absolute-path . "$knb_dir" | 
+                     fzf --query "$Pattern" --header "Fuzzy Search: $knb_dir" --height 40% --reverse --border
+        
+        if ($selection) {
+            bat --style="plain" -- $selection.Trim()
+        }
+
+    } elseif ($count -eq 1) {
+        # Ensure we pass a clean string to bat
+        bat --style="plain" -- $matches.Trim()
+
+    } else {
+        $selection = $matches | fzf --header "Multiple matches found" --height 40% --reverse --border
+        
+        if ($selection) {
+            bat --style="plain" -- $selection.Trim()
+        }
+    }
+}
+
 
 # DISABLE TELEMETRY 
 $POWERSHELL_TELEMETRY_OPTOUT = 1
