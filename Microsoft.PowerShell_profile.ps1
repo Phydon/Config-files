@@ -247,7 +247,7 @@ function knb {
     )
 
     # --- CONFIGURATION ---
-    $knb_dir = "$HOME\main\testing"
+    $knb_dir = "$HOME\Nextcloud\Obsidian"
     # ---------------------
 
     if ([string]::IsNullOrWhiteSpace($Pattern)) {
