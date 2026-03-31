@@ -32,3 +32,9 @@ alias hf="hx (fzf)"
 
 # Set up fzf key bindings
 fzf --fish | source
+
+# setting default permissions for files and directories
+# for high security or work: 'umask 077' := permissions (file/dir): 600/700
+# for standard or home use: 'umask 022' := permissions (file/dir): 644/755
+# for collaboration: 'umask 002' := permissions (file/dir): 644/775
+umask 022
