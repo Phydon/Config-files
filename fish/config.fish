@@ -4,6 +4,8 @@ if status is-interactive
 end
 
 set -g fish_greeting ""
+fish_config prompt choose simple
+fish_config theme choose 'Mono Smoke'
 
 fish_add_path /usr/local/bin /usr/bin /bin /usr/local/games /usr/games
 fish_add_path "$HOME/.local/bin"
