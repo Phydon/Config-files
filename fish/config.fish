@@ -23,6 +23,7 @@ alias gs="git status"
 alias gd="git diff"
 alias fzf="fzf --height 50% --layout reverse --border"
 alias hf="hx (fzf)"
+alias up="sudo apt update && sudo apt upgrade -y"
 
 # # zellij autostart
 # if set -q ZELLIJ
