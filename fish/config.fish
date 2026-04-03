@@ -24,7 +24,7 @@ alias gd="git diff"
 alias fzf="fzf --height 50% --layout reverse --border"
 alias hf="hx (fzf)"
 
-# zellij autostart
+# # zellij autostart
 # if set -q ZELLIJ
 # else
 #     zellij
@@ -32,6 +32,10 @@ alias hf="hx (fzf)"
 
 # Set up fzf key bindings
 fzf --fish | source
+
+# fzf always start from home directory 
+set -x FZF_DEFAULT_COMMAND 'fd --hidden --no-ignore --absolute-path --search-path ~'
+set -x FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 
 # setting default permissions for files and directories
 # for high security or work: 'umask 077' := permissions (file/dir): 600/700
