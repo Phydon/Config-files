@@ -1,4 +1,4 @@
-function up --description "Update system, flatpak and apps"
+function up --description "Update system, flatpak, apps, rust, pip"
     set_color yellow
     echo "--- Updating System ---"
     set_color normal
@@ -31,6 +31,20 @@ function up --description "Update system, flatpak and apps"
         echo "Updating Flatpaks..."
         set_color normal
         flatpak update -y
+    end
+
+    if command -q rustup
+        set_color cyan
+        echo "Updating Rust..."
+        set_color normal
+        rustup update
+    end
+
+    if command -q python3
+        set_color cyan
+        echo "Updating Pip..."
+        set_color normal
+        python3 -m pip install --upgrade pip
     end
 
     set_color green
