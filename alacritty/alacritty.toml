@@ -1,8 +1,9 @@
 [window]
 padding = { x = 5, y = 5 }
 dynamic_padding = true
-decorations = "None"
-startup_mode = "Maximized"
+decorations = "Full"
+# startup_mode = "Maximized"
+dimensions = { columns = 150, lines = 40 }
 
 [scrolling]
 history = 100000
@@ -10,11 +11,11 @@ multiplier = 5
 
 [font]
 normal = { family = "Fira Code", style = "Regular" }
-size = 17
-offset = { x = 0, y = 0 } 
+size = 16
+offset = { x = 0, y = 0 }
 
 [terminal]
-shell = "/bin/fish"
+shell = { program = "/usr/bin/fish" }
 
 [env]
 TERM = "xterm-256color"
