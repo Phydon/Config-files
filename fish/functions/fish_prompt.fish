@@ -15,7 +15,7 @@ function fish_prompt
     echo -n $USER@$hostname
     set_color --reset
 
-    set_color $color
+    set_color bryellow
     echo -n (prompt_pwd)
     set_color --reset
 
